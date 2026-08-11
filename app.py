@@ -393,9 +393,21 @@ def main():
             break
         logger.warning(f"Content generation returned unparsable output (attempt {attempt}/{max_attempts}). Retrying...")
 
-    if not content_data or not content_data.get("approved"):
-        reason = content_data.get("reason", "Manager agent rejected content or failed to parse agent response.")
+    if not content_data:
+        logger.error("Content generation returned no usable output.")
+        logger.error("Aborting posting process. Topic remains in queue.")
+        sys.exit(1)
+
+    if content_data.get("approved") is False:
+        reason = content_data.get("reason", "Manager agent rejected content.")
         logger.error(f"Content generation rejected by Quality Manager: {reason}")
+        logger.error("Aborting posting process. Topic remains in queue.")
+        sys.exit(1)
+
+    # Qwen sometimes emits the final content JSON directly without an explicit
+    # 'approved' key. Treat present content fields as approval.
+    if not (content_data.get("hook") and content_data.get("caption")):
+        logger.error("Manager agent rejected content or failed to parse agent response.")
         logger.error("Aborting posting process. Topic remains in queue.")
         sys.exit(1)
 
