@@ -1,0 +1,27 @@
+# Environment files
+.env
+*.env
+
+# Python virtual environment & cache
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary generated assets
+temp_*.jpg
+temp_*.png
+output.json
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
