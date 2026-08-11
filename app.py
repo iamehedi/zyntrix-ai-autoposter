@@ -87,6 +87,44 @@ def remove_topic_from_queue(topic_to_remove, file_path="topics.txt"):
 
 
 # Helper for Parsing JSON from Agent Outputs
+def _find_json_objects(text: str):
+    """Yield all top-level JSON objects found in text via balanced-brace scan.
+
+    Handles nested braces and braces inside string literals correctly, so a
+    JSON template echoed inside <think>/reasoning text won't confuse us.
+    """
+    candidates = []
+    depth = 0
+    start = -1
+    in_string = False
+    escaped = False
+    for i, ch in enumerate(text):
+        if in_string:
+            if escaped:
+                escaped = False
+            elif ch == "\\":
+                escaped = True
+            elif ch == '"':
+                in_string = False
+            continue
+        if ch == '"':
+            in_string = True
+        elif ch == "{":
+            if depth == 0:
+                start = i
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0 and start != -1:
+                candidate = text[start:i + 1]
+                try:
+                    candidates.append(json.loads(candidate))
+                except Exception:
+                    pass
+                start = -1
+    return candidates
+
+
 def parse_json_from_text(text: str) -> dict:
     """Extracts and parses JSON object from LLM response string."""
     try:
@@ -94,16 +132,25 @@ def parse_json_from_text(text: str) -> dict:
         # contain braces and break naive JSON extraction below.
         cleaned = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL | re.IGNORECASE)
 
-        # Match json codeblock if present
+        # 1. Match json codeblock if present
         json_match = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", cleaned, re.DOTALL)
         if json_match:
-            return json.loads(json_match.group(1))
-        
-        # Match raw json object boundaries
-        raw_match = re.search(r"\{.*\}", cleaned, re.DOTALL)
-        if raw_match:
-            return json.loads(raw_match.group(0))
+            try:
+                return json.loads(json_match.group(1))
+            except Exception:
+                pass  # fall through to full scan below
 
+        # 2. Balanced-brace scan: pick the most likely payload object.
+        #    Prefer objects carrying expected content keys (approved/hook/etc).
+        candidates = _find_json_objects(cleaned)
+        if candidates:
+            def _score(obj):
+                return sum(k in obj for k in ("approved", "hook", "caption", "hashtags", "image_prompt", "reason"))
+            scored = sorted(candidates, key=_score, reverse=True)
+            if scored[0]:
+                return scored[0]
+
+        # 3. Last resort: whole-text parse
         return json.loads(cleaned)
     except Exception as e:
         logger.error(f"Failed to parse JSON output from agent text: {e}")
@@ -129,7 +176,11 @@ def generate_and_validate_content(topic: str) -> dict:
         model=f"openai/{GROQ_MODEL}",
         api_key=GROQ_API_KEY,
         base_url="https://api.groq.com/openai/v1",
-        temperature=0.7
+        temperature=0.7,
+        # Qwen 3.6 is a reasoning model: it spends tokens on <think> blocks
+        # before the final JSON. Without a high cap it gets truncated (Groq
+        # defaults to 2048) and the JSON is never emitted.
+        max_tokens=8192
     )
 
     # 1. Writer Agent
