@@ -2,7 +2,7 @@
 
 An autonomous, production-ready, GitHub-based AI social media publishing system built for **Zyntrix Studio**, a software, web development, and AI solutions agency.
 
-The system runs completely in the cloud via **GitHub Actions**—requiring zero local machine uptime. It takes topics from a queue, orchestrates a 3-agent CrewAI pipeline powered by **Groq Llama 3**, generates custom 1080×1080 branded tech imagery via **Pollinations AI**, quality-checks the content against brand guidelines, and publishes directly to the **Zyntrix Studio Facebook Page** via Meta's Graph API.
+The system runs completely in the cloud via **GitHub Actions**—requiring zero local machine uptime. It takes topics from a queue, orchestrates a 3-agent CrewAI pipeline powered by **Groq Qwen 3.6**, generates custom 1080×1080 branded tech imagery via **Pollinations AI**, quality-checks the content against brand guidelines, and publishes directly to the **Zyntrix Studio Facebook Page** via Meta's Graph API.
 
 ---
 
@@ -130,7 +130,7 @@ To run the workflow automatically on GitHub Actions, add your credentials as Rep
 | `FACEBOOK_PAGE_ID` | Numeric Facebook Page ID | `123456789012345` |
 | `FACEBOOK_PAGE_ACCESS_TOKEN` | Permanent Facebook Page Access Token | `EAAG...` |
 | `POLLINATIONS_API_KEY` | (Optional) Pollinations.ai API Key | `pk_...` or leave blank for free tier |
-| `GROQ_MODEL` | (Optional) Groq model override | `openai/gpt-oss-120b` |
+| `GROQ_MODEL` | (Optional) Groq model override | `qwen/qwen3.6-27b` |
 | `GRAPH_API_VERSION` | (Optional) Meta Graph API Version | `v20.0` |
 
 ---
@@ -176,7 +176,7 @@ You can easily run and test the autoposter engine on your local computer before 
    Edit `.env`:
    ```env
    GROQ_API_KEY=gsk_your_real_groq_key
-   GROQ_MODEL=openai/gpt-oss-120b
+   GROQ_MODEL=qwen/qwen3.6-27b
    FACEBOOK_PAGE_ID=123456789012345
    FACEBOOK_PAGE_ACCESS_TOKEN=EAAG...
    POLLINATIONS_API_KEY=
