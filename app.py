@@ -178,10 +178,11 @@ def generate_and_validate_content(topic: str) -> dict:
         base_url="https://api.groq.com/openai/v1",
         temperature=0.7,
         # Qwen 3.6 is a reasoning model: it spends tokens on <think> blocks
-        # before the final JSON. Without a cap above Groq's 2048 default it gets
-        # truncated mid-reasoning. 3000 keeps prompt+output under the free tier
-        # TPM limit (8000) even for the manager call (~4.4k prompt tokens).
-        max_tokens=3000
+        # before the final JSON. max_tokens=2048 is the default but stated
+        # explicitly; a higher value would exceed the free-tier 8000 TPM limit
+        # once agent context accumulates (prompt+output > 8000). Truncation is
+        # handled by a retry loop in main() + a robust JSON parser.
+        max_tokens=2048
     )
 
     # 1. Writer Agent
@@ -379,9 +380,17 @@ def main():
     current_topic, queue = get_next_topic("topics.txt")
     logger.info(f"Selected Queue Topic: '{current_topic}'")
 
-    # 2. Execute CrewAI agent pipeline
-    content_data = generate_and_validate_content(current_topic)
-    
+    # 2. Execute CrewAI agent pipeline.
+    #    Qwen 3.6 can truncate mid-<think> under the 2048 token cap, producing
+    #    unparsable output ({}). Retry once before giving up.
+    content_data = {}
+    max_attempts = 2
+    for attempt in range(1, max_attempts + 1):
+        content_data = generate_and_validate_content(current_topic)
+        if content_data:
+            break
+        logger.warning(f"Content generation returned unparsable output (attempt {attempt}/{max_attempts}). Retrying...")
+
     if not content_data or not content_data.get("approved"):
         reason = content_data.get("reason", "Manager agent rejected content or failed to parse agent response.")
         logger.error(f"Content generation rejected by Quality Manager: {reason}")
