@@ -166,17 +166,35 @@ def parse_json_from_text(text: str) -> dict:
         # contain braces and break naive JSON extraction below.
         cleaned = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL | re.IGNORECASE)
 
+        # Template-echo markers: LLMs sometimes parrot the JSON format example
+        # from the prompt (placeholder values like "Final validated Facebook post
+        # in Bengali") instead of writing real content. Such objects must never
+        # be selected, or we would publish the template itself.
+        PLACEHOLDER_MARKERS = (
+            "Final validated Facebook post",
+            "Selected topic",
+            "Technology category",
+            "Content mode used",
+        )
+
+        def _is_template_echo(obj):
+            blob = json.dumps(obj, ensure_ascii=False)
+            return any(m in blob for m in PLACEHOLDER_MARKERS)
+
         # 1. Match json codeblock if present
         json_match = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", cleaned, re.DOTALL)
         if json_match:
             try:
-                return json.loads(json_match.group(1))
+                parsed = json.loads(json_match.group(1))
+                if not _is_template_echo(parsed):
+                    return parsed
             except Exception:
                 pass  # fall through to full scan below
 
         # 2. Balanced-brace scan: pick the most likely payload object.
         #    Prefer objects carrying expected content keys.
         candidates = _find_json_objects(cleaned)
+        candidates = [c for c in candidates if not _is_template_echo(c)]
         if candidates:
             def _score(obj):
                 return sum(k in obj for k in ("approved", "post", "topic", "hashtags", "scores", "reason", "content_mode"))
@@ -282,7 +300,8 @@ def generate_and_validate_content(topic, history_summary) -> dict:
             '  "hashtags": ["#Example"],\n'
             '  "scores": {"usefulness": 9, "uniqueness": 9, "human_feel": 9, "technical_accuracy": 10, "promotional_feel": 1, "ai_like_feel": 1}\n'
             "}\n"
-            "Do not include any explanation outside the JSON."
+            "Do not include any explanation outside the JSON. Never echo the format template back — "
+            "the JSON above is only a structure example; every value must be your real content."
         ),
         expected_output="A JSON object containing topic, category, content_mode, post, hashtags, and scores.",
         agent=creator
@@ -293,6 +312,9 @@ def generate_and_validate_content(topic, history_summary) -> dict:
             "Review the creator's post using your quality checklist. If the post is already excellent, "
             "return it unchanged. If any check fails, silently rewrite the post to fix the issue. Never "
             "make it promotional and never add an image reference.\n"
+            "CRITICAL: Never echo the JSON format template or its placeholder values back. You must "
+            "output the real, complete post text — actual Bengali content, not example strings like "
+            "'Final validated Facebook post in Bengali' or '#Example'.\n"
             "Output structured JSON:\n"
             "If accepted:\n"
             "{\n"
@@ -326,6 +348,9 @@ def generate_and_validate_content(topic, history_summary) -> dict:
     raw_result_str = str(result)
 
     logger.info(f"CrewAI raw output (first 1500 chars): {raw_result_str[:1500]}")
+    raw_attr = getattr(result, "raw", None)
+    if raw_attr is not None and str(raw_attr) != raw_result_str:
+        logger.info(f"CrewAI result.raw (first 1500 chars): {str(raw_attr)[:1500]}")
     parsed_output = parse_json_from_text(raw_result_str)
     logger.info(f"Parsed content data: {json.dumps(parsed_output, ensure_ascii=False)[:1000]}")
     return parsed_output
@@ -408,8 +433,8 @@ def main():
     # JSON without an explicit 'approved' key — treat present post as approval.
     post_text = content_data.get("post", "")
     hashtags = content_data.get("hashtags", [])
-    if not post_text:
-        logger.error("Reviewer agent rejected content or failed to parse agent response.")
+    if not post_text or any(m in post_text for m in ("Final validated Facebook post", "Selected topic")):
+        logger.error("Reviewer agent rejected content, failed to parse, or returned a template echo.")
         logger.error("Aborting posting process. Topic remains in queue.")
         sys.exit(1)
 
