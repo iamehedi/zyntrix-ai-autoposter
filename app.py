@@ -178,9 +178,10 @@ def generate_and_validate_content(topic: str) -> dict:
         base_url="https://api.groq.com/openai/v1",
         temperature=0.7,
         # Qwen 3.6 is a reasoning model: it spends tokens on <think> blocks
-        # before the final JSON. Without a high cap it gets truncated (Groq
-        # defaults to 2048) and the JSON is never emitted.
-        max_tokens=8192
+        # before the final JSON. Without a cap above Groq's 2048 default it gets
+        # truncated mid-reasoning. 3000 keeps prompt+output under the free tier
+        # TPM limit (8000) even for the manager call (~4.4k prompt tokens).
+        max_tokens=3000
     )
 
     # 1. Writer Agent
