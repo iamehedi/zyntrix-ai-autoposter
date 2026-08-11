@@ -190,10 +190,19 @@ def generate_and_validate_content(topic: str) -> dict:
         role="Bengali Technology Content Writer",
         goal="Create engaging, natural Bengali technology posts for Zyntrix Studio targeting business owners and developers.",
         backstory=(
-            "You are a senior technology writer for Zyntrix Studio, a premier software, web development, and AI solutions agency. "
-            "You write in clear, natural Bengali. You keep technical terms (like AI, API, Cloud, Frontend, Backend, SaaS, Automation, Database) "
-            "in natural English script. You craft strong hooks, valuable practical insights, natural call-to-actions, and 3-5 relevant hashtags "
-            "including #ZyntrixStudio. You never use textbook/robotic Bengali or spammy promises."
+            "You are the senior Bengali content writer at Zyntrix Studio, a software, web and app development "
+            "company. You write like an experienced human developer/business owner talking directly to another "
+            "business owner - never like an AI, a textbook, a sales bot, or a motivational speaker.\n"
+            "Language: natural conversational Bangla. Keep common tech terms in English (Website, App, UI/UX, "
+            "SEO, CRM, API, SaaS, E-commerce, Automation, Hosting, Database). Never translate them into "
+            "awkward Bengali.\n"
+            "Rules: strong human hook in the first 1-2 lines; short paragraphs; 80-180 words (educational up to "
+            "220, promotional 60-150); 0-4 emojis max; 3-6 relevant hashtags always including #ZyntrixStudio; "
+            "a soft natural CTA, varied between posts.\n"
+            "Content mix: mostly educational/problem-solving value (40% educational, 20% problem/solution, 15% "
+            "industry insight, 10% business tips, 10% services, 5% promotional). Never invent clients, stats, "
+            "awards, testimonials, experience or results. Avoid cliches like 'আজকের ডিজিটাল যুগে', 'আপনি কি "
+            "জানেন?', 'cutting-edge technology', 'আমরা গর্বিত'. Vary openings, CTAs and hashtag combos."
         ),
         verbose=False,
         allow_delegation=False,
@@ -205,10 +214,17 @@ def generate_and_validate_content(topic: str) -> dict:
         role="Zyntrix Social Media Visual Designer",
         goal="Formulate detailed visual prompts for 1080x1080 social media graphics following Zyntrix brand aesthetics.",
         backstory=(
-            "You are the Lead Visual Designer at Zyntrix Studio. You design dark-mode tech visuals. "
-            "Zyntrix Brand Direction: Dark slate/charcoal background (#1E1E1E), subtle green/cyan/blue accents, modern geometric shapes, "
-            "clean developer aesthetics, abstract software architecture, digital UI elements, controlled lighting, minimal clutter. "
-            "Avoid generic AI robots, excessive neon glow, stock photos, competitor logos, and text clutter."
+            "You are the Lead Visual Designer at Zyntrix Studio. You art-direct 1:1 Facebook visuals that look "
+            "like premium commercial tech photography, NOT AI wallpapers.\n"
+            "The image MUST visually communicate the post's actual topic: e-commerce -> realistic online store "
+            "UI on a laptop/phone; web development -> professional website interface on a screen; automation -> "
+            "business workflow/dashboard; UI/UX -> clean design interface; apps -> smartphone app screens.\n"
+            "Style: realistic lighting, subtle depth, professional composition, one primary subject, negative "
+            "space, clean workspace. Dark slate background (#1E1E1E) with subtle cyan/blue/green accents. No "
+            "excessive gradients or neon.\n"
+            "Avoid: robots, humanoid AI faces, holograms, circuit boards, floating code, sci-fi looks, "
+            "stock-photo cliches, and long text. If text is needed, use only a short phrase (e.g. 'Build "
+            "Better.'). Never invent or redesign the Zyntrix logo - leave clean space for it."
         ),
         verbose=False,
         allow_delegation=False,
@@ -220,10 +236,16 @@ def generate_and_validate_content(topic: str) -> dict:
         role="Zyntrix Content Quality Manager",
         goal="Review writer and designer outputs for Zyntrix tone, Bengali naturalness, factual safety, brand consistency, and Facebook policy.",
         backstory=(
-            "You are the Editorial Director and Brand Guardian at Zyntrix Studio. "
-            "You strictly enforce: 70% educational/value, 20% industry insight, 10% promotional ratio. "
-            "You ensure no false claims ('100% guarantee', fake reviews/stats), natural non-robotic Bengali, "
-            "professional tone, concise structure, and brand alignment. You reject substandard posts."
+            "You are the Editorial Director and Brand Guardian at Zyntrix Studio. You enforce the official "
+            "brand guide strictly.\n"
+            "Content mix: 40% educational, 20% problem/solution, 15% industry insight, 10% business tips, 10% "
+            "Zyntrix services, 5% promotional. Never sell constantly.\n"
+            "Final quality checklist before approving: sounds human-written? natural Bengali? strong opening? "
+            "not too long? provides real value? natural CTA? 3-6 relevant hashtags? image matches topic and "
+            "looks professional? no generic AI aesthetics? consistent branding? no invented facts? different "
+            "from previous posts? If any answer is NO, reject or revise.\n"
+            "Reject robotic language, fake claims ('100% guarantee', fake reviews/stats), spammy promises, and "
+            "generic AI-looking visuals."
         ),
         verbose=False,
         allow_delegation=False,
@@ -234,7 +256,10 @@ def generate_and_validate_content(topic: str) -> dict:
     writer_task = Task(
         description=(
             f"Topic: '{topic}'\n"
-            "Write a Facebook post in natural Bengali with appropriate English tech terms for Zyntrix Studio.\n"
+            "Write a Facebook post in natural conversational Bangla with common English tech terms kept in "
+            "English (per brand guide). Target 80-180 words with a strong human hook, short paragraphs, "
+            "practical value, a soft natural CTA, and 3-6 relevant hashtags including #ZyntrixStudio. Never "
+            "invent facts, clients, stats or testimonials.\n"
             "Format your final answer as JSON with these keys:\n"
             "{\n"
             '  "hook": "Attention-grabbing hook line in Bengali",\n'
@@ -249,8 +274,13 @@ def generate_and_validate_content(topic: str) -> dict:
     designer_task = Task(
         description=(
             f"Topic: '{topic}'\n"
-            "Create a detailed 1080x1080 visual prompt for Pollinations AI matching Zyntrix brand aesthetics.\n"
-            "Prompt must incorporate: dark slate background (#1E1E1E), geometric forms, subtle green/blue/cyan accents, modern software concept.\n"
+            "Create a detailed 1080x1080 visual prompt for Pollinations AI that visually communicates this "
+            "topic with a realistic subject (e.g. real website/app/dashboard UI on a device in a clean "
+            "workspace) - NOT a random tech background.\n"
+            "Style: premium commercial tech photography, realistic lighting, one primary subject, negative "
+            "space, dark slate (#1E1E1E) with subtle cyan/blue/green accents. Avoid robots, holograms, neon, "
+            "circuit boards, floating code, sci-fi looks, stock-photo cliches, and long text (max a short "
+            "phrase). Never invent a logo.\n"
             "Format your final answer as JSON:\n"
             "{\n"
             '  "image_prompt": "Professional 1080x1080 social media visual for Zyntrix Studio..."\n'
@@ -262,8 +292,10 @@ def generate_and_validate_content(topic: str) -> dict:
 
     manager_task = Task(
         description=(
-            "Review the writer's post and designer's image prompt.\n"
-            "Verify natural Bengali, Zyntrix dark tech visual style, non-spam policy, factual claims, and concise structure.\n"
+            "Review the writer's post and designer's image prompt against the official brand guide.\n"
+            "Verify: human-sounding natural Bengali, 80-180 words, strong hook, natural CTA, 3-6 relevant "
+            "hashtags, topic-matching professional image, no fake claims, no robotic cliches. Content should "
+            "feel educational and useful, not promotional.\n"
             "If approved, output structured JSON:\n"
             "{\n"
             '  "approved": true,\n'
