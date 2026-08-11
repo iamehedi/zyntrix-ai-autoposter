@@ -7,6 +7,11 @@ on:
     # Note: GitHub scheduled actions may occasionally experience slight delays depending on runner queue load.
     - cron: "0 12 * * *"
 
+# Prevent overlapping runs (e.g. manual trigger + scheduled cron) from posting the same topic twice
+concurrency:
+  group: zyntrix-autopost
+  cancel-in-progress: true
+
 jobs:
   autopost:
     runs-on: ubuntu-latest
@@ -34,7 +39,7 @@ jobs:
       - name: Execute Autoposter Engine
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          GROQ_MODEL: ${{ secrets.GROQ_MODEL || 'llama-3.3-70b-versatile' }}
+          GROQ_MODEL: ${{ secrets.GROQ_MODEL || 'openai/gpt-oss-120b' }}
           POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
           FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}

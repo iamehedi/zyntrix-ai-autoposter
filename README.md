@@ -130,7 +130,7 @@ To run the workflow automatically on GitHub Actions, add your credentials as Rep
 | `FACEBOOK_PAGE_ID` | Numeric Facebook Page ID | `123456789012345` |
 | `FACEBOOK_PAGE_ACCESS_TOKEN` | Permanent Facebook Page Access Token | `EAAG...` |
 | `POLLINATIONS_API_KEY` | (Optional) Pollinations.ai API Key | `pk_...` or leave blank for free tier |
-| `GROQ_MODEL` | (Optional) Groq Llama model override | `llama-3.3-70b-versatile` |
+| `GROQ_MODEL` | (Optional) Groq model override | `openai/gpt-oss-120b` |
 | `GRAPH_API_VERSION` | (Optional) Meta Graph API Version | `v20.0` |
 
 ---
@@ -176,7 +176,7 @@ You can easily run and test the autoposter engine on your local computer before 
    Edit `.env`:
    ```env
    GROQ_API_KEY=gsk_your_real_groq_key
-   GROQ_MODEL=llama-3.3-70b-versatile
+   GROQ_MODEL=openai/gpt-oss-120b
    FACEBOOK_PAGE_ID=123456789012345
    FACEBOOK_PAGE_ACCESS_TOKEN=EAAG...
    POLLINATIONS_API_KEY=
