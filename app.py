@@ -294,7 +294,9 @@ def generate_and_validate_content(topic: str) -> dict:
     result = crew.kickoff()
     raw_result_str = str(result)
     
+    logger.info(f"CrewAI raw output (first 1500 chars): {raw_result_str[:1500]}")
     parsed_output = parse_json_from_text(raw_result_str)
+    logger.info(f"Parsed content data: {json.dumps(parsed_output, ensure_ascii=False)[:1000]}")
     return parsed_output
 
 
