@@ -113,7 +113,7 @@ def save_post_history(history):
 
 
 def topic_history_summary(history, limit=10):
-    """Builds a compact text summary of recent post topics for the agents."""
+    """Builds a compact text summary of recent post topics for the agent."""
     topics = [h.get("topic", "") for h in history if h.get("topic")]
     if not topics:
         return "No previous posts yet — this will be the first post."
@@ -244,9 +244,10 @@ def parse_json_from_text(text: str) -> dict:
         return {}
 
 
-# CrewAI AI Content Pipeline (Imageless)
+# CrewAI AI Content Pipeline (Imageless, single self-reviewing agent)
 def generate_and_validate_content(topic, history_summary) -> dict:
-    """Runs CrewAI 2-agent pipeline (Creator + Reviewer) to write and validate a text-only post."""
+    """Runs a single CrewAI agent that writes the post AND self-reviews it,
+    returning JSON with a quality scorecard for the programmatic gate."""
     try:
         from crewai import Agent, Task, Crew, Process, LLM
     except ImportError as e:
@@ -263,14 +264,14 @@ def generate_and_validate_content(topic, history_summary) -> dict:
         api_key=GROQ_API_KEY,
         base_url="https://api.groq.com/openai/v1",
         temperature=0.7,
-        # Qwen 3.6 is a reasoning model: it spends tokens on <think> blocks
-        # before the final JSON. max_tokens=2048 keeps us under the free-tier
-        # 8000 TPM limit. Truncation is handled by a retry loop in main() and a
-        # robust JSON parser.
-        max_tokens=2048
+        # Single self-reviewing agent: prompt ~700 tokens + output <=3200 = ~3900
+        # per call, so even the retry (x2) stays under the free-tier 8000 TPM
+        # limit. Qwen 3.6 is a reasoning model that burns up to ~2500 tokens of
+        # <think> reasoning before emitting JSON; 2048 was proven insufficient.
+        max_tokens=3200
     )
 
-    # 1. Creator Agent — writes the imageless post
+    # Creator & Editor Agent — writes the post, then silently self-reviews it
     creator = Agent(
         role="Zyntrix Imaginative Tech Content Creator",
         goal="Create natural, human, occasionally funny Bengali Facebook posts that teach technology in a simple, entertaining way — never requiring an image.",
@@ -292,40 +293,27 @@ def generate_and_validate_content(topic, history_summary) -> dict:
             "subtle and only where it fits naturally.\n"
             "This is an IMAGELESS system: never mention, request, or describe images.\n"
             "Uniqueness: previous topics are provided — pick something meaningfully different and "
-            "rotate between technology categories."
+            "rotate between technology categories.\n"
+            "SELF-REVIEW before answering: silently run a quality checklist — sounds human? natural "
+            "Bangla? strong opening? 100-250 words? teaches something real? humor on-topic? technically "
+            "accurate? non-promotional? different from previous posts? readable as text-only? Assign "
+            "honest scores (usefulness>=8, uniqueness>=8, human_feel>=8, technical_accuracy>=9, "
+            "promotional_feel<=3, ai_like_feel<=3). If any fails, rewrite the post until it passes."
         ),
         verbose=False,
         allow_delegation=False,
         llm=llm
     )
 
-    # 2. Reviewer Agent — quality gate
-    reviewer = Agent(
-        role="Zyntrix Editorial Reviewer",
-        goal="Review the creator's post for quality, originality, accuracy, naturalness and AI-like writing, then return the final approved version.",
-        backstory=(
-            "You are the strict Editorial Director at Zyntrix Studio. Before approving you silently "
-            "check: Does this sound like a real human wrote it? Is the Bangla natural? Is the opening "
-            "interesting? Is it 100-250 words? Does it teach something real? Is the humor (if any) "
-            "on-topic? Is it technically accurate with no invented facts? Is it non-promotional? Is it "
-            "meaningfully different from previous posts? Is it fully readable as a text-only post? "
-            "Minimum scores: usefulness 8, uniqueness 8, human_feel 8, humor 7 (if used), "
-            "technical_accuracy 9; maximum: promotional_feel 3, ai_like_feel 3. If any check fails, "
-            "silently rewrite the post to fix it before returning."
-        ),
-        verbose=False,
-        allow_delegation=False,
-        llm=llm
-    )
-
-    # Define Tasks
+    # Define Task
     topic_line = f"Topic: '{topic}'" if topic else "Topic: none provided — discover your own interesting technology topic."
     creator_task = Task(
         description=(
             f"{topic_line}\n"
             f"Previous topics (avoid repeating these): {history_summary}\n"
             "Write a complete text-only Facebook post in natural conversational Bangla (tech terms in "
-            "English) following your brand style. Format your final answer as JSON with exactly these keys:\n"
+            "English) following your brand style, then self-review it. Format your final answer as JSON "
+            "with exactly these keys:\n"
             "{\n"
             '  "topic": "Selected topic",\n'
             '  "category": "Technology category",\n'
@@ -341,43 +329,15 @@ def generate_and_validate_content(topic, history_summary) -> dict:
         agent=creator
     )
 
-    reviewer_task = Task(
-        description=(
-            "Review the creator's post using your quality checklist. If the post is already excellent, "
-            "return it unchanged. If any check fails, silently rewrite the post to fix the issue. Never "
-            "make it promotional and never add an image reference.\n"
-            "CRITICAL: Never echo the JSON format template or its placeholder values back. You must "
-            "output the real, complete post text — actual Bengali content, not example strings like "
-            "'Final validated Facebook post in Bengali' or '#Example'.\n"
-            "Output structured JSON:\n"
-            "If accepted:\n"
-            "{\n"
-            '  "approved": true,\n'
-            '  "topic": "Selected topic",\n'
-            '  "category": "Technology category",\n'
-            '  "content_mode": "Content mode used",\n'
-            '  "post": "Final validated Facebook post in Bengali",\n'
-            '  "hashtags": ["#Example"]\n'
-            "}\n"
-            "If fundamentally rejected:\n"
-            "{\n"
-            '  "approved": false,\n'
-            '  "reason": "Specific explanation"\n'
-            "}"
-        ),
-        expected_output="A JSON object indicating approval status and the final validated post.",
-        agent=reviewer
-    )
-
     # Form Crew and Execute
     crew = Crew(
-        agents=[creator, reviewer],
-        tasks=[creator_task, reviewer_task],
+        agents=[creator],
+        tasks=[creator_task],
         process=Process.sequential,
         verbose=False
     )
 
-    logger.info("Executing CrewAI agents workflow (Creator -> Reviewer)...")
+    logger.info("Executing CrewAI agent workflow (Creator & self-review)...")
     result = crew.kickoff()
     raw_result_str = str(result)
 
@@ -390,6 +350,41 @@ def generate_and_validate_content(topic, history_summary) -> dict:
     parsed_output = parse_json_from_text(raw_result_str)
     logger.info(f"Parsed content data: {json.dumps(parsed_output, ensure_ascii=False)[:1000]}")
     return parsed_output
+
+
+def _content_usable(content_data) -> bool:
+    """Deterministic quality gate: post text present, no template echo, and
+    self-reported scores meet the brand guide minima (when scores exist)."""
+    if not content_data:
+        return False
+    if content_data.get("approved") is False:
+        return False
+    post_text = content_data.get("post", "")
+    if not post_text or any(m in post_text for m in ("Final validated Facebook post", "Selected topic")):
+        return False
+    scores = content_data.get("scores") or {}
+
+    def _num(key, default):
+        try:
+            return float(scores.get(key, default))
+        except (TypeError, ValueError):
+            return default
+
+    # Defaults are lenient: a missing score is treated as passing (Qwen
+    # sometimes omits the scores block entirely).
+    failures = [
+        ("usefulness", _num("usefulness", 8) < 8),
+        ("uniqueness", _num("uniqueness", 8) < 8),
+        ("human_feel", _num("human_feel", 8) < 8),
+        ("technical_accuracy", _num("technical_accuracy", 9) < 9),
+        ("promotional_feel", _num("promotional_feel", 0) > 3),
+        ("ai_like_feel", _num("ai_like_feel", 0) > 3),
+    ]
+    failed = [k for k, bad in failures if bad]
+    if failed:
+        logger.warning(f"Content failed quality gate: {failed}")
+        return False
+    return True
 
 
 # Facebook Meta Graph API Publishing (text-only)
@@ -443,38 +438,27 @@ def main():
     else:
         logger.info("Topic queue empty — Creator agent will discover its own topic.")
 
-    # 2. Execute CrewAI agent pipeline.
-    #    Qwen 3.6 can truncate mid-<think> under the 2048 token cap, producing
-    #    unparsable output ({}). Retry once before giving up.
+    # 2. Execute the single-agent pipeline.
+    #    Retry once if the output is unparsable, a template echo, or fails the
+    #    quality score gate.
     content_data = {}
     max_attempts = 2
     for attempt in range(1, max_attempts + 1):
         content_data = generate_and_validate_content(current_topic, history_summary)
-        if content_data:
+        if content_data.get("approved") is False:
+            logger.error(f"Content rejected by agent: {content_data.get('reason', 'no reason given')}")
+        if _content_usable(content_data):
             break
-        logger.warning(f"Content generation returned unparsable output (attempt {attempt}/{max_attempts}). Retrying...")
+        logger.warning(f"Content generation returned unusable output (attempt {attempt}/{max_attempts}). Retrying...")
 
-    if not content_data:
-        logger.error("Content generation returned no usable output.")
+    if not _content_usable(content_data):
+        logger.error("Content generation returned no usable output after retries.")
         logger.error("Aborting posting process. Topic remains in queue.")
         sys.exit(1)
 
-    if content_data.get("approved") is False:
-        reason = content_data.get("reason", "Reviewer agent rejected content.")
-        logger.error(f"Content generation rejected by Editorial Reviewer: {reason}")
-        logger.error("Aborting posting process. Topic remains in queue.")
-        sys.exit(1)
-
-    # Reviewer returns the final post directly. Qwen sometimes emits the final
-    # JSON without an explicit 'approved' key — treat present post as approval.
+    logger.info("Content approved by Zyntrix quality gate (self-review scores OK)!")
     post_text = content_data.get("post", "")
     hashtags = content_data.get("hashtags", [])
-    if not post_text or any(m in post_text for m in ("Final validated Facebook post", "Selected topic")):
-        logger.error("Reviewer agent rejected content, failed to parse, or returned a template echo.")
-        logger.error("Aborting posting process. Topic remains in queue.")
-        sys.exit(1)
-
-    logger.info("Content approved by Zyntrix Editorial Reviewer!")
 
     # 3. Publish text-only post to Facebook Page
     post_id = publish_text_post(post_text, hashtags)

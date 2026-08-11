@@ -2,6 +2,9 @@
 
 > Canonical prompt/spec for the imageless content pipeline implemented in `app.py`.
 > Language: natural conversational **Bangla** (tech terms kept in English).
+> Implementation: a **single self-reviewing CrewAI agent** (Creator + Editor in one call,
+> `max_tokens=3200`) whose quality scores are enforced by a programmatic gate in `main()`
+> (`_content_usable`) — the 2-agent variant exceeded the free-tier 8K TPM limit.
 
 ## ROLE
 
