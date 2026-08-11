@@ -159,12 +159,42 @@ def _find_json_objects(text: str):
     return candidates
 
 
+def _escape_raw_newlines_in_strings(text: str) -> str:
+    """Replace literal newlines found inside JSON string literals with escaped
+    \\n so json.loads accepts Qwen-style multi-line string values (Qwen often
+    writes paragraph breaks in Bengali posts as raw newlines instead of \\n)."""
+    out = []
+    in_string = False
+    escaped = False
+    for ch in text:
+        if in_string:
+            if escaped:
+                escaped = False
+            elif ch == "\\":
+                escaped = True
+            elif ch == '"':
+                in_string = False
+            elif ch == "\n":
+                out.append("\\n")
+                continue
+            elif ch == "\r":
+                out.append("\\r")
+                continue
+        else:
+            if ch == '"':
+                in_string = True
+        out.append(ch)
+    return "".join(out)
+
+
 def parse_json_from_text(text: str) -> dict:
     """Extracts and parses JSON object from LLM response string."""
     try:
         # Strip reasoning/thinking blocks (e.g. Qwen <think>...</think>) that may
         # contain braces and break naive JSON extraction below.
         cleaned = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL | re.IGNORECASE)
+        # Qwen writes raw newlines inside JSON string values; escape them first.
+        cleaned = _escape_raw_newlines_in_strings(cleaned)
 
         # Template-echo markers: LLMs sometimes parrot the JSON format example
         # from the prompt (placeholder values like "Final validated Facebook post
@@ -202,11 +232,14 @@ def parse_json_from_text(text: str) -> dict:
             if scored[0]:
                 return scored[0]
 
-        # 3. Last resort: whole-text parse
-        return json.loads(cleaned)
+        # 3. Last resort: whole-text parse (must not return a template echo)
+        parsed = json.loads(cleaned)
+        if not _is_template_echo(parsed):
+            return parsed
+        return {}
     except Exception as e:
         logger.error(f"Failed to parse JSON output from agent text: {e}")
-        logger.warning(f"Raw text output: {text[:2000]}")
+        logger.warning(f"Raw text output: {text[:2000].replace(chr(10), '\\n')}")
         return {}
 
 
@@ -347,10 +380,10 @@ def generate_and_validate_content(topic, history_summary) -> dict:
     result = crew.kickoff()
     raw_result_str = str(result)
 
-    logger.info(f"CrewAI raw output (first 1500 chars): {raw_result_str[:1500]}")
+    logger.info(f"CrewAI raw output (first 1500 chars): {raw_result_str[:1500].replace(chr(10), '\\n')}")
     raw_attr = getattr(result, "raw", None)
     if raw_attr is not None and str(raw_attr) != raw_result_str:
-        logger.info(f"CrewAI result.raw (first 1500 chars): {str(raw_attr)[:1500]}")
+        logger.info(f"CrewAI result.raw (first 1500 chars): {str(raw_attr)[:1500].replace(chr(10), '\\n')}")
     parsed_output = parse_json_from_text(raw_result_str)
     logger.info(f"Parsed content data: {json.dumps(parsed_output, ensure_ascii=False)[:1000]}")
     return parsed_output
