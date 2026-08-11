@@ -3,14 +3,18 @@ name: Zyntrix AI Facebook Autoposter
 on:
   workflow_dispatch:
   schedule:
-    # Runs daily at 12:00 UTC (6:00 PM Bangladesh Time - UTC+6)
+    # 5 posts per day, spaced ~3 hours apart, in Bangladesh Time (UTC+6):
+    #   03:00 UTC = 09:00 AM, 06:00 UTC = 12:00 PM, 09:00 UTC = 03:00 PM,
+    #   12:00 UTC = 06:00 PM, 15:00 UTC = 09:00 PM
     # Note: GitHub scheduled actions may occasionally experience slight delays depending on runner queue load.
-    - cron: "0 12 * * *"
+    - cron: "0 3,6,9,12,15 * * *"
 
-# Prevent overlapping runs (e.g. manual trigger + scheduled cron) from posting the same topic twice
+# Prevent overlapping runs (e.g. manual trigger + scheduled cron) from posting the same topic twice.
+# cancel-in-progress: false makes a new run WAIT for the in-progress one to finish instead of killing it
+# mid-publish (killing a run after a successful publish but before the queue update would double-post).
 concurrency:
   group: zyntrix-autopost
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   autopost:

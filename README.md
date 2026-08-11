@@ -192,11 +192,15 @@ You can manually trigger the workflow anytime:
 4. Click **Run workflow** → Select branch `main` → Click **Run workflow**.
 
 ### Daily Automatic Schedule
-The workflow includes a cron trigger configured for daily posting:
+The workflow includes cron triggers for **5 posts per day**, spaced ~3 hours apart (Bangladesh Time, UTC+6):
 ```yaml
 schedule:
-  - cron: "0 12 * * *"  # 12:00 UTC = 6:00 PM BST (Bangladesh Standard Time - UTC+6)
+  - cron: "0 3,6,9,12,15 * * *"
+  # 03:00 UTC = 09:00 AM, 06:00 UTC = 12:00 PM, 09:00 UTC = 03:00 PM,
+  # 12:00 UTC = 06:00 PM, 15:00 UTC = 09:00 PM (Bangladesh Time)
 ```
+A `concurrency` guard (with `cancel-in-progress: false`) ensures runs never overlap, so a delayed
+scheduled run waits instead of cancelling a publish mid-flight (which could double-post a topic).
 
 > [!NOTE]
 > GitHub Actions cron jobs run on shared runner pools. Scheduled execution may occasionally experience a slight delay (10-30 minutes) during peak GitHub infrastructure load times.
@@ -239,7 +243,7 @@ schedule:
 
 - **Never Commit Secrets**: Ensure `.env` is listed in `.gitignore`. Secrets must only reside in GitHub Secrets.
 - **No False Claims**: The Manager Agent automatically screens out misleading statements ("100% guarantee", unverified client reviews, fake awards).
-- **No Spamming**: Post volume is controlled via scheduled cron runs (1 post per day maximum recommended).
+- **No Spamming**: Post volume is controlled via scheduled cron runs (5 posts/day maximum in this config). For a newer page, consider 1–3/day for best engagement; Meta may throttle pages that post very frequently with low engagement.
 
 ---
 
