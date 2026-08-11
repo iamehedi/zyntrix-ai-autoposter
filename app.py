@@ -239,7 +239,8 @@ def parse_json_from_text(text: str) -> dict:
         return {}
     except Exception as e:
         logger.error(f"Failed to parse JSON output from agent text: {e}")
-        logger.warning(f"Raw text output: {text[:2000].replace(chr(10), '\\n')}")
+        escaped_raw = text[:2000].replace(chr(10), "\\n")  # no backslash inside f-string (Py 3.11)
+        logger.warning(f"Raw text output: {escaped_raw}")
         return {}
 
 
@@ -380,10 +381,12 @@ def generate_and_validate_content(topic, history_summary) -> dict:
     result = crew.kickoff()
     raw_result_str = str(result)
 
-    logger.info(f"CrewAI raw output (first 1500 chars): {raw_result_str[:1500].replace(chr(10), '\\n')}")
+    escaped_output = raw_result_str[:1500].replace(chr(10), "\\n")  # no backslash inside f-string (Py 3.11)
+    logger.info(f"CrewAI raw output (first 1500 chars): {escaped_output}")
     raw_attr = getattr(result, "raw", None)
     if raw_attr is not None and str(raw_attr) != raw_result_str:
-        logger.info(f"CrewAI result.raw (first 1500 chars): {str(raw_attr)[:1500].replace(chr(10), '\\n')}")
+        escaped_raw_attr = str(raw_attr)[:1500].replace(chr(10), "\\n")
+        logger.info(f"CrewAI result.raw (first 1500 chars): {escaped_raw_attr}")
     parsed_output = parse_json_from_text(raw_result_str)
     logger.info(f"Parsed content data: {json.dumps(parsed_output, ensure_ascii=False)[:1000]}")
     return parsed_output
