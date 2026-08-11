@@ -40,7 +40,6 @@ jobs:
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GROQ_MODEL: ${{ secrets.GROQ_MODEL || 'qwen/qwen3.6-27b' }}
-          POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
           FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
           GRAPH_API_VERSION: ${{ secrets.GRAPH_API_VERSION || 'v20.0' }}
@@ -51,10 +50,10 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet topics.txt; then
-            git add topics.txt
-            git commit -m "chore: update topic queue [skip ci]"
+          if ! git diff --quiet topics.txt post_history.json; then
+            git add topics.txt post_history.json
+            git commit -m "chore: update topic queue and post history [skip ci]"
             git push
           else
-            echo "No changes in topics.txt to commit."
+            echo "No changes to commit."
           fi

@@ -2,10 +2,9 @@ import os
 import sys
 import json
 import re
-import random
 import logging
-import urllib.parse
 import requests
+from datetime import datetime, timezone
 from dotenv import load_dotenv
 
 # Configure logging
@@ -25,7 +24,9 @@ GROQ_MODEL = os.getenv("GROQ_MODEL", "qwen/qwen3.6-27b")
 FACEBOOK_PAGE_ID = os.getenv("FACEBOOK_PAGE_ID")
 FACEBOOK_PAGE_ACCESS_TOKEN = os.getenv("FACEBOOK_PAGE_ACCESS_TOKEN")
 GRAPH_API_VERSION = os.getenv("GRAPH_API_VERSION", "v20.0")
-POLLINATIONS_API_KEY = os.getenv("POLLINATIONS_API_KEY", "")
+
+HISTORY_FILE = "post_history.json"
+
 
 # Validate Critical Environment Variables
 def validate_environment():
@@ -36,7 +37,7 @@ def validate_environment():
         missing.append("FACEBOOK_PAGE_ID")
     if not FACEBOOK_PAGE_ACCESS_TOKEN:
         missing.append("FACEBOOK_PAGE_ACCESS_TOKEN")
-    
+
     if missing:
         logger.error(f"Missing required environment variables: {', '.join(missing)}")
         logger.error("Please configure them in your environment or GitHub Secrets.")
@@ -45,19 +46,23 @@ def validate_environment():
 
 # Queue Management Functions
 def get_next_topic(file_path="topics.txt"):
-    """Reads topics.txt and returns the first available non-empty topic and remaining list."""
+    """Reads topics.txt and returns the first available non-empty topic and remaining list.
+
+    Returns (None, []) when the queue is missing or empty, which switches the
+    pipeline to autonomous topic discovery.
+    """
     if not os.path.exists(file_path):
-        logger.error(f"Topic file '{file_path}' not found.")
-        sys.exit(1)
+        logger.warning(f"Topic file '{file_path}' not found. Switching to autonomous topic discovery.")
+        return None, []
 
     with open(file_path, "r", encoding="utf-8") as f:
         lines = [line.strip() for line in f.readlines()]
 
     valid_topics = [line for line in lines if line and not line.startswith("#")]
-    
+
     if not valid_topics:
-        logger.warning("Topic queue is empty. Nothing to post today.")
-        sys.exit(0)
+        logger.warning("Topic queue is empty. Switching to autonomous topic discovery.")
+        return None, []
 
     selected_topic = valid_topics[0]
     return selected_topic, valid_topics
@@ -84,6 +89,35 @@ def remove_topic_from_queue(topic_to_remove, file_path="topics.txt"):
         f.writelines(new_lines)
 
     logger.info(f"Topic successfully removed from queue: '{topic_to_remove}'")
+
+
+# Post History Tracking
+def load_post_history():
+    """Loads previously published posts from post_history.json."""
+    if not os.path.exists(HISTORY_FILE):
+        return []
+    try:
+        with open(HISTORY_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        if isinstance(data, list):
+            return data
+    except Exception as e:
+        logger.warning(f"Could not load post history ({e}). Starting fresh.")
+    return []
+
+
+def save_post_history(history):
+    """Persists post history to post_history.json."""
+    with open(HISTORY_FILE, "w", encoding="utf-8") as f:
+        json.dump(history, f, ensure_ascii=False, indent=2)
+
+
+def topic_history_summary(history, limit=10):
+    """Builds a compact text summary of recent post topics for the agents."""
+    topics = [h.get("topic", "") for h in history if h.get("topic")]
+    if not topics:
+        return "No previous posts yet — this will be the first post."
+    return " | ".join(topics[-limit:])
 
 
 # Helper for Parsing JSON from Agent Outputs
@@ -141,11 +175,11 @@ def parse_json_from_text(text: str) -> dict:
                 pass  # fall through to full scan below
 
         # 2. Balanced-brace scan: pick the most likely payload object.
-        #    Prefer objects carrying expected content keys (approved/hook/etc).
+        #    Prefer objects carrying expected content keys.
         candidates = _find_json_objects(cleaned)
         if candidates:
             def _score(obj):
-                return sum(k in obj for k in ("approved", "hook", "caption", "hashtags", "image_prompt", "reason"))
+                return sum(k in obj for k in ("approved", "post", "topic", "hashtags", "scores", "reason", "content_mode"))
             scored = sorted(candidates, key=_score, reverse=True)
             if scored[0]:
                 return scored[0]
@@ -158,9 +192,9 @@ def parse_json_from_text(text: str) -> dict:
         return {}
 
 
-# CrewAI AI Content Pipeline
-def generate_and_validate_content(topic: str) -> dict:
-    """Runs CrewAI 3-Agent pipeline to write, design, and validate content."""
+# CrewAI AI Content Pipeline (Imageless)
+def generate_and_validate_content(topic, history_summary) -> dict:
+    """Runs CrewAI 2-agent pipeline (Creator + Reviewer) to write and validate a text-only post."""
     try:
         from crewai import Agent, Task, Crew, Process, LLM
     except ImportError as e:
@@ -168,7 +202,7 @@ def generate_and_validate_content(topic: str) -> dict:
         sys.exit(1)
 
     logger.info(f"Initializing CrewAI with Groq model: {GROQ_MODEL}")
-    
+
     # Initialize Groq LLM (via its OpenAI-compatible endpoint)
     # Using the openai/ provider prefix avoids LiteLLM injecting unsupported
     # params (e.g. cache_breakpoint) that Groq rejects when using groq/ prefix.
@@ -178,74 +212,54 @@ def generate_and_validate_content(topic: str) -> dict:
         base_url="https://api.groq.com/openai/v1",
         temperature=0.7,
         # Qwen 3.6 is a reasoning model: it spends tokens on <think> blocks
-        # before the final JSON. max_tokens=2048 is the default but stated
-        # explicitly; a higher value would exceed the free-tier 8000 TPM limit
-        # once agent context accumulates (prompt+output > 8000). Truncation is
-        # handled by a retry loop in main() + a robust JSON parser.
+        # before the final JSON. max_tokens=2048 keeps us under the free-tier
+        # 8000 TPM limit. Truncation is handled by a retry loop in main() and a
+        # robust JSON parser.
         max_tokens=2048
     )
 
-    # 1. Writer Agent
-    writer = Agent(
-        role="Bengali Technology Content Writer",
-        goal="Create engaging, natural Bengali technology posts for Zyntrix Studio targeting business owners and developers.",
+    # 1. Creator Agent — writes the imageless post
+    creator = Agent(
+        role="Zyntrix Imaginative Tech Content Creator",
+        goal="Create natural, human, occasionally funny Bengali Facebook posts that teach technology in a simple, entertaining way — never requiring an image.",
         backstory=(
-            "You are the senior Bengali content writer at Zyntrix Studio, a software, web and app development "
-            "company. You write like an experienced human developer/business owner talking directly to another "
-            "business owner - never like an AI, a textbook, a sales bot, or a motivational speaker.\n"
-            "Language: natural conversational Bangla. Keep common tech terms in English (Website, App, UI/UX, "
-            "SEO, CRM, API, SaaS, E-commerce, Automation, Hosting, Database). Never translate them into "
-            "awkward Bengali.\n"
-            "Rules: strong human hook in the first 1-2 lines; short paragraphs; 80-180 words (educational up to "
-            "220, promotional 60-150); 0-4 emojis max; 3-6 relevant hashtags always including #ZyntrixStudio; "
-            "a soft natural CTA, varied between posts.\n"
-            "Content mix: mostly educational/problem-solving value (40% educational, 20% problem/solution, 15% "
-            "industry insight, 10% business tips, 10% services, 5% promotional). Never invent clients, stats, "
-            "awards, testimonials, experience or results. Avoid cliches like 'আজকের ডিজিটাল যুগে', 'আপনি কি "
-            "জানেন?', 'cutting-edge technology', 'আমরা গর্বিত'. Vary openings, CTAs and hashtag combos."
+            "You are the technology brain behind Zyntrix Studio's Facebook page, a software, web, "
+            "mobile app, AI and automation development company. You write like a knowledgeable human "
+            "developer explaining interesting things to a friend: useful, entertaining, technically "
+            "accurate, and never like an AI, a textbook, or a sales bot.\n"
+            "LANGUAGE: natural conversational Bangla. Keep common tech terms in English (Website, App, "
+            "API, UI/UX, SEO, CRM, Database, Cloud, etc.) — never force awkward Bengali translations.\n"
+            "STYLE: funny + tutorial + simple explanation. Use everyday situations, relatable "
+            "experiences, small jokes and analogies to make concepts easy. The joke must always serve "
+            "the explanation (70-90% useful info, 10-30% humor).\n"
+            "CONTENT MODES — pick ONE each run: Funny Explanation, Mini Tutorial, ELI5 Technology, "
+            "'What Actually Happens?', Tech Myth vs Reality, Developer Life, or Tech Story.\n"
+            "RULES: 100-250 words; 0-1 emoji (max 2); 0-3 relevant hashtags; CTA optional and never "
+            "forced; plain Facebook text (no headings, tables, heavy formatting); avoid AI-sounding "
+            "phrases; never invent statistics, clients, benchmarks or company facts; branding must be "
+            "subtle and only where it fits naturally.\n"
+            "This is an IMAGELESS system: never mention, request, or describe images.\n"
+            "Uniqueness: previous topics are provided — pick something meaningfully different and "
+            "rotate between technology categories."
         ),
         verbose=False,
         allow_delegation=False,
         llm=llm
     )
 
-    # 2. Designer Agent
-    designer = Agent(
-        role="Zyntrix Social Media Visual Designer",
-        goal="Formulate detailed visual prompts for 1080x1080 social media graphics following Zyntrix brand aesthetics.",
+    # 2. Reviewer Agent — quality gate
+    reviewer = Agent(
+        role="Zyntrix Editorial Reviewer",
+        goal="Review the creator's post for quality, originality, accuracy, naturalness and AI-like writing, then return the final approved version.",
         backstory=(
-            "You are the Lead Visual Designer at Zyntrix Studio. You art-direct 1:1 Facebook visuals that look "
-            "like premium commercial tech photography, NOT AI wallpapers.\n"
-            "The image MUST visually communicate the post's actual topic: e-commerce -> realistic online store "
-            "UI on a laptop/phone; web development -> professional website interface on a screen; automation -> "
-            "business workflow/dashboard; UI/UX -> clean design interface; apps -> smartphone app screens.\n"
-            "Style: realistic lighting, subtle depth, professional composition, one primary subject, negative "
-            "space, clean workspace. Dark slate background (#1E1E1E) with subtle cyan/blue/green accents. No "
-            "excessive gradients or neon.\n"
-            "Avoid: robots, humanoid AI faces, holograms, circuit boards, floating code, sci-fi looks, "
-            "stock-photo cliches, and long text. If text is needed, use only a short phrase (e.g. 'Build "
-            "Better.'). Never invent or redesign the Zyntrix logo - leave clean space for it."
-        ),
-        verbose=False,
-        allow_delegation=False,
-        llm=llm
-    )
-
-    # 3. Manager Agent
-    manager = Agent(
-        role="Zyntrix Content Quality Manager",
-        goal="Review writer and designer outputs for Zyntrix tone, Bengali naturalness, factual safety, brand consistency, and Facebook policy.",
-        backstory=(
-            "You are the Editorial Director and Brand Guardian at Zyntrix Studio. You enforce the official "
-            "brand guide strictly.\n"
-            "Content mix: 40% educational, 20% problem/solution, 15% industry insight, 10% business tips, 10% "
-            "Zyntrix services, 5% promotional. Never sell constantly.\n"
-            "Final quality checklist before approving: sounds human-written? natural Bengali? strong opening? "
-            "not too long? provides real value? natural CTA? 3-6 relevant hashtags? image matches topic and "
-            "looks professional? no generic AI aesthetics? consistent branding? no invented facts? different "
-            "from previous posts? If any answer is NO, reject or revise.\n"
-            "Reject robotic language, fake claims ('100% guarantee', fake reviews/stats), spammy promises, and "
-            "generic AI-looking visuals."
+            "You are the strict Editorial Director at Zyntrix Studio. Before approving you silently "
+            "check: Does this sound like a real human wrote it? Is the Bangla natural? Is the opening "
+            "interesting? Is it 100-250 words? Does it teach something real? Is the humor (if any) "
+            "on-topic? Is it technically accurate with no invented facts? Is it non-promotional? Is it "
+            "meaningfully different from previous posts? Is it fully readable as a text-only post? "
+            "Minimum scores: usefulness 8, uniqueness 8, human_feel 8, humor 7 (if used), "
+            "technical_accuracy 9; maximum: promotional_feel 3, ai_like_feel 3. If any check fails, "
+            "silently rewrite the post to fix it before returning."
         ),
         verbose=False,
         allow_delegation=False,
@@ -253,171 +267,120 @@ def generate_and_validate_content(topic: str) -> dict:
     )
 
     # Define Tasks
-    writer_task = Task(
+    topic_line = f"Topic: '{topic}'" if topic else "Topic: none provided — discover your own interesting technology topic."
+    creator_task = Task(
         description=(
-            f"Topic: '{topic}'\n"
-            "Write a Facebook post in natural conversational Bangla with common English tech terms kept in "
-            "English (per brand guide). Target 80-180 words with a strong human hook, short paragraphs, "
-            "practical value, a soft natural CTA, and 3-6 relevant hashtags including #ZyntrixStudio. Never "
-            "invent facts, clients, stats or testimonials.\n"
-            "Format your final answer as JSON with these keys:\n"
+            f"{topic_line}\n"
+            f"Previous topics (avoid repeating these): {history_summary}\n"
+            "Write a complete text-only Facebook post in natural conversational Bangla (tech terms in "
+            "English) following your brand style. Format your final answer as JSON with exactly these keys:\n"
             "{\n"
-            '  "hook": "Attention-grabbing hook line in Bengali",\n'
-            '  "caption": "Short explanation, practical insight, takeaway, and concise CTA",\n'
-            '  "hashtags": ["#ZyntrixStudio", "#WebDevelopment", "#AI"]\n'
-            "}"
+            '  "topic": "Selected topic",\n'
+            '  "category": "Technology category",\n'
+            '  "content_mode": "One of: Funny Explanation / Mini Tutorial / ELI5 / What Actually Happens / Myth vs Reality / Developer Life / Tech Story",\n'
+            '  "post": "Complete Facebook post in Bengali",\n'
+            '  "hashtags": ["#Example"],\n'
+            '  "scores": {"usefulness": 9, "uniqueness": 9, "human_feel": 9, "technical_accuracy": 10, "promotional_feel": 1, "ai_like_feel": 1}\n'
+            "}\n"
+            "Do not include any explanation outside the JSON."
         ),
-        expected_output="A JSON object containing hook, caption, and hashtags.",
-        agent=writer
+        expected_output="A JSON object containing topic, category, content_mode, post, hashtags, and scores.",
+        agent=creator
     )
 
-    designer_task = Task(
+    reviewer_task = Task(
         description=(
-            f"Topic: '{topic}'\n"
-            "Create a detailed 1080x1080 visual prompt for Pollinations AI that visually communicates this "
-            "topic with a realistic subject (e.g. real website/app/dashboard UI on a device in a clean "
-            "workspace) - NOT a random tech background.\n"
-            "Style: premium commercial tech photography, realistic lighting, one primary subject, negative "
-            "space, dark slate (#1E1E1E) with subtle cyan/blue/green accents. Avoid robots, holograms, neon, "
-            "circuit boards, floating code, sci-fi looks, stock-photo cliches, and long text (max a short "
-            "phrase). Never invent a logo.\n"
-            "Format your final answer as JSON:\n"
-            "{\n"
-            '  "image_prompt": "Professional 1080x1080 social media visual for Zyntrix Studio..."\n'
-            "}"
-        ),
-        expected_output="A JSON object containing image_prompt.",
-        agent=designer
-    )
-
-    manager_task = Task(
-        description=(
-            "Review the writer's post and designer's image prompt against the official brand guide.\n"
-            "Verify: human-sounding natural Bengali, 80-180 words, strong hook, natural CTA, 3-6 relevant "
-            "hashtags, topic-matching professional image, no fake claims, no robotic cliches. Content should "
-            "feel educational and useful, not promotional.\n"
-            "If approved, output structured JSON:\n"
+            "Review the creator's post using your quality checklist. If the post is already excellent, "
+            "return it unchanged. If any check fails, silently rewrite the post to fix the issue. Never "
+            "make it promotional and never add an image reference.\n"
+            "Output structured JSON:\n"
+            "If accepted:\n"
             "{\n"
             '  "approved": true,\n'
-            '  "hook": "...",\n'
-            '  "caption": "...",\n'
-            '  "hashtags": ["#ZyntrixStudio", "..."],\n'
-            '  "image_prompt": "..."\n'
+            '  "topic": "Selected topic",\n'
+            '  "category": "Technology category",\n'
+            '  "content_mode": "Content mode used",\n'
+            '  "post": "Final validated Facebook post in Bengali",\n'
+            '  "hashtags": ["#Example"]\n'
             "}\n"
-            "If rejected, output:\n"
+            "If fundamentally rejected:\n"
             "{\n"
             '  "approved": false,\n'
-            '  "reason": "Specific explanation of rejection"\n'
+            '  "reason": "Specific explanation"\n'
             "}"
         ),
-        expected_output="A JSON object indicating approval status and final validated post fields.",
-        agent=manager
+        expected_output="A JSON object indicating approval status and the final validated post.",
+        agent=reviewer
     )
 
     # Form Crew and Execute
     crew = Crew(
-        agents=[writer, designer, manager],
-        tasks=[writer_task, designer_task, manager_task],
+        agents=[creator, reviewer],
+        tasks=[creator_task, reviewer_task],
         process=Process.sequential,
         verbose=False
     )
 
-    logger.info("Executing CrewAI agents workflow...")
+    logger.info("Executing CrewAI agents workflow (Creator -> Reviewer)...")
     result = crew.kickoff()
     raw_result_str = str(result)
-    
+
     logger.info(f"CrewAI raw output (first 1500 chars): {raw_result_str[:1500]}")
     parsed_output = parse_json_from_text(raw_result_str)
     logger.info(f"Parsed content data: {json.dumps(parsed_output, ensure_ascii=False)[:1000]}")
     return parsed_output
 
 
-# Pollinations AI Image Generation
-def generate_image_pollinations(image_prompt: str, output_file="temp_post_image.jpg") -> str:
-    """Generates 1080x1080 image using Pollinations API and saves to disk."""
-    logger.info("Generating 1080x1080 visual using Pollinations API...")
-    
-    # Ensure brand direction keywords are present WITHOUT overriding the
-    # topic-specific subject the Designer agent already described (brand guide
-    # rule: image must visually communicate the post topic).
-    brand_suffix = (
-        ". Keep the main subject exactly as described above. Style: premium realistic "
-        "commercial photography, dark slate charcoal background (#1E1E1E) with subtle cyan "
-        "blue green accents, natural lighting, clean professional composition, negative "
-        "space. Avoid robots, holograms, neon glow, circuit boards, floating code, sci-fi "
-        "looks, stock-photo cliches, and text in the image."
-    )
-    final_prompt = image_prompt + brand_suffix
-    encoded_prompt = urllib.parse.quote(final_prompt)
-    seed = random.randint(10000, 99999)
-    
-    # Pollinations image generation endpoint
-    url = f"https://image.pollinations.ai/prompt/{encoded_prompt}?width=1080&height=1080&nologo=true&seed={seed}"
-    
-    headers = {}
-    if POLLINATIONS_API_KEY:
-        headers["Authorization"] = f"Bearer {POLLINATIONS_API_KEY}"
+# Facebook Meta Graph API Publishing (text-only)
+def publish_text_post(post_text: str, hashtags: list) -> str:
+    """Publishes a text-only post to the Facebook Page via the /feed endpoint."""
+    logger.info("Publishing text-only post to Facebook Page via Meta Graph API...")
+
+    hashtags_formatted = " ".join(hashtags).strip() if hashtags else ""
+    full_text = post_text.strip()
+    if hashtags_formatted and hashtags_formatted not in full_text:
+        full_text += f"\n\n{hashtags_formatted}"
+
+    api_url = f"https://graph.facebook.com/{GRAPH_API_VERSION}/{FACEBOOK_PAGE_ID}/feed"
 
     try:
-        response = requests.get(url, headers=headers, timeout=60)
-        if response.status_code == 200 and len(response.content) > 5000:
-            with open(output_file, "wb") as f:
-                f.write(response.content)
-            logger.info(f"Image successfully generated and saved to '{output_file}' ({len(response.content)} bytes)")
-            return output_file
+        response = requests.post(
+            api_url,
+            data={
+                "message": full_text,
+                "access_token": FACEBOOK_PAGE_ACCESS_TOKEN
+            },
+            timeout=60
+        )
+        res_json = response.json()
+
+        if response.status_code == 200 and res_json.get("id"):
+            post_id = res_json["id"]
+            logger.info(f"Successfully published text post to Facebook Page! Facebook Post ID: {post_id}")
+            return post_id
         else:
-            logger.error(f"Pollinations API failed with status {response.status_code}. Response length: {len(response.content)}")
+            error_msg = res_json.get("error", {}).get("message", response.text)
+            logger.error(f"Facebook Graph API Error (HTTP {response.status_code}): {error_msg}")
             return ""
     except Exception as e:
-        logger.error(f"Exception during image generation: {e}")
-        return ""
-
-
-# Facebook Meta Graph API Publishing
-def publish_to_facebook(hook: str, caption: str, hashtags: list, image_path: str) -> bool:
-    """Publishes photo with text caption to Facebook Page via Meta Graph API."""
-    logger.info("Publishing post to Facebook Page via Meta Graph API...")
-    
-    hashtags_formatted = " ".join(hashtags) if hashtags else "#ZyntrixStudio"
-    full_text = f"{hook}\n\n{caption}\n\n{hashtags_formatted}"
-    
-    api_url = f"https://graph.facebook.com/{GRAPH_API_VERSION}/{FACEBOOK_PAGE_ID}/photos"
-    
-    try:
-        with open(image_path, "rb") as image_file:
-            payload = {
-                "access_token": FACEBOOK_PAGE_ACCESS_TOKEN,
-                "caption": full_text,
-                "published": "true"
-            }
-            files = {
-                "source": ("image.jpg", image_file, "image/jpeg")
-            }
-            
-            response = requests.post(api_url, data=payload, files=files, timeout=60)
-            res_json = response.json()
-            
-            if response.status_code == 200 and ("id" in res_json or "post_id" in res_json):
-                post_id = res_json.get("id") or res_json.get("post_id")
-                logger.info(f"Successfully published post to Facebook Page! Facebook Post ID: {post_id}")
-                return True
-            else:
-                error_msg = res_json.get("error", {}).get("message", response.text)
-                logger.error(f"Facebook Graph API Error (HTTP {response.status_code}): {error_msg}")
-                return False
-    except Exception as e:
         logger.error(f"Exception while posting to Facebook API: {e}")
-        return False
+        return ""
 
 
 # Main Orchestration Loop
 def main():
-    logger.info("Starting Zyntrix Studio AI Autoposter Engine")
+    logger.info("Starting Zyntrix Studio AI Autoposter Engine (Imageless Mode)")
     validate_environment()
 
-    # 1. Fetch next topic from queue
+    # 1. Hybrid topic source: use queue when available, otherwise autonomous
+    history = load_post_history()
+    history_summary = topic_history_summary(history)
+
     current_topic, queue = get_next_topic("topics.txt")
-    logger.info(f"Selected Queue Topic: '{current_topic}'")
+    if current_topic:
+        logger.info(f"Selected Queue Topic: '{current_topic}'")
+    else:
+        logger.info("Topic queue empty — Creator agent will discover its own topic.")
 
     # 2. Execute CrewAI agent pipeline.
     #    Qwen 3.6 can truncate mid-<think> under the 2048 token cap, producing
@@ -425,7 +388,7 @@ def main():
     content_data = {}
     max_attempts = 2
     for attempt in range(1, max_attempts + 1):
-        content_data = generate_and_validate_content(current_topic)
+        content_data = generate_and_validate_content(current_topic, history_summary)
         if content_data:
             break
         logger.warning(f"Content generation returned unparsable output (attempt {attempt}/{max_attempts}). Retrying...")
@@ -436,43 +399,41 @@ def main():
         sys.exit(1)
 
     if content_data.get("approved") is False:
-        reason = content_data.get("reason", "Manager agent rejected content.")
-        logger.error(f"Content generation rejected by Quality Manager: {reason}")
+        reason = content_data.get("reason", "Reviewer agent rejected content.")
+        logger.error(f"Content generation rejected by Editorial Reviewer: {reason}")
         logger.error("Aborting posting process. Topic remains in queue.")
         sys.exit(1)
 
-    # Qwen sometimes emits the final content JSON directly without an explicit
-    # 'approved' key. Treat present content fields as approval.
-    if not (content_data.get("hook") and content_data.get("caption")):
-        logger.error("Manager agent rejected content or failed to parse agent response.")
+    # Reviewer returns the final post directly. Qwen sometimes emits the final
+    # JSON without an explicit 'approved' key — treat present post as approval.
+    post_text = content_data.get("post", "")
+    hashtags = content_data.get("hashtags", [])
+    if not post_text:
+        logger.error("Reviewer agent rejected content or failed to parse agent response.")
         logger.error("Aborting posting process. Topic remains in queue.")
         sys.exit(1)
 
-    logger.info("Content approved by Zyntrix Quality Manager!")
-    hook = content_data.get("hook", "")
-    caption = content_data.get("caption", "")
-    hashtags = content_data.get("hashtags", ["#ZyntrixStudio"])
-    image_prompt = content_data.get("image_prompt", "")
+    logger.info("Content approved by Zyntrix Editorial Reviewer!")
 
-    # 3. Generate image via Pollinations
-    image_file = generate_image_pollinations(image_prompt, "temp_post_image.jpg")
-    if not image_file or not os.path.exists(image_file):
-        logger.error("Image generation failed. Aborting Facebook post. Topic remains in queue.")
-        sys.exit(1)
+    # 3. Publish text-only post to Facebook Page
+    post_id = publish_text_post(post_text, hashtags)
 
-    # 4. Publish to Facebook Page
-    posted_successfully = publish_to_facebook(hook, caption, hashtags, image_file)
-    
-    # Clean up temporary image
-    if os.path.exists(image_file):
-        try:
-            os.remove(image_file)
-        except Exception:
-            pass
+    if post_id:
+        # 4. Remove processed topic from queue only on successful post
+        if current_topic:
+            remove_topic_from_queue(current_topic, "topics.txt")
 
-    if posted_successfully:
-        # 5. Remove processed topic from queue only on successful post
-        remove_topic_from_queue(current_topic, "topics.txt")
+        # 5. Record post history for future uniqueness checks
+        history.append({
+            "topic": content_data.get("topic") or current_topic or "(autonomous topic)",
+            "category": content_data.get("category", ""),
+            "content_mode": content_data.get("content_mode", ""),
+            "posted_at": datetime.now(timezone.utc).isoformat(),
+            "post_id": post_id
+        })
+        save_post_history(history)
+        logger.info(f"Post history updated ({len(history)} posts recorded).")
+
         logger.info("Autoposter pipeline execution completed successfully.")
         sys.exit(0)
     else:
