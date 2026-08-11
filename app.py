@@ -337,10 +337,15 @@ def generate_image_pollinations(image_prompt: str, output_file="temp_post_image.
     """Generates 1080x1080 image using Pollinations API and saves to disk."""
     logger.info("Generating 1080x1080 visual using Pollinations API...")
     
-    # Ensure brand direction keywords are present in prompt
+    # Ensure brand direction keywords are present WITHOUT overriding the
+    # topic-specific subject the Designer agent already described (brand guide
+    # rule: image must visually communicate the post topic).
     brand_suffix = (
-        ", dark slate charcoal background #1E1E1E, modern geometric technology style, "
-        "subtle cyan green accents, ultra clean, minimal clutter, square 1080x1080"
+        ". Keep the main subject exactly as described above. Style: premium realistic "
+        "commercial photography, dark slate charcoal background (#1E1E1E) with subtle cyan "
+        "blue green accents, natural lighting, clean professional composition, negative "
+        "space. Avoid robots, holograms, neon glow, circuit boards, floating code, sci-fi "
+        "looks, stock-photo cliches, and text in the image."
     )
     final_prompt = image_prompt + brand_suffix
     encoded_prompt = urllib.parse.quote(final_prompt)
