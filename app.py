@@ -90,20 +90,24 @@ def remove_topic_from_queue(topic_to_remove, file_path="topics.txt"):
 def parse_json_from_text(text: str) -> dict:
     """Extracts and parses JSON object from LLM response string."""
     try:
+        # Strip reasoning/thinking blocks (e.g. Qwen <think>...</think>) that may
+        # contain braces and break naive JSON extraction below.
+        cleaned = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL | re.IGNORECASE)
+
         # Match json codeblock if present
-        json_match = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", text, re.DOTALL)
+        json_match = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", cleaned, re.DOTALL)
         if json_match:
             return json.loads(json_match.group(1))
         
         # Match raw json object boundaries
-        raw_match = re.search(r"\{.*\}", text, re.DOTALL)
+        raw_match = re.search(r"\{.*\}", cleaned, re.DOTALL)
         if raw_match:
             return json.loads(raw_match.group(0))
 
-        return json.loads(text)
+        return json.loads(cleaned)
     except Exception as e:
         logger.error(f"Failed to parse JSON output from agent text: {e}")
-        logger.debug(f"Raw text output: {text}")
+        logger.warning(f"Raw text output: {text[:2000]}")
         return {}
 
 
