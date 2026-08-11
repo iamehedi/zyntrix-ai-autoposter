@@ -118,10 +118,13 @@ def generate_and_validate_content(topic: str) -> dict:
 
     logger.info(f"Initializing CrewAI with Groq model: {GROQ_MODEL}")
     
-    # Initialize Groq LLM
+    # Initialize Groq LLM (via its OpenAI-compatible endpoint)
+    # Using the openai/ provider prefix avoids LiteLLM injecting unsupported
+    # params (e.g. cache_breakpoint) that Groq rejects when using groq/ prefix.
     llm = LLM(
-        model=f"groq/{GROQ_MODEL}",
+        model=f"openai/{GROQ_MODEL}",
         api_key=GROQ_API_KEY,
+        base_url="https://api.groq.com/openai/v1",
         temperature=0.7
     )
 
