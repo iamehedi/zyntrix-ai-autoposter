@@ -20,7 +20,7 @@ load_dotenv()
 
 # Environment Credentials & Settings
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-GROQ_MODEL = os.getenv("GROQ_MODEL", "qwen/qwen3.6-27b")
+GROQ_MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
 FACEBOOK_PAGE_ID = os.getenv("FACEBOOK_PAGE_ID")
 FACEBOOK_PAGE_ACCESS_TOKEN = os.getenv("FACEBOOK_PAGE_ACCESS_TOKEN")
 GRAPH_API_VERSION = os.getenv("GRAPH_API_VERSION", "v20.0")
@@ -264,11 +264,10 @@ def generate_and_validate_content(topic, history_summary) -> dict:
         api_key=GROQ_API_KEY,
         base_url="https://api.groq.com/openai/v1",
         temperature=0.7,
-        # Single self-reviewing agent: prompt ~700 tokens + output <=3200 = ~3900
-        # per call, so even the retry (x2) stays under the free-tier 8000 TPM
-        # limit. Qwen 3.6 is a reasoning model that burns up to ~2500 tokens of
-        # <think> reasoning before emitting JSON; 2048 was proven insufficient.
-        max_tokens=3200
+        # gpt-oss-120b is a non-reasoning model: no <think> blocks, JSON is emitted
+        # directly, so a 2048 cap is plenty (actual completion ~600-900 tokens) and
+        # stays far under the free-tier 8000 TPM limit even with the retry.
+        max_tokens=2048
     )
 
     # Creator & Editor Agent — writes the post, then silently self-reviews it
