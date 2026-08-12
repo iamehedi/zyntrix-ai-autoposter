@@ -42,6 +42,7 @@ jobs:
 
       - name: Benchmark — Google gemini-2.5-flash (dry-run)
         env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GEMINI_MODEL: gemini-2.5-flash
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
