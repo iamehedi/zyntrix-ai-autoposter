@@ -375,8 +375,15 @@ def generate_and_validate_content(topic, history_summary, provider="groq") -> di
     )
 
     logger.info("Executing CrewAI agent workflow (Creator & self-review)...")
-    result = crew.kickoff()
-    raw_result_str = str(result)
+    try:
+        result = crew.kickoff()
+        raw_result_str = str(result)
+    except Exception as e:
+        # API failures (404 model not found, 429 rate limit, timeouts, etc.)
+        # must NOT crash the pipeline — return empty so main() can try the
+        # Gemini fallback instead of aborting.
+        logger.error(f"Provider call failed ({type(e).__name__}): {str(e)[:400]}")
+        return {}
 
     parsed_output = parse_json_from_text(raw_result_str)
 
