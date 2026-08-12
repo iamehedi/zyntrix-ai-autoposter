@@ -21,9 +21,12 @@ load_dotenv()
 # Environment Credentials & Settings
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 GROQ_MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
 FACEBOOK_PAGE_ID = os.getenv("FACEBOOK_PAGE_ID")
 FACEBOOK_PAGE_ACCESS_TOKEN = os.getenv("FACEBOOK_PAGE_ACCESS_TOKEN")
 GRAPH_API_VERSION = os.getenv("GRAPH_API_VERSION", "v20.0")
+DRY_RUN = os.getenv("DRY_RUN", "").strip().lower() in ("1", "true", "yes")
 
 HISTORY_FILE = "post_history.json"
 
@@ -31,12 +34,19 @@ HISTORY_FILE = "post_history.json"
 # Validate Critical Environment Variables
 def validate_environment():
     missing = []
-    if not GROQ_API_KEY:
+    if GOOGLE_API_KEY:
+        # Gemini provider selected — Groq key not required.
+        if not GOOGLE_API_KEY:
+            missing.append("GOOGLE_API_KEY")
+    elif not GROQ_API_KEY:
         missing.append("GROQ_API_KEY")
-    if not FACEBOOK_PAGE_ID:
-        missing.append("FACEBOOK_PAGE_ID")
-    if not FACEBOOK_PAGE_ACCESS_TOKEN:
-        missing.append("FACEBOOK_PAGE_ACCESS_TOKEN")
+
+    if not DRY_RUN:
+        # Publishing is skipped in dry-run, so Facebook credentials are optional there.
+        if not FACEBOOK_PAGE_ID:
+            missing.append("FACEBOOK_PAGE_ID")
+        if not FACEBOOK_PAGE_ACCESS_TOKEN:
+            missing.append("FACEBOOK_PAGE_ACCESS_TOKEN")
 
     if missing:
         logger.error(f"Missing required environment variables: {', '.join(missing)}")
@@ -254,21 +264,38 @@ def generate_and_validate_content(topic, history_summary) -> dict:
         logger.error(f"CrewAI initialization failed. Ensure dependencies are installed: {e}")
         sys.exit(1)
 
-    logger.info(f"Initializing CrewAI with Groq model: {GROQ_MODEL}")
-
-    # Initialize Groq LLM (via its OpenAI-compatible endpoint)
-    # Using the openai/ provider prefix avoids LiteLLM injecting unsupported
-    # params (e.g. cache_breakpoint) that Groq rejects when using groq/ prefix.
-    llm = LLM(
-        model=f"openai/{GROQ_MODEL}",
-        api_key=GROQ_API_KEY,
-        base_url="https://api.groq.com/openai/v1",
-        temperature=0.7,
-        # gpt-oss-120b is a non-reasoning model: no <think> blocks, JSON is emitted
-        # directly, so a 2048 cap is plenty (actual completion ~600-900 tokens) and
-        # stays far under the free-tier 8000 TPM limit even with the retry.
-        max_tokens=2048
-    )
+    if GOOGLE_API_KEY:
+        # --- Google Gemini provider (benchmark / alternative) ---
+        # Uses LiteLLM's native gemini/ provider (not the OpenAI-compat layer,
+        # which rejects thinking_config). thinking_budget=0 disables the hidden
+        # reasoning tokens so the full 2048 budget goes to the actual post JSON
+        # (Gemini 2.5 Flash burns the entire budget on thinking otherwise).
+        logger.info(f"Initializing CrewAI with Gemini model: {GEMINI_MODEL}")
+        llm = LLM(
+            model=f"gemini/{GEMINI_MODEL}",
+            api_key=GOOGLE_API_KEY,
+            temperature=0.7,
+            max_tokens=2048,
+            extra_body={"thinking_config": {"thinking_budget": 0}}
+        )
+    else:
+        # --- Groq provider (default) ---
+        # Using the openai/ provider prefix avoids LiteLLM injecting unsupported
+        # params (e.g. cache_breakpoint) that Groq rejects when using groq/ prefix.
+        # NOTE: GROQ_MODEL must include Groq's full model id (e.g. 'openai/gpt-oss-120b'
+        # or 'qwen/qwen3.6-27b') because LiteLLM sends the remainder after the first
+        # slash verbatim to the API.
+        logger.info(f"Initializing CrewAI with Groq model: {GROQ_MODEL}")
+        llm = LLM(
+            model=f"openai/{GROQ_MODEL}",
+            api_key=GROQ_API_KEY,
+            base_url="https://api.groq.com/openai/v1",
+            temperature=0.7,
+            # gpt-oss-120b is a non-reasoning model: no <think> blocks, JSON is emitted
+            # directly, so a 2048 cap is plenty (actual completion ~600-900 tokens) and
+            # stays far under the free-tier 8000 TPM limit even with the retry.
+            max_tokens=2048
+        )
 
     # Creator & Editor Agent — writes the post, then silently self-reviews it
     creator = Agent(
@@ -463,6 +490,21 @@ def main():
     logger.info("Content approved by Zyntrix quality gate (self-review scores OK)!")
     post_text = content_data.get("post", "")
     hashtags = content_data.get("hashtags", [])
+
+    # 2.5 Dry-run mode: show the generated post and exit WITHOUT publishing.
+    if DRY_RUN:
+        logger.info("=" * 62)
+        logger.info("DRY RUN — post NOT published to Facebook.")
+        logger.info(f"Topic: {content_data.get('topic') or current_topic or '(autonomous)'}")
+        logger.info(f"Category: {content_data.get('category', '')} | Mode: {content_data.get('content_mode', '')}")
+        logger.info("=" * 62)
+        for line in post_text.splitlines():
+            logger.info(line)
+        if hashtags:
+            logger.info(" " + " ".join(hashtags))
+        logger.info("=" * 62)
+        logger.info("DRY RUN complete. No topic consumed, nothing posted.")
+        sys.exit(0)
 
     # 3. Publish text-only post to Facebook Page
     post_id = publish_text_post(post_text, hashtags)
