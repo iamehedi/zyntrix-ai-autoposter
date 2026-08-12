@@ -34,11 +34,8 @@ HISTORY_FILE = "post_history.json"
 # Validate Critical Environment Variables
 def validate_environment():
     missing = []
-    if GOOGLE_API_KEY:
-        # Gemini provider selected — Groq key not required.
-        if not GOOGLE_API_KEY:
-            missing.append("GOOGLE_API_KEY")
-    elif not GROQ_API_KEY:
+    # Groq is the primary provider — always required.
+    if not GROQ_API_KEY:
         missing.append("GROQ_API_KEY")
 
     if not DRY_RUN:
@@ -52,6 +49,9 @@ def validate_environment():
         logger.error(f"Missing required environment variables: {', '.join(missing)}")
         logger.error("Please configure them in your environment or GitHub Secrets.")
         sys.exit(1)
+
+    if not GOOGLE_API_KEY:
+        logger.warning("GOOGLE_API_KEY not set — Gemini fallback is disabled (Groq primary only).")
 
 
 # Queue Management Functions
@@ -255,21 +255,27 @@ def parse_json_from_text(text: str) -> dict:
 
 
 # CrewAI AI Content Pipeline (Imageless, single self-reviewing agent)
-def generate_and_validate_content(topic, history_summary) -> dict:
+def generate_and_validate_content(topic, history_summary, provider="groq") -> dict:
     """Runs a single CrewAI agent that writes the post AND self-reviews it,
-    returning JSON with a quality scorecard for the programmatic gate."""
+    returning JSON with a quality scorecard for the programmatic gate.
+
+    provider: 'groq' (primary) or 'gemini' (fallback).
+    """
     try:
         from crewai import Agent, Task, Crew, Process, LLM
     except ImportError as e:
         logger.error(f"CrewAI initialization failed. Ensure dependencies are installed: {e}")
         sys.exit(1)
 
-    if GOOGLE_API_KEY:
-        # --- Google Gemini provider (benchmark / alternative) ---
+    if provider == "gemini":
+        # --- Google Gemini provider (fallback) ---
         # Uses LiteLLM's native gemini/ provider (not the OpenAI-compat layer,
         # which rejects thinking_config). thinking_budget=0 disables the hidden
         # reasoning tokens so the full 2048 budget goes to the actual post JSON
         # (Gemini 2.5 Flash burns the entire budget on thinking otherwise).
+        if not GOOGLE_API_KEY:
+            logger.error("Gemini fallback requested but GOOGLE_API_KEY is not set.")
+            return {}
         logger.info(f"Initializing CrewAI with Gemini model: {GEMINI_MODEL}")
         llm = LLM(
             model=f"gemini/{GEMINI_MODEL}",
@@ -279,7 +285,7 @@ def generate_and_validate_content(topic, history_summary) -> dict:
             extra_body={"thinking_config": {"thinking_budget": 0}}
         )
     else:
-        # --- Groq provider (default) ---
+        # --- Groq provider (primary) ---
         # Using the openai/ provider prefix avoids LiteLLM injecting unsupported
         # params (e.g. cache_breakpoint) that Groq rejects when using groq/ prefix.
         # NOTE: GROQ_MODEL must include Groq's full model id (e.g. 'openai/gpt-oss-120b'
@@ -372,14 +378,20 @@ def generate_and_validate_content(topic, history_summary) -> dict:
     result = crew.kickoff()
     raw_result_str = str(result)
 
-    escaped_output = raw_result_str[:1500].replace(chr(10), "\\n")  # no backslash inside f-string (Py 3.11)
-    logger.info(f"CrewAI raw output (first 1500 chars): {escaped_output}")
-    raw_attr = getattr(result, "raw", None)
-    if raw_attr is not None and str(raw_attr) != raw_result_str:
-        escaped_raw_attr = str(raw_attr)[:1500].replace(chr(10), "\\n")
-        logger.info(f"CrewAI result.raw (first 1500 chars): {escaped_raw_attr}")
     parsed_output = parse_json_from_text(raw_result_str)
-    logger.info(f"Parsed content data: {json.dumps(parsed_output, ensure_ascii=False)[:1000]}")
+
+    # Log only the actual post content (no raw JSON / reasoning dumps).
+    post_text = parsed_output.get("post", "") if parsed_output else ""
+    if post_text:
+        logger.info("Generated post content:")
+        for line in post_text.splitlines():
+            logger.info(line)
+        hashtags = parsed_output.get("hashtags")
+        if hashtags:
+            logger.info(" " + " ".join(hashtags))
+    else:
+        logger.warning("No usable 'post' content in agent output.")
+
     return parsed_output
 
 
@@ -469,25 +481,44 @@ def main():
     else:
         logger.info("Topic queue empty — Creator agent will discover its own topic.")
 
-    # 2. Execute the single-agent pipeline.
+    # 2. Execute the single-agent pipeline with Groq (primary).
     #    Retry once if the output is unparsable, a template echo, or fails the
-    #    quality score gate.
-    content_data = {}
+    #    quality score gate. If Groq still fails, fall back to Gemini (if a
+    #    GOOGLE_API_KEY is configured).
     max_attempts = 2
+
+    # --- Primary: Groq ---
+    provider_used = "groq"
+    content_data = {}
     for attempt in range(1, max_attempts + 1):
-        content_data = generate_and_validate_content(current_topic, history_summary)
+        logger.info(f"Attempt {attempt}/{max_attempts} — primary provider: Groq ({GROQ_MODEL})")
+        content_data = generate_and_validate_content(current_topic, history_summary, provider="groq")
         if content_data.get("approved") is False:
             logger.error(f"Content rejected by agent: {content_data.get('reason', 'no reason given')}")
         if _content_usable(content_data):
             break
-        logger.warning(f"Content generation returned unusable output (attempt {attempt}/{max_attempts}). Retrying...")
+        logger.warning(f"Groq returned unusable output (attempt {attempt}/{max_attempts}). Retrying...")
+
+    # --- Fallback: Gemini ---
+    if not _content_usable(content_data) and GOOGLE_API_KEY:
+        logger.warning("Groq failed — falling back to Gemini provider.")
+        provider_used = "gemini"
+        content_data = {}
+        for attempt in range(1, max_attempts + 1):
+            logger.info(f"Attempt {attempt}/{max_attempts} — fallback provider: Gemini ({GEMINI_MODEL})")
+            content_data = generate_and_validate_content(current_topic, history_summary, provider="gemini")
+            if content_data.get("approved") is False:
+                logger.error(f"Content rejected by agent: {content_data.get('reason', 'no reason given')}")
+            if _content_usable(content_data):
+                break
+            logger.warning(f"Gemini returned unusable output (attempt {attempt}/{max_attempts}). Retrying...")
 
     if not _content_usable(content_data):
-        logger.error("Content generation returned no usable output after retries.")
+        logger.error("Content generation returned no usable output from Groq or Gemini.")
         logger.error("Aborting posting process. Topic remains in queue.")
         sys.exit(1)
 
-    logger.info("Content approved by Zyntrix quality gate (self-review scores OK)!")
+    logger.info(f"Content approved by Zyntrix quality gate via {provider_used} (self-review scores OK)!")
     post_text = content_data.get("post", "")
     hashtags = content_data.get("hashtags", [])
 
