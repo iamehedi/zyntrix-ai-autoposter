@@ -43,7 +43,7 @@ jobs:
       - name: Execute Autoposter Engine
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          GROQ_MODEL: ${{ secrets.GROQ_MODEL || 'qwen/qwen3.6-27b' }}
+          GROQ_MODEL: ${{ secrets.GROQ_MODEL || 'openai/gpt-oss-120b' }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
           FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
           GRAPH_API_VERSION: ${{ secrets.GRAPH_API_VERSION || 'v20.0' }}
