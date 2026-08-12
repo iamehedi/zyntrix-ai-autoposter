@@ -1,0 +1,50 @@
+name: Model Benchmark (dry-run)
+
+# Compares gpt-oss-120b (Groq) vs gemini-2.5-flash (Google) on the same topic.
+# DRY_RUN=1: generates content, logs the full post, publishes NOTHING.
+# Run manually from Actions → Model Benchmark (dry-run).
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: zyntrix-benchmark
+  cancel-in-progress: false
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Benchmark — Groq gpt-oss-120b (dry-run)
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_MODEL: openai/gpt-oss-120b
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+          DRY_RUN: "1"
+        run: python app.py
+
+      - name: Benchmark — Google gemini-2.5-flash (dry-run)
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GEMINI_MODEL: gemini-2.5-flash
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+          DRY_RUN: "1"
+        run: python app.py
