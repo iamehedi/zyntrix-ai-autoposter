@@ -282,5 +282,345 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122094923841446154",
     "generated_at": "2026-08-13T09:59:57.137797+00:00"
+  },
+  {
+    "internal_title": "Brain – প্রথম PC‑ভিত্তিক কম্পিউটার ভাইরাসের গল্প",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-08-17",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094930495446154",
+    "generated_at": "2026-08-13T10:11:11.377763+00:00"
+  },
+  {
+    "internal_title": "Intel 4004 – প্রথম মাইক্রোপ্রসেসর",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-17",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094931179446154",
+    "generated_at": "2026-08-13T10:11:50.992311+00:00"
+  },
+  {
+    "internal_title": "Xerox Alto – আধুনিক GUI‑এর প্রথম পিতামাতা",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-17",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094931563446154",
+    "generated_at": "2026-08-13T10:12:06.423534+00:00"
+  },
+  {
+    "internal_title": "Morris Worm – ইন্টারনেটের প্রথম বিশাল ভাইরাস",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-08-18",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094932427446154",
+    "generated_at": "2026-08-13T10:12:54.204237+00:00"
+  },
+  {
+    "internal_title": "BASIC ভাষার উত্থান ও গৃহ কম্পিউটার বিপ্লব",
+    "category": "Programming History",
+    "scheduled_date": "2026-08-18",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094935577446154",
+    "generated_at": "2026-08-13T10:13:41.759004+00:00"
+  },
+  {
+    "internal_title": "C ভাষার জন্ম",
+    "category": "Programming History",
+    "scheduled_date": "2026-08-18",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094935673446154",
+    "generated_at": "2026-08-13T10:13:58.238372+00:00"
+  },
+  {
+    "internal_title": "মথের গল্প: প্রথম কম্পিউটার বাগের ইতিহাস",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-08-18",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094936027446154",
+    "generated_at": "2026-08-13T10:14:26.532693+00:00"
+  },
+  {
+    "internal_title": "VisiCalc – প্রথম স্প্রেডশিটের গল্প",
+    "category": "Software History",
+    "scheduled_date": "2026-08-18",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094936177446154",
+    "generated_at": "2026-08-13T10:15:09.197826+00:00"
+  },
+  {
+    "internal_title": "UNIX এর জন্ম ও Ken Thompson‑এর রাতের কোডিং",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-19",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094936327446154",
+    "generated_at": "2026-08-13T10:15:36.436567+00:00"
+  },
+  {
+    "internal_title": "Sketchpad এবং ইন্টারেক্টিভ গ্রাফিক্সের জন্ম",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-19",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094936801446154",
+    "generated_at": "2026-08-13T10:16:20.393687+00:00"
+  },
+  {
+    "internal_title": "গিটের উত্থান ও লিনাসের দুঃসাহসিক কোডিং",
+    "category": "Programming History",
+    "scheduled_date": "2026-08-19",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094936915446154",
+    "generated_at": "2026-08-13T10:16:31.119242+00:00"
+  },
+  {
+    "internal_title": "IBM RAMAC এবং প্রথম হার্ড ড্রাইভের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-19",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094937761446154",
+    "generated_at": "2026-08-13T10:17:08.134412+00:00"
+  },
+  {
+    "internal_title": "First Email Story",
+    "category": "Internet History",
+    "scheduled_date": "2026-08-19",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094938445446154",
+    "generated_at": "2026-08-13T10:17:55.097939+00:00"
+  },
+  {
+    "internal_title": "FORTRAN এর জন্ম ও প্রভাব",
+    "category": "Programming History",
+    "scheduled_date": "2026-08-20",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094939153446154",
+    "generated_at": "2026-08-13T10:18:43.461516+00:00"
+  },
+  {
+    "internal_title": "Mosaic এবং ওয়েবের উত্থান",
+    "category": "Internet History",
+    "scheduled_date": "2026-08-20",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094939393446154",
+    "generated_at": "2026-08-13T10:19:18.241280+00:00"
+  },
+  {
+    "internal_title": "মাউসের উদ্ভব ও অদ্ভুত গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-20",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094939795446154",
+    "generated_at": "2026-08-13T10:19:37.023442+00:00"
+  },
+  {
+    "internal_title": "Creeper Virus – প্রথম কম্পিউটার ভাইরাসের গল্প",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-08-20",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094940275446154",
+    "generated_at": "2026-08-13T10:20:09.865452+00:00"
+  },
+  {
+    "internal_title": "ARPANET – ইন্টারনেটের জন্মের গোপন গল্প",
+    "category": "Internet History",
+    "scheduled_date": "2026-08-20",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094940851446154",
+    "generated_at": "2026-08-13T10:20:36.170728+00:00"
+  },
+  {
+    "internal_title": "Altair 8800 এবং পার্সোনাল কম্পিউটারের সূচনা",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-21",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094941415446154",
+    "generated_at": "2026-08-13T10:21:02.276477+00:00"
+  },
+  {
+    "internal_title": "Spacewar! – প্রথম ভিডিও গেমের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-21",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094942549446154",
+    "generated_at": "2026-08-13T10:21:49.231500+00:00"
+  },
+  {
+    "internal_title": "Grace Hopper এবং প্রথম Compiler",
+    "category": "Programming History",
+    "scheduled_date": "2026-08-21",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094943125446154",
+    "generated_at": "2026-08-13T10:22:20.411425+00:00"
+  },
+  {
+    "internal_title": "Xerox PARC এবং আধুনিক কম্পিউটিংয়ের জন্ম",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-21",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094946353446154",
+    "generated_at": "2026-08-13T10:24:33.653043+00:00"
+  },
+  {
+    "internal_title": "Y2K Bug Story",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-08-21",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094946605446154",
+    "generated_at": "2026-08-13T10:25:03.438285+00:00"
+  },
+  {
+    "internal_title": "The Morris Worm – ইন্টারনেটের প্রথম বড় আঘাত",
+    "category": "Internet History",
+    "scheduled_date": "2026-08-22",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094946677446154",
+    "generated_at": "2026-08-13T10:25:20.614848+00:00"
+  },
+  {
+    "internal_title": "ট্রানজিস্টরের জন্ম: ছোট একটি উদ্ভাবন, বিশাল এক বিপ্লব",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-22",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094947187446154",
+    "generated_at": "2026-08-13T10:26:05.667162+00:00"
+  },
+  {
+    "internal_title": "ENIAC: প্রথম ইলেকট্রনিক কম্পিউটার",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-22",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094947409446154",
+    "generated_at": "2026-08-13T10:26:27.423489+00:00"
+  },
+  {
+    "internal_title": "UNIX: From a Game to the OS Backbone",
+    "category": "Operating System History",
+    "scheduled_date": "2026-08-22",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094948609446154",
+    "generated_at": "2026-08-13T10:28:25.121546+00:00"
+  },
+  {
+    "internal_title": "World Wide Web Origin: Tim Berners-Lee at CERN",
+    "category": "Internet History",
+    "scheduled_date": "2026-08-22",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094948879446154",
+    "generated_at": "2026-08-13T10:28:50.054767+00:00"
+  },
+  {
+    "internal_title": "The Mother of All Demos and Doug Engelbart",
+    "category": "Computer History / Famous Programmers",
+    "scheduled_date": "2026-08-23",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094949395446154",
+    "generated_at": "2026-08-13T10:29:15.009686+00:00"
+  },
+  {
+    "internal_title": "Ada Lovelace: The First Programmer",
+    "category": "Programming History",
+    "scheduled_date": "2026-08-23",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094949737446154",
+    "generated_at": "2026-08-13T10:29:37.520072+00:00"
+  },
+  {
+    "internal_title": "The Origin of the Term 'Bug'",
+    "category": "Computer History / Famous Bugs",
+    "scheduled_date": "2026-08-23",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094950907446154",
+    "generated_at": "2026-08-13T10:30:26.087755+00:00"
+  },
+  {
+    "internal_title": "Intel 4004: The First Microprocessor",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-23",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094951603446154",
+    "generated_at": "2026-08-13T10:31:04.822300+00:00"
+  },
+  {
+    "internal_title": "The Invention of the Computer Mouse",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-23",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094952149446154",
+    "generated_at": "2026-08-13T10:31:44.319374+00:00"
+  },
+  {
+    "internal_title": "ARPANET: ইন্টারনেটের প্রথম ধাপ",
+    "category": "Internet History",
+    "scheduled_date": "2026-08-24",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094953559446154",
+    "generated_at": "2026-08-13T10:33:58.185851+00:00"
   }
 ]
