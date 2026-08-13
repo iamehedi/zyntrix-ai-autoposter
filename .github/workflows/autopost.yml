@@ -1,13 +1,12 @@
 name: Zyntrix AI Facebook Autoposter
 
 on:
+  # NOTE: Exact-time posting is handled by cron-job.org, which calls the
+  # workflow_dispatch API at 03:00, 06:00, 10:00, 13:00, 15:00 UTC
+  # (9 AM / 12 PM / 4 PM / 7 PM / 9 PM Bangladesh Time).
+  # GitHub's own `schedule` cron was removed because it fires 1-2h late
+  # and occasionally skips slots, and a duplicate trigger would double-post.
   workflow_dispatch:
-  schedule:
-    # 5 posts per day, spaced ~3 hours apart, in Bangladesh Time (UTC+6):
-    #   03:00 UTC = 09:00 AM, 06:00 UTC = 12:00 PM, 10:00 UTC = 04:00 PM,
-    #   13:00 UTC = 07:00 PM, 15:00 UTC = 09:00 PM
-    # Note: GitHub scheduled actions may occasionally experience slight delays depending on runner queue load.
-    - cron: "0 3,6,10,13,15 * * *"
 
 # Prevent overlapping runs (e.g. manual trigger + scheduled cron) from posting the same topic twice.
 # cancel-in-progress: false makes a new run WAIT for the in-progress one to finish instead of killing it
