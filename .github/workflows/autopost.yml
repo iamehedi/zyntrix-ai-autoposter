@@ -1,16 +1,19 @@
 name: Zyntrix AI Facebook Autoposter
 
 on:
-  # NOTE: Exact-time posting is handled by cron-job.org, which calls the
-  # workflow_dispatch API at 03:00, 06:00, 10:00, 13:00, 15:00 UTC
-  # (9 AM / 12 PM / 4 PM / 7 PM / 9 PM Bangladesh Time).
-  # GitHub's own `schedule` cron was removed because it fires 1-2h late
-  # and occasionally skips slots, and a duplicate trigger would double-post.
+  # One run per day is enough: posts are SCHEDULED via Meta's Graph API
+  # (published=false + scheduled_publish_time), so exact publish timing no
+  # longer depends on when GitHub fires — Meta publishes at the scheduled
+  # Asia/Dhaka slot (08:00 / 12:00 / 17:00 / 20:00 / 22:00).
+  # 02:30 UTC = 08:30 Asia/Dhaka: each daily run schedules the next 2 days.
+  schedule:
+    - cron: "30 2 * * *"
   workflow_dispatch:
 
-# Prevent overlapping runs (e.g. manual trigger + scheduled cron) from posting the same topic twice.
-# cancel-in-progress: false makes a new run WAIT for the in-progress one to finish instead of killing it
-# mid-publish (killing a run after a successful publish but before the queue update would double-post).
+# Prevent overlapping runs (e.g. manual trigger + scheduled cron) from assigning
+# the same publishing slot twice.
+# cancel-in-progress: false makes a new run WAIT for the in-progress one to
+# finish instead of killing it mid-schedule.
 concurrency:
   group: zyntrix-autopost
   cancel-in-progress: false
@@ -39,24 +42,24 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Execute Autoposter Engine
+      - name: Execute Content Engine & Meta Scheduler
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          GROQ_MODEL: ${{ secrets.GROQ_MODEL || 'openai/gpt-oss-120b' }}
+          GROQ_MODEL: ${{ secrets.GROQ_MODEL || 'qwen/qwen3.6-27b' }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
           FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
           GRAPH_API_VERSION: ${{ secrets.GRAPH_API_VERSION || 'v20.0' }}
         run: python app.py
 
-      - name: Commit and Push Queue Updates
+      - name: Commit and Push Post History
         if: success()
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet topics.txt post_history.json; then
-            git add topics.txt post_history.json
-            git commit -m "chore: update topic queue and post history [skip ci]"
+          if ! git diff --quiet post_history.json content_plan.json; then
+            git add post_history.json content_plan.json
+            git commit -m "chore: update post history and content plan [skip ci]"
             git push
           else
             echo "No changes to commit."

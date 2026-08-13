@@ -1,7 +1,11 @@
 # Zyntrix Studio — Official Social Media Content Brand Guide
 
 > Canonical brand guide for all Zyntrix Studio social media content.
-> The autoposter's CrewAI agents (Writer, Designer, Manager) enforce these rules.
+>
+> ⚠️ **The autoposter does NOT use this document anymore.** The autoposter now runs the
+> **history-storytelling algorithm** in [`IMAGELESS-CONTENT-AGENT.md`](IMAGELESS-CONTENT-AGENT.md)
+> (Bengali computer/programming/internet/AI history stories, 400–800 words, 0–3 emojis, 3–6 hashtags).
+> This brand guide still applies to general Zyntrix agency marketing content.
 
 ---
 

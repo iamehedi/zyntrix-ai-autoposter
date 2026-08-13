@@ -1,8 +1,13 @@
 name: Model Benchmark (dry-run)
 
-# Compares gpt-oss-120b (Groq) vs gemini-2.5-flash (Google) on the same topic.
-# DRY_RUN=1: generates content, logs the full post, publishes NOTHING.
-# Run manually from Actions → Model Benchmark (dry-run).
+# Compares qwen/qwen3.6-27b (Groq) vs gemini-2.5-flash (Google) on the same
+# content task. DRY_RUN=1: generates the batch, prints the JSON plan,
+# schedules NOTHING and never calls Meta. Run manually from Actions →
+# Model Benchmark (dry-run).
+#
+# NOTE: each run generates a full batch (default 10 long-form posts), which is
+# ~10 LLM calls. On Groq's free tier, consider `python app.py --plan-only
+# --batch 2` for a quick spot-check instead.
 
 on:
   workflow_dispatch:
@@ -31,12 +36,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Benchmark — Groq gpt-oss-120b (dry-run)
+      - name: Benchmark — Groq qwen3.6-27b (dry-run)
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          GROQ_MODEL: openai/gpt-oss-120b
-          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
-          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+          GROQ_MODEL: qwen/qwen3.6-27b
           DRY_RUN: "1"
         run: python app.py
 
@@ -45,18 +48,14 @@ jobs:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GEMINI_MODEL: gemini-2.5-flash
-          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
-          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
           DRY_RUN: "1"
         run: python app.py
 
       - name: Fallback test — force Groq failure, expect Gemini rescue (dry-run)
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          GROQ_MODEL: openai/gpt-oss-does-not-exist-999
+          GROQ_MODEL: qwen/qwen3.6-does-not-exist-999
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GEMINI_MODEL: gemini-2.5-flash
-          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
-          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
           DRY_RUN: "1"
         run: python app.py
