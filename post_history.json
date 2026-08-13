@@ -82,5 +82,105 @@
     "content_mode": "Funny Explanation",
     "posted_at": "2026-08-13T04:08:46.444993+00:00",
     "post_id": "1303242722866748_122094751551446154"
+  },
+  {
+    "internal_title": "VisiCalc এবং পিসি বিপ্লব",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-13",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "***_122094915465446154",
+    "generated_at": "2026-08-13T09:53:29.710118+00:00"
+  },
+  {
+    "internal_title": "Creeper এবং Reaper: প্রথম কম্পিউটার ভাইরাসের গল্প",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-08-13",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "***_122094915831446154",
+    "generated_at": "2026-08-13T09:53:29.710118+00:00"
+  },
+  {
+    "internal_title": "Grace Hopper এবং প্রথম Compiler-এর গল্প",
+    "category": "Programming History",
+    "scheduled_date": "2026-08-13",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "***_122094916431446154",
+    "generated_at": "2026-08-13T09:53:29.710118+00:00"
+  },
+  {
+    "internal_title": "প্রথম কম্পিউটার মাউসের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-14",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "***_122094916479446154",
+    "generated_at": "2026-08-13T09:53:29.710118+00:00"
+  },
+  {
+    "internal_title": "Xerox PARC এর Alto এবং GUI এর জন্ম",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-14",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "***_122094916629446154",
+    "generated_at": "2026-08-13T09:53:29.710118+00:00"
+  },
+  {
+    "internal_title": "প্রথম ইমেল এবং @ চিহ্নের গল্প",
+    "category": "Internet History",
+    "scheduled_date": "2026-08-14",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "***_122094917493446154",
+    "generated_at": "2026-08-13T09:53:29.710118+00:00"
+  },
+  {
+    "internal_title": "UNIX এর জন্মের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-14",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "***_122094918111446154",
+    "generated_at": "2026-08-13T09:53:29.710118+00:00"
+  },
+  {
+    "internal_title": "FORTRAN – প্রথম হাই-লেভেল প্রোগ্রামিং ভাষার জন্ম",
+    "category": "Programming History",
+    "scheduled_date": "2026-08-14",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "***_122094918525446154",
+    "generated_at": "2026-08-13T09:53:29.710118+00:00"
+  },
+  {
+    "internal_title": "Hello, World! প্রোগ্রামের জন্ম",
+    "category": "Programming History",
+    "scheduled_date": "2026-08-15",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "***_122094918585446154",
+    "generated_at": "2026-08-13T09:53:29.710118+00:00"
+  },
+  {
+    "internal_title": "Deep Blue vs গ্যারি কাসপারভস্কি",
+    "category": "AI History",
+    "scheduled_date": "2026-08-15",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "***_122094918687446154",
+    "generated_at": "2026-08-13T09:53:29.710118+00:00"
   }
 ]

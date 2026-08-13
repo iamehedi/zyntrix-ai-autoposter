@@ -57,8 +57,13 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet post_history.json content_plan.json; then
-            git add post_history.json content_plan.json
+          # post_history.json always exists; content_plan.json is only created
+          # by --monthly runs, so stage it only when present.
+          git add post_history.json
+          if [ -f content_plan.json ]; then
+            git add content_plan.json
+          fi
+          if ! git diff --cached --quiet; then
             git commit -m "chore: update post history and content plan [skip ci]"
             git push
           else
