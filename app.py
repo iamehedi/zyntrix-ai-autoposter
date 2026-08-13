@@ -709,13 +709,95 @@ def failed_post_payload(slot: dict, stage: str) -> dict:
     }
 
 
+# ---------------------------------------------------------------- plan consumption
+def _load_content_plan():
+    """Loads the content plan saved by a --monthly run (list of post payloads)."""
+    if not os.path.exists(PLAN_FILE):
+        return []
+    try:
+        with open(PLAN_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return data if isinstance(data, list) else []
+    except Exception:
+        return []
+
+
+def _save_content_plan(plan):
+    with open(PLAN_FILE, "w", encoding="utf-8") as f:
+        json.dump(plan, f, ensure_ascii=False, indent=2)
+
+
+def _schedule_planned_posts(planned, limit, history):
+    """Schedules pending posts from content_plan.json that are now inside Meta's
+    scheduling window (10 min - 30 days). Returns
+    (scheduled_payloads, remaining_plan, any_failed).
+
+    This lets a big --monthly plan be consumed gradually by the daily cron:
+    each day the window moves forward, more planned posts become schedulable.
+    """
+    history_slots = {(h.get("scheduled_date"), h.get("scheduled_time")) for h in history}
+    now_ts = datetime.now(timezone.utc).timestamp()
+    scheduled = []
+    remaining = []
+    any_failed = False
+
+    for p in planned:
+        if len(scheduled) >= limit:
+            remaining.append(p)
+            continue
+        if p.get("meta_post_id"):
+            continue  # already scheduled on a previous run
+        if not p.get("caption"):
+            continue  # generation-failed placeholder — never schedule empty text
+        d, t = p.get("scheduled_date"), p.get("scheduled_time")
+        if not d or not t or (d, t) in history_slots:
+            continue
+        try:
+            slot_dt = datetime.combine(datetime.strptime(d, "%Y-%m-%d").date(),
+                                       time.fromisoformat(t), tzinfo=DHAKA_TZ)
+            unix_ts = int(slot_dt.timestamp())
+        except ValueError:
+            continue
+        lead = unix_ts - now_ts
+        if lead < META_MIN_LEAD_SECONDS or lead > META_MAX_LEAD_SECONDS:
+            remaining.append(p)  # outside window for now — retry on a later run
+            continue
+
+        result = schedule_post(p.get("caption", ""), p.get("hashtags", []), unix_ts)
+        if result["status"] == "SCHEDULED_VERIFIED":
+            p["scheduling_status"] = "SCHEDULED_VERIFIED"
+            p["meta_post_id"] = result["post_id"]
+            history.append({
+                "internal_title": p.get("internal_title", ""),
+                "category": p.get("category", ""),
+                "scheduled_date": d,
+                "scheduled_time": t,
+                "timezone": "Asia/Dhaka",
+                "status": "SCHEDULED_VERIFIED",
+                "meta_post_id": result["post_id"],
+                "generated_at": datetime.now(timezone.utc).isoformat(),
+            })
+            scheduled.append(p)
+            logger.info(f"Scheduled from plan: {d} {t} | {p.get('internal_title', '')} | {result['post_id']}")
+        else:
+            any_failed = True
+            p["scheduling_status"] = result["status"]
+            p["error"] = result.get("error", {})
+            remaining.append(p)
+            logger.error(f"Plan scheduling failed for {d} {t}: "
+                         f"{result.get('error', {}).get('message', result['status'])}")
+
+    return scheduled, remaining, any_failed
+
+
 # ---------------------------------------------------------------- monthly plan
 def run_monthly_plan(args, history, used_titles):
-    """Generates a full 30-day plan (150 posts) in sub-batches of `--batch`
-    (default 10). Each sub-batch is printed as one JSON object as soon as it is
-    generated. With --schedule, posts within Meta's window are scheduled and
-    verified; otherwise everything is marked PLANNED (plan-only preview)."""
-    total = MONTHLY_DAYS * len(args.times)
+    """Generates a full `--days` plan (default 30 days x 5 = 150 posts) in
+    sub-batches of `--batch` (default 10). Each sub-batch is printed as one JSON
+    object as soon as it is generated. With --schedule, posts inside Meta's
+    scheduling window are scheduled and verified; posts beyond the window stay
+    PLANNED in content_plan.json for later runs to schedule."""
+    total = args.days * len(args.times)
     slots = next_slots(total, history, start_date=args.start_date, times=args.times)
     plan = []
     batch_number = 0
@@ -739,6 +821,11 @@ def run_monthly_plan(args, history, used_titles):
                 if result["status"] == "SCHEDULED_VERIFIED":
                     payload["meta_post_id"] = result["post_id"]
                     history.append(history_entry(content, slot, result["post_id"]))
+                elif result["status"] == "OUT_OF_SCHEDULE_WINDOW":
+                    # Beyond Meta's 30-day window: keep it PLANNED so a later
+                    # run (daily cron) schedules it once the window allows.
+                    payload["scheduling_status"] = "PLANNED"
+                    payload["note"] = result.get("error", {}).get("message", "")
                 else:
                     any_failed = True
                     payload["error"] = result.get("error", {})
@@ -771,7 +858,7 @@ def history_entry(content: dict, slot: dict, meta_post_id: str) -> dict:
 
 
 # ---------------------------------------------------------------- CLI
-def parse_args():
+def parse_args(argv=None):
     parser = argparse.ArgumentParser(
         description="Zyntrix Studio — Facebook history-storytelling content engine & Meta scheduler."
     )
@@ -780,7 +867,9 @@ def parse_args():
     parser.add_argument("--plan-only", action="store_true",
                         help="Generate the batch and print the JSON plan WITHOUT calling Meta.")
     parser.add_argument("--monthly", action="store_true",
-                        help="Generate a full 30-day plan (150 posts) in sub-batches of --batch.")
+                        help="Generate a full multi-day plan in sub-batches of --batch.")
+    parser.add_argument("--days", type=int, default=MONTHLY_DAYS,
+                        help=f"Days of content for --monthly (default {MONTHLY_DAYS}).")
     parser.add_argument("--schedule", action="store_true",
                         help="With --monthly: schedule posts via Meta instead of plan-only preview.")
     parser.add_argument("--start-date", type=str, default=None,
@@ -789,7 +878,7 @@ def parse_args():
                         help=f"Comma-separated daily publish times HH:MM (default: {','.join(DEFAULT_SLOT_TIMES)}).")
     parser.add_argument("--attempts", type=int, default=2,
                         help="Generation attempts per post per provider (default 2).")
-    return parser.parse_args()
+    return parser.parse_args(argv)
 
 
 def main():
@@ -815,14 +904,31 @@ def main():
         run_monthly_plan(args, history, used_titles)
         return  # exits inside
 
-    # --- Default: generate the next batch and schedule it via Meta ---
-    slots = next_slots(args.batch, history, start_date=args.start_date, times=args.times)
-    logger.info(f"Next {len(slots)} publishing slots assigned "
-                f"({slots[0]['scheduled_date']} {slots[0]['scheduled_time']} → "
-                f"{slots[-1]['scheduled_date']} {slots[-1]['scheduled_time']}, Asia/Dhaka).")
-
+    # --- Default: schedule the next batch via Meta ---
     posts = []
     any_failed = False
+
+    # 1. First, schedule pending planned posts (from a --monthly plan file) whose
+    #    slots have entered Meta's scheduling window. The daily cron gradually
+    #    consumes the plan; fresh generation only fills what the plan lacks.
+    if not plan_only and os.path.exists(PLAN_FILE):
+        planned = _load_content_plan()
+        if planned:
+            from_plan, remaining_plan, plan_failed = _schedule_planned_posts(planned, args.batch, history)
+            posts.extend(from_plan)
+            any_failed = any_failed or plan_failed
+            _save_content_plan(remaining_plan)
+            logger.info(f"Scheduled {len(from_plan)} post(s) from content plan "
+                        f"({len(remaining_plan)} still planned).")
+
+    slots_needed = args.batch - len(posts)
+    if slots_needed > 0:
+        slots = next_slots(slots_needed, history, start_date=args.start_date, times=args.times)
+        logger.info(f"Filling {len(slots)} remaining slot(s) with fresh content "
+                    f"({slots[0]['scheduled_date']} {slots[0]['scheduled_time']} → "
+                    f"{slots[-1]['scheduled_date']} {slots[-1]['scheduled_time']}, Asia/Dhaka).")
+    else:
+        slots = []
 
     for slot in slots:
         content = generate_usable_post(used_titles, args.attempts)

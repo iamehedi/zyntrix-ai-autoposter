@@ -159,8 +159,9 @@ Python 3.10+ and Git.
 | :--- | :--- | :--- |
 | `--batch N` | `10` | Posts per batch (algorithm default). |
 | `--plan-only` | off | Generate + print the JSON plan, never call Meta. |
-| `--monthly` | off | Generate a full **30-day / 150-post plan** in sub-batches of `--batch` (prints one JSON object per sub-batch, saves `content_plan.json`). |
-| `--schedule` | off | With `--monthly`: schedule the plan via Meta instead of previewing. |
+| `--monthly` | off | Generate a full **multi-day plan** in sub-batches of `--batch` (prints one JSON object per sub-batch, saves `content_plan.json`). |
+| `--days N` | `30` | Days of content for `--monthly` (e.g. `--days 60` = 2-month plan). |
+| `--schedule` | off | With `--monthly`: schedule the plan via Meta instead of previewing. Posts beyond Meta's 30-day window stay `PLANNED` and are scheduled by later runs. |
 | `--start-date YYYY-MM-DD` | next free slot | First slot date (custom date/time support). |
 | `--times 08:00,12:00,...` | `08:00,12:00,17:00,20:00,22:00` | Daily publish times (Asia/Dhaka). |
 | `--attempts N` | `2` | Generation attempts per post per provider. |
@@ -178,9 +179,10 @@ schedule:
 ```
 Each daily run:
 1. Loads `post_history.json` (uniqueness feed).
-2. Generates the next batch of **10 posts** and assigns the next free slots (2 days × 5 slots/day).
-3. Schedules each post via Meta (`published=false` + `scheduled_publish_time`) and **verifies** it.
-4. Commits updated `post_history.json` (and `content_plan.json` if a monthly plan exists) back to the repo.
+2. **Schedules from `content_plan.json` first** — any planned posts whose slots have entered Meta's 30-day window get scheduled now (so a big 2-month plan is consumed gradually).
+3. Fills the rest of the batch with **fresh generation** (default 10 posts = 2 days × 5 slots/day).
+4. Schedules each post via Meta (`published=false` + `scheduled_publish_time`) and **verifies** it.
+5. Commits updated `post_history.json` (and `content_plan.json`) back to the repo.
 
 A `concurrency` guard (`cancel-in-progress: false`) ensures manual + scheduled runs never overlap, so two
 runs can never claim the same publishing slot.

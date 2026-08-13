@@ -9,6 +9,11 @@ on:
   schedule:
     - cron: "30 2 * * *"
   workflow_dispatch:
+    inputs:
+      args:
+        description: "Extra CLI args for app.py (e.g. --monthly --schedule --days 60 --plan-only)"
+        required: false
+        default: ""
 
 # Prevent overlapping runs (e.g. manual trigger + scheduled cron) from assigning
 # the same publishing slot twice.
@@ -50,10 +55,12 @@ jobs:
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
           FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
           GRAPH_API_VERSION: ${{ secrets.GRAPH_API_VERSION || 'v20.0' }}
-        run: python app.py
+        run: python app.py ${{ inputs.args }}
 
       - name: Commit and Push Post History
-        if: success()
+        # always(): a long --monthly run can finish with partial success (exit 1)
+        # but its scheduled posts + plan file must still be committed.
+        if: always()
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
