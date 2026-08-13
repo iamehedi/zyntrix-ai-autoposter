@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Zyntrix Auto poster</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; max-width: 760px; margin: 40px auto; padding: 0 20px; color: #1c1e21; line-height: 1.6; }
+  h1 { font-size: 1.6em; }
+  h2 { font-size: 1.15em; margin-top: 1.6em; }
+  p, li { font-size: 0.98em; }
+  .meta { color: #65676b; font-size: 0.9em; }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy</h1>
+<p class="meta"><strong>App:</strong> Zyntrix Auto poster &nbsp;|&nbsp; <strong>Owner:</strong> Zyntrix Studio &nbsp;|&nbsp; <strong>Last updated:</strong> August 13, 2026</p>
+
+<p>This privacy policy explains what data the <strong>Zyntrix Auto poster</strong> application ("the app") processes and how it is handled. The app is an automated content publishing tool that generates and publishes text posts to the Facebook Page <em>The Zyntrix Studio</em> using the Meta Graph API.</p>
+
+<h2>1. What the app does</h2>
+<p>The app automatically creates short technology-related text posts, checks them for quality, and publishes them to the owner's Facebook Page. It does not interact with personal profiles and does not post on behalf of any other person, Page, or business.</p>
+
+<h2>2. Data processed by the app</h2>
+<ul>
+  <li><strong>Facebook Page credentials:</strong> A Page Access Token and Page ID, used only to publish posts to the owner's own Facebook Page. The token is stored encrypted in GitHub Secrets and is never published, logged, or shared.</li>
+  <li><strong>Post content and history:</strong> The text of generated posts, topics, and post IDs are stored in the app's repository to avoid repeating topics and to keep a history of published posts.</li>
+  <li><strong>Content prompts:</strong> When generating posts, the app sends topic suggestions to third-party AI providers (see Section 4).</li>
+</ul>
+<p>The app does <strong>not</strong> collect, request, or store any personal information about the Page's followers, visitors, or other Facebook users.</p>
+
+<h2>3. How data is used</h2>
+<p>All processed data is used exclusively to operate the app: generating content, publishing it to the owner's Facebook Page, and tracking post history. Data is never sold, rented, or shared for advertising or marketing purposes.</p>
+
+<h2>4. Third-party services</h2>
+<p>The app relies on the following services:</p>
+<ul>
+  <li><strong>Meta (Facebook Graph API)</strong> — publishes posts to the owner's Facebook Page.</li>
+  <li><strong>Groq / Google Gemini (via LiteLLM)</strong> — generate post content from topic prompts.</li>
+  <li><strong>GitHub (Actions &amp; Pages)</strong> — runs the automation, stores the repository, and hosts this page.</li>
+</ul>
+<p>Each provider processes data under its own terms and privacy policies. Only the minimum data needed for the app to function is sent to these services.</p>
+
+<h2>5. Data retention</h2>
+<p>Post history is retained for as long as the repository exists and may be deleted at any time by the app owner. The Facebook Page Access Token is retained until the owner revokes or replaces it.</p>
+
+<h2>6. Data security</h2>
+<p>Credentials are stored in encrypted secrets (GitHub Secrets) and are never committed to the repository, included in logs, or transmitted outside of the services listed above.</p>
+
+<h2>7. Your rights</h2>
+<p>Since the app does not process personal data of end users, there are no end-user accounts or personal records to access or delete. Page owners may contact the address below for any questions about this policy or to request deletion of stored post history.</p>
+
+<h2>8. Changes to this policy</h2>
+<p>This policy may be updated from time to time. The date above shows when it was last changed. Continued use of the app after changes means acceptance of the updated policy.</p>
+
+<h2>9. Contact</h2>
+<p>For questions about this privacy policy, contact Zyntrix Studio via the Facebook Page <em>The Zyntrix Studio</em>.</p>
+
+</body>
+</html>
