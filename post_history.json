@@ -182,5 +182,105 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "***_122094918687446154",
     "generated_at": "2026-08-13T09:53:29.710118+00:00"
+  },
+  {
+    "internal_title": "ARPANETের প্রথম বার্তা",
+    "category": "Internet History",
+    "scheduled_date": "2026-08-15",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094920907446154",
+    "generated_at": "2026-08-13T09:55:15.256185+00:00"
+  },
+  {
+    "internal_title": "লিনাক্সের জন্মের গল্প",
+    "category": "Programming History",
+    "scheduled_date": "2026-08-15",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094921111446154",
+    "generated_at": "2026-08-13T09:55:24.767453+00:00"
+  },
+  {
+    "internal_title": "IMS – প্রথম ডেটাবেস সিস্টেমের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-15",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094921699446154",
+    "generated_at": "2026-08-13T09:56:11.132754+00:00"
+  },
+  {
+    "internal_title": "IBM System/360 এর জন্ম",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-16",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094921741446154",
+    "generated_at": "2026-08-13T09:56:19.989385+00:00"
+  },
+  {
+    "internal_title": "Spacewar! এবং গেমিং বিপ্লব",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-16",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094922275446154",
+    "generated_at": "2026-08-13T09:57:06.129019+00:00"
+  },
+  {
+    "internal_title": "Mother of All Demos – Engelbart এর সোনার দিন",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-16",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094922557446154",
+    "generated_at": "2026-08-13T09:57:54.073350+00:00"
+  },
+  {
+    "internal_title": "Ada Lovelace – প্রথম প্রোগ্রামার",
+    "category": "Famous Programmers",
+    "scheduled_date": "2026-08-16",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094922887446154",
+    "generated_at": "2026-08-13T09:58:42.941101+00:00"
+  },
+  {
+    "internal_title": "Creeper – প্রথম কম্পিউটার ভাইরাসের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-16",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094922923446154",
+    "generated_at": "2026-08-13T09:58:48.848211+00:00"
+  },
+  {
+    "internal_title": "World Wide Web এর জন্ম",
+    "category": "Internet History",
+    "scheduled_date": "2026-08-17",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094923427446154",
+    "generated_at": "2026-08-13T09:59:26.721890+00:00"
+  },
+  {
+    "internal_title": "Grace Hopper এবং প্রথম কম্পাইলার A‑0",
+    "category": "Programming History",
+    "scheduled_date": "2026-08-17",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122094923841446154",
+    "generated_at": "2026-08-13T09:59:57.137797+00:00"
   }
 ]
