@@ -622,5 +622,105 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122094953559446154",
     "generated_at": "2026-08-13T10:33:58.185851+00:00"
+  },
+  {
+    "internal_title": "LISP – AI প্রোগ্রামিংয়ের প্রথম ভাষা",
+    "category": "Programming History / AI History",
+    "scheduled_date": "2026-08-24",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122095601787446154",
+    "generated_at": "2026-08-14T04:22:04.756227+00:00"
+  },
+  {
+    "internal_title": "Creeper Virus এবং প্রথম অ্যান্টিভাইরাসের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-24",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122095602213446154",
+    "generated_at": "2026-08-14T04:22:45.105823+00:00"
+  },
+  {
+    "internal_title": "FORTRAN – প্রথম বাণিজ্যিক প্রোগ্রামিং ভাষার জন্ম",
+    "category": "Programming History",
+    "scheduled_date": "2026-08-24",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122095602369446154",
+    "generated_at": "2026-08-14T04:23:11.813347+00:00"
+  },
+  {
+    "internal_title": "Brain Virus – প্রথম PC ভাইরাসের গল্প",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-08-24",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122095602783446154",
+    "generated_at": "2026-08-14T04:23:57.867173+00:00"
+  },
+  {
+    "internal_title": "প্রথম ইমেইল ও @ চিহ্নের গল্প",
+    "category": "Internet History",
+    "scheduled_date": "2026-08-25",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122095603233446154",
+    "generated_at": "2026-08-14T04:24:46.984930+00:00"
+  },
+  {
+    "internal_title": "Spacewar! – প্রথম কম্পিউটার গেমের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-25",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122095603653446154",
+    "generated_at": "2026-08-14T04:25:34.867643+00:00"
+  },
+  {
+    "internal_title": "Xerox Alto এবং GUI বিপ্লব",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-25",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122095604157446154",
+    "generated_at": "2026-08-14T04:26:01.886638+00:00"
+  },
+  {
+    "internal_title": "C ভাষার জন্ম: B থেকে C",
+    "category": "Programming History",
+    "scheduled_date": "2026-08-25",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122095604841446154",
+    "generated_at": "2026-08-14T04:26:49.631948+00:00"
+  },
+  {
+    "internal_title": "Morris Worm – ইন্টারনেটের প্রথম বড় ভাইরাসের গল্প",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-08-25",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122095605099446154",
+    "generated_at": "2026-08-14T04:27:16.677558+00:00"
+  },
+  {
+    "internal_title": "ওয়্যারলেস জগৎ: ওয়েবের জন্মের গল্প",
+    "category": "Internet History",
+    "scheduled_date": "2026-08-26",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122095606125446154",
+    "generated_at": "2026-08-14T04:28:03.455687+00:00"
   }
 ]
