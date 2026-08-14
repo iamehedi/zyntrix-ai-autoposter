@@ -722,5 +722,115 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122095606125446154",
     "generated_at": "2026-08-14T04:28:03.455687+00:00"
+  },
+  {
+    "internal_title": "Mosaic ব্রাউজার: ওয়েবের প্রথম জনপ্রিয় গেটওয়ে",
+    "category": "Internet History",
+    "scheduled_date": "2026-08-26",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122095649673446154",
+    "generated_at": "2026-08-14T05:47:25.406491+00:00"
+  },
+  {
+    "internal_title": "টিম বার্নার্স-লে এবং ওয়ার্ল্ড ওয়াইড ওয়েবের জন্ম",
+    "category": "Internet History",
+    "scheduled_date": "2026-08-26",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122095650291446154",
+    "generated_at": "2026-08-14T05:48:03.982900+00:00"
+  },
+  {
+    "internal_title": "IBM 305 RAMAC এবং প্রথম হার্ড ডিস্কের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-26",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122095650705446154",
+    "generated_at": "2026-08-14T05:48:51.709175+00:00"
+  },
+  {
+    "internal_title": "Intel 4004 – বিশ্বের প্রথম মাইক্রোপ্রসেসর",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-26",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122095651269446154",
+    "generated_at": "2026-08-14T05:49:40.061183+00:00"
+  },
+  {
+    "internal_title": "ডগলাস এঞ্জেলবার্টের মাউস ও হাইপারটেক্সটের জন্ম",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-27",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122095651521446154",
+    "generated_at": "2026-08-14T05:50:11.747212+00:00"
+  },
+  {
+    "internal_title": "UNIVAC I – প্রথম বাণিজ্যিক কম্পিউটার ও ১৯৫২ সালের ভোট গণনা",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-27",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122095652019446154",
+    "generated_at": "2026-08-14T05:50:48.401051+00:00"
+  },
+  {
+    "internal_title": "Grace Hopper এবং প্রথম কম্পাইলার A-0",
+    "category": "Famous Programmers",
+    "scheduled_date": "2026-08-27",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122095652559446154",
+    "generated_at": "2026-08-14T05:51:36.779697+00:00"
+  },
+  {
+    "internal_title": "Grace Hopper and the First Computer Bug",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-27",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122095653393446154",
+    "generated_at": "2026-08-14T05:51:59.965439+00:00"
+  },
+  {
+    "internal_title": "Linux Kernelের জন্ম: লিনাসের রাত্রি-ভোরের কোডিং",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-27",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122095653471446154",
+    "generated_at": "2026-08-14T05:52:05.612144+00:00"
+  },
+  {
+    "internal_title": "ট্রানজিস্টরের জন্ম: ডিজিটাল বিপ্লবের ভিত্তি",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-28",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122095654617446154",
+    "generated_at": "2026-08-14T05:52:47.118616+00:00"
+  },
+  {
+    "internal_title": "Y2K Bug: ২০০০ সালের আতঙ্ক",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-08-30",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122095654923446154",
+    "generated_at": "2026-08-14T05:53:14.583094+00:00"
   }
 ]
