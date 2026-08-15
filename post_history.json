@@ -832,5 +832,105 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122095654923446154",
     "generated_at": "2026-08-14T05:53:14.583094+00:00"
+  },
+  {
+    "internal_title": "Ray Tomlinson এবং প্রথম ইমেল",
+    "category": "Internet History",
+    "scheduled_date": "2026-08-28",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122096430975446154",
+    "generated_at": "2026-08-15T03:11:49.172583+00:00"
+  },
+  {
+    "internal_title": "Archie – প্রথম সার্চ ইঞ্জিনের গল্প",
+    "category": "Internet History",
+    "scheduled_date": "2026-08-28",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122096431371446154",
+    "generated_at": "2026-08-15T03:12:30.698129+00:00"
+  },
+  {
+    "internal_title": "Xerox Alto এবং GUI‑এর জন্ম",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-28",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122096431719446154",
+    "generated_at": "2026-08-15T03:13:20.893051+00:00"
+  },
+  {
+    "internal_title": "ARPANET-এর প্রথম বার্তা",
+    "category": "Internet History",
+    "scheduled_date": "2026-08-28",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122096432115446154",
+    "generated_at": "2026-08-15T03:14:58.590068+00:00"
+  },
+  {
+    "internal_title": "Ada Lovelace এবং প্রথম অ্যালগরিদম",
+    "category": "Famous Programmers",
+    "scheduled_date": "2026-08-29",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122096432301446154",
+    "generated_at": "2026-08-15T03:15:40.239262+00:00"
+  },
+  {
+    "internal_title": "Altair BASIC এবং সফটওয়্যার শিল্পের সূচনা",
+    "category": "Programming History",
+    "scheduled_date": "2026-08-29",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122096432697446154",
+    "generated_at": "2026-08-15T03:16:27.220560+00:00"
+  },
+  {
+    "internal_title": "টিম বার্নার্স-লি এবং ওয়েবের জন্ম",
+    "category": "Internet History",
+    "scheduled_date": "2026-08-29",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122096432745446154",
+    "generated_at": "2026-08-15T03:16:32.472489+00:00"
+  },
+  {
+    "internal_title": "Fortran – প্রথম হাই‑লেভেল প্রোগ্রামিং ভাষা",
+    "category": "Programming History",
+    "scheduled_date": "2026-08-29",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122096433177446154",
+    "generated_at": "2026-08-15T03:17:05.243253+00:00"
+  },
+  {
+    "internal_title": "ELIZA – প্রথম চ্যাটবটের গল্প",
+    "category": "AI History",
+    "scheduled_date": "2026-08-29",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122096433687446154",
+    "generated_at": "2026-08-15T03:18:30.110636+00:00"
+  },
+  {
+    "internal_title": "DNS এর জন্ম ও আজকের গুরুত্ব",
+    "category": "Internet History",
+    "scheduled_date": "2026-08-30",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122096433729446154",
+    "generated_at": "2026-08-15T03:18:46.456615+00:00"
   }
 ]
