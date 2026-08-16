@@ -932,5 +932,105 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122096433729446154",
     "generated_at": "2026-08-15T03:18:46.456615+00:00"
+  },
+  {
+    "internal_title": "Mosaic – প্রথম গ্রাফিক্যাল ওয়েব ব্রাউজার",
+    "category": "Internet History",
+    "scheduled_date": "2026-08-30",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122097132939446154",
+    "generated_at": "2026-08-16T03:26:14.086889+00:00"
+  },
+  {
+    "internal_title": "Osborne 1 – প্রথম পোর্টেবল কম্পিউটার",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-30",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122097133287446154",
+    "generated_at": "2026-08-16T03:26:53.645545+00:00"
+  },
+  {
+    "internal_title": "ইন্টেল 4004 এবং মাইক্রোপ্রসেসরের জন্ম",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-30",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122097133473446154",
+    "generated_at": "2026-08-16T03:27:25.002675+00:00"
+  },
+  {
+    "internal_title": "ডগ এঙ্গেলবার্টের মাউসের উত্পত্তি",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-31",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122097133857446154",
+    "generated_at": "2026-08-16T03:27:50.214669+00:00"
+  },
+  {
+    "internal_title": "IBM RAMAC এবং প্রথম হার্ডড্রাইভ",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-31",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122097134127446154",
+    "generated_at": "2026-08-16T03:28:14.581527+00:00"
+  },
+  {
+    "internal_title": "মার্ক II‑তে মথি: প্রথম বাগের গল্প",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-08-31",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122097134427446154",
+    "generated_at": "2026-08-16T03:28:59.568126+00:00"
+  },
+  {
+    "internal_title": "Creeper Virus – প্রথম কম্পিউটার ওয়্যার্মের গল্প",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-08-31",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122097134775446154",
+    "generated_at": "2026-08-16T03:29:29.647196+00:00"
+  },
+  {
+    "internal_title": "UNIVAC I – প্রথম বাণিজ্যিক কম্পিউটার",
+    "category": "Computer History",
+    "scheduled_date": "2026-08-31",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122097134895446154",
+    "generated_at": "2026-08-16T03:29:52.600924+00:00"
+  },
+  {
+    "internal_title": "Sketchpad এবং গ্রাফিক্যাল ইন্টারফেসের সূচনা",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-01",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122097135219446154",
+    "generated_at": "2026-08-16T03:30:21.589143+00:00"
+  },
+  {
+    "internal_title": "Xerox PARC এবং GUI বিপ্লব",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-01",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122097135717446154",
+    "generated_at": "2026-08-16T03:31:14.827879+00:00"
   }
 ]
