@@ -1032,5 +1032,105 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122097135717446154",
     "generated_at": "2026-08-16T03:31:14.827879+00:00"
+  },
+  {
+    "internal_title": "Morris Worm – প্রথম ইন্টারনেট ওয়র্মের উন্মাদনা",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-09-01",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122097698433446154",
+    "generated_at": "2026-08-17T03:27:19.109966+00:00"
+  },
+  {
+    "internal_title": "C ভাষার জন্ম ও আধুনিক সফটওয়্যারে তার প্রভাব",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-01",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122097698943446154",
+    "generated_at": "2026-08-17T03:27:59.834623+00:00"
+  },
+  {
+    "internal_title": "ইমেইল ও @ চিহ্নের অদ্ভুত গল্প",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-01",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122097699261446154",
+    "generated_at": "2026-08-17T03:28:30.901605+00:00"
+  },
+  {
+    "internal_title": "ARPANET – ইন্টারনেটের জন্মের গল্প",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-02",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122097699927446154",
+    "generated_at": "2026-08-17T03:29:06.176783+00:00"
+  },
+  {
+    "internal_title": "UNIX এর জন্ম ও আধুনিক জগতে তার ছাপ",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-02",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122097700011446154",
+    "generated_at": "2026-08-17T03:29:30.546875+00:00"
+  },
+  {
+    "internal_title": "Fortran এর জন্ম",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-02",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122097700383446154",
+    "generated_at": "2026-08-17T03:30:19.124440+00:00"
+  },
+  {
+    "internal_title": "Xerox Alto – প্রথম GUI কম্পিউটার",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-02",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122097700917446154",
+    "generated_at": "2026-08-17T03:31:13.984646+00:00"
+  },
+  {
+    "internal_title": "VisiCalc – প্রথম স্প্রেডশীটের উত্থান",
+    "category": "Software History",
+    "scheduled_date": "2026-09-02",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122097701223446154",
+    "generated_at": "2026-08-17T03:31:39.529128+00:00"
+  },
+  {
+    "internal_title": "গ্রেস হপার এবং প্রথম কম্পাইলার",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-03",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122097701415446154",
+    "generated_at": "2026-08-17T03:32:04.985117+00:00"
+  },
+  {
+    "internal_title": "Windows 1.0 এর জন্ম এবং GUI যুদ্ধ",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-03",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122097701901446154",
+    "generated_at": "2026-08-17T03:32:29.067987+00:00"
   }
 ]
