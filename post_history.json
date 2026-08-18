@@ -1132,5 +1132,105 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122097701901446154",
     "generated_at": "2026-08-17T03:32:29.067987+00:00"
+  },
+  {
+    "internal_title": "IBM Simon – প্রথম স্মার্টফোনের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-03",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122098331019446154",
+    "generated_at": "2026-08-18T03:16:38.150612+00:00"
+  },
+  {
+    "internal_title": "মাউসের উত্থান: ডগলাস এঞ্জেলবাটের ছোট কাঠের জাদু",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-03",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122098331271446154",
+    "generated_at": "2026-08-18T03:18:07.899515+00:00"
+  },
+  {
+    "internal_title": "লিনাক্সের জন্ম: লিনাসের রাত্রিকালীন কোডিং সেশন",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-03",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122098331571446154",
+    "generated_at": "2026-08-18T03:18:34.968958+00:00"
+  },
+  {
+    "internal_title": "ওয়েবের জন্মের কাগজের টুকরো",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-04",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122098331727446154",
+    "generated_at": "2026-08-18T03:19:01.455269+00:00"
+  },
+  {
+    "internal_title": "আডা লাভলেসের প্রথম কোডের গল্প",
+    "category": "Famous Programmers",
+    "scheduled_date": "2026-09-04",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122098331751446154",
+    "generated_at": "2026-08-18T03:19:10.511393+00:00"
+  },
+  {
+    "internal_title": "ইন্টেল 4004 – প্রথম মাইক্রোপ্রসেসর",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-04",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122098332243446154",
+    "generated_at": "2026-08-18T03:19:53.590190+00:00"
+  },
+  {
+    "internal_title": "টেট্রিসের জন্ম এবং বিশ্বব্যাপী সাফল্য",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-04",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122098332873446154",
+    "generated_at": "2026-08-18T03:21:07.906807+00:00"
+  },
+  {
+    "internal_title": "Python এর জন্ম ও গুইডোর গল্প",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-04",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122098332981446154",
+    "generated_at": "2026-08-18T03:21:17.440858+00:00"
+  },
+  {
+    "internal_title": "Java এর জন্ম ও সান মাইক্রোসিস্টেমসের গল্প",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-05",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122098333731446154",
+    "generated_at": "2026-08-18T03:21:52.903835+00:00"
+  },
+  {
+    "internal_title": "প্রথম ইমেইল ও @ চিহ্নের গোপন গল্প",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-05",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122098334109446154",
+    "generated_at": "2026-08-18T03:22:21.391858+00:00"
   }
 ]
