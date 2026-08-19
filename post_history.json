@@ -1232,5 +1232,105 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122098334109446154",
     "generated_at": "2026-08-18T03:22:21.391858+00:00"
+  },
+  {
+    "internal_title": "UNIX এর জন্ম ও প্রভাব",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-05",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122099040591446154",
+    "generated_at": "2026-08-19T03:24:19.348463+00:00"
+  },
+  {
+    "internal_title": "Sketchpad – গ্রাফিক্সের প্রথম জাদু",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-05",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122099041371446154",
+    "generated_at": "2026-08-19T03:25:00.686969+00:00"
+  },
+  {
+    "internal_title": "NCSA Mosaic – প্রথম গ্রাফিক্যাল ওয়েব ব্রাউজার",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-05",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122099041863446154",
+    "generated_at": "2026-08-19T03:25:31.789998+00:00"
+  },
+  {
+    "internal_title": "C ভাষার জন্ম ও ডেনিস রিচি",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-06",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122099043501446154",
+    "generated_at": "2026-08-19T03:27:03.232954+00:00"
+  },
+  {
+    "internal_title": "Spacewar! – প্রথম ভিডিও গেমের গল্প ও তার উত্তরাধিকার",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-06",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122099043651446154",
+    "generated_at": "2026-08-19T03:27:12.321087+00:00"
+  },
+  {
+    "internal_title": "Xerox Alto – আধুনিক GUI‑এর জন্ম",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-06",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122099044221446154",
+    "generated_at": "2026-08-19T03:27:38.550927+00:00"
+  },
+  {
+    "internal_title": "আর্কি: প্রথম ওয়েবসার্চ ইঞ্জিনের গল্প",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-06",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122099044437446154",
+    "generated_at": "2026-08-19T03:28:06.313366+00:00"
+  },
+  {
+    "internal_title": "Osborne 1: প্রথম পোর্টেবল কম্পিউটারের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-06",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122099044881446154",
+    "generated_at": "2026-08-19T03:28:32.575642+00:00"
+  },
+  {
+    "internal_title": "কম্পিউটার মাউসের জন্ম ও ডগলাস এঙ্গেলবার্টের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-07",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122099045397446154",
+    "generated_at": "2026-08-19T03:28:59.424842+00:00"
+  },
+  {
+    "internal_title": "প্রথম ডোমেইন নামের গল্প – symbolics.com",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-07",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122099045925446154",
+    "generated_at": "2026-08-19T03:29:46.424917+00:00"
   }
 ]
