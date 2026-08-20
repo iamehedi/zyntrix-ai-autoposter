@@ -1332,5 +1332,105 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122099045925446154",
     "generated_at": "2026-08-19T03:29:46.424917+00:00"
+  },
+  {
+    "internal_title": "আদা লাভলেস – প্রথম প্রোগ্রামার",
+    "category": "Famous Programmers",
+    "scheduled_date": "2026-09-07",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122099989209446154",
+    "generated_at": "2026-08-20T03:24:35.350883+00:00"
+  },
+  {
+    "internal_title": "লিনাক্সের উত্থান",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-07",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122099989875446154",
+    "generated_at": "2026-08-20T03:25:23.444342+00:00"
+  },
+  {
+    "internal_title": "FORTRAN – প্রোগ্রামিং ভাষার প্রথম গৌরব",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-07",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122099990361446154",
+    "generated_at": "2026-08-20T03:26:11.721039+00:00"
+  },
+  {
+    "internal_title": "প্রথম কম্পিউটার বাগের গল্প",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-09-08",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122099990607446154",
+    "generated_at": "2026-08-20T03:26:45.213992+00:00"
+  },
+  {
+    "internal_title": "ইন্টেল 4004 মাইক্রোপ্রসেসরের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-08",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122099991015446154",
+    "generated_at": "2026-08-20T03:27:24.076305+00:00"
+  },
+  {
+    "internal_title": "ইন্টারনেটের প্রথম ইমেল",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-08",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122099991513446154",
+    "generated_at": "2026-08-20T03:28:37.375528+00:00"
+  },
+  {
+    "internal_title": "WWW এর প্রথম সার্ভার ও HTTP",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-08",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122099992053446154",
+    "generated_at": "2026-08-20T03:29:02.552520+00:00"
+  },
+  {
+    "internal_title": "ARPANET – ইন্টারনেটের পূর্বপুরুষের গল্প",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-08",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122099992869446154",
+    "generated_at": "2026-08-20T03:29:51.201468+00:00"
+  },
+  {
+    "internal_title": "পাইথনের জন্ম ও গুইডো ভ্যান রসাম",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-09",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122099994201446154",
+    "generated_at": "2026-08-20T03:31:06.288132+00:00"
+  },
+  {
+    "internal_title": "Mosaic ব্রাউজার ও ওয়েবের বিস্ফোরণ",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-09",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122099994729446154",
+    "generated_at": "2026-08-20T03:31:32.725234+00:00"
   }
 ]
