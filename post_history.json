@@ -1432,5 +1432,105 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122099994729446154",
     "generated_at": "2026-08-20T03:31:32.725234+00:00"
+  },
+  {
+    "internal_title": "C ভাষা ও ইউনিক্সের জন্ম",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-09",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122100947769446154",
+    "generated_at": "2026-08-21T03:29:19.343550+00:00"
+  },
+  {
+    "internal_title": "ডিএনএসের জন্ম: ইন্টারনেটের ফোনবুক",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-09",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122100948081446154",
+    "generated_at": "2026-08-21T03:30:00.897057+00:00"
+  },
+  {
+    "internal_title": "IBM System/360 এর বিপ্লব",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-09",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122100948621446154",
+    "generated_at": "2026-08-21T03:30:49.768307+00:00"
+  },
+  {
+    "internal_title": "Atari 2600 এবং গৃহে গেমের উত্থান",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-10",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122100949347446154",
+    "generated_at": "2026-08-21T03:31:18.959093+00:00"
+  },
+  {
+    "internal_title": "Creeper ভাইরাসের জন্ম",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-09-10",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122100950391446154",
+    "generated_at": "2026-08-21T03:31:50.276061+00:00"
+  },
+  {
+    "internal_title": "GNU প্রজেক্টের উত্থান ও ফ্রি সফটওয়্যার বিপ্লব",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-10",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122100950805446154",
+    "generated_at": "2026-08-21T03:32:33.180595+00:00"
+  },
+  {
+    "internal_title": "Xerox Alto এবং আধুনিক GUI‑এর জন্ম",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-10",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122100951159446154",
+    "generated_at": "2026-08-21T03:33:00.015309+00:00"
+  },
+  {
+    "internal_title": "Apple II এবং ব্যক্তিগত কম্পিউটারের উত্থান",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-10",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122100952275446154",
+    "generated_at": "2026-08-21T03:33:39.774125+00:00"
+  },
+  {
+    "internal_title": "Deep Blue vs Kasparov",
+    "category": "AI History",
+    "scheduled_date": "2026-09-11",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122100952551446154",
+    "generated_at": "2026-08-21T03:34:14.149370+00:00"
+  },
+  {
+    "internal_title": "Grace Hopper এবং A‑0 কম্পাইলার",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-11",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122100954273446154",
+    "generated_at": "2026-08-21T03:35:26.322060+00:00"
   }
 ]
