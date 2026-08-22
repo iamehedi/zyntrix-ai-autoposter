@@ -1532,5 +1532,105 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122100954273446154",
     "generated_at": "2026-08-21T03:35:26.322060+00:00"
+  },
+  {
+    "internal_title": "Spacewar! – প্রথম ভিডিও গেমের জন্ম",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-11",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122101709625446154",
+    "generated_at": "2026-08-22T03:14:15.351828+00:00"
+  },
+  {
+    "internal_title": "মাউসের প্রথম প্রদর্শন – মাদার অফ অল ডেমো",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-11",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122101711113446154",
+    "generated_at": "2026-08-22T03:14:56.109873+00:00"
+  },
+  {
+    "internal_title": "BASIC-এর জন্ম ও বিস্ফোরণ",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-11",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122101711461446154",
+    "generated_at": "2026-08-22T03:15:22.283037+00:00"
+  },
+  {
+    "internal_title": "FORTRAN এর জন্ম ও আধুনিক প্রোগ্রামিং‑এর ভিত্তি",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-12",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122101711689446154",
+    "generated_at": "2026-08-22T03:16:10.281843+00:00"
+  },
+  {
+    "internal_title": "ENIAC's First Programmers",
+    "category": "Computer History / Famous Programmers",
+    "scheduled_date": "2026-09-12",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122101712157446154",
+    "generated_at": "2026-08-22T03:17:15.797854+00:00"
+  },
+  {
+    "internal_title": "ARPANET এর উত্থান",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-12",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122101712289446154",
+    "generated_at": "2026-08-22T03:17:46.217876+00:00"
+  },
+  {
+    "internal_title": "C ভাষার জন্ম ও আধুনিক সফটওয়্যারে প্রভাব",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-12",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122101712463446154",
+    "generated_at": "2026-08-22T03:18:06.790572+00:00"
+  },
+  {
+    "internal_title": "মথের পোকা এবং প্রথম কম্পিউটার বাগ",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-09-12",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122101712781446154",
+    "generated_at": "2026-08-22T03:18:52.249756+00:00"
+  },
+  {
+    "internal_title": "Magnavox Odyssey এবং গৃহে গেমের সূচনা",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-13",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122101713447446154",
+    "generated_at": "2026-08-22T03:19:23.591439+00:00"
+  },
+  {
+    "internal_title": "ইমেইলের প্রথম বার্তা ও @ চিহ্নের গল্প",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-13",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122101713861446154",
+    "generated_at": "2026-08-22T03:19:48.316545+00:00"
   }
 ]
