@@ -1632,5 +1632,105 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122101713861446154",
     "generated_at": "2026-08-22T03:19:48.316545+00:00"
+  },
+  {
+    "internal_title": "World Wide Web and Tim Berners-Lee",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-13",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122102526009446154",
+    "generated_at": "2026-08-23T03:30:11.638277+00:00"
+  },
+  {
+    "internal_title": "IBM System/360 এবং মেইনফ্রেমের বিপ্লব",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-13",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122102526423446154",
+    "generated_at": "2026-08-23T03:30:44.183378+00:00"
+  },
+  {
+    "internal_title": "UNIX Operating System এর জন্ম",
+    "category": "Operating System History",
+    "scheduled_date": "2026-09-13",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122102527515446154",
+    "generated_at": "2026-08-23T03:32:38.996923+00:00"
+  },
+  {
+    "internal_title": "ট্রানজিস্টরের জন্ম: আধুনিক ইলেকট্রনিক্সের ভিত্তি",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-14",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122102527827446154",
+    "generated_at": "2026-08-23T03:33:13.970407+00:00"
+  },
+  {
+    "internal_title": "Creeper ও Reaper: প্রথম কম্পিউটার ভাইরাসের গল্প",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-09-14",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122102527875446154",
+    "generated_at": "2026-08-23T03:33:19.903227+00:00"
+  },
+  {
+    "internal_title": "VisiCalc – প্রথম স্প্রেডশীটের গল্প",
+    "category": "Software History",
+    "scheduled_date": "2026-09-14",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122102527905446154",
+    "generated_at": "2026-08-23T03:33:39.435286+00:00"
+  },
+  {
+    "internal_title": "Python এর জন্মগাঁথা",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-14",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122102528223446154",
+    "generated_at": "2026-08-23T03:34:00.201427+00:00"
+  },
+  {
+    "internal_title": "Intel 4004 এবং মাইক্রোপ্রসেসরের জন্ম",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-14",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122102528673446154",
+    "generated_at": "2026-08-23T03:34:47.354108+00:00"
+  },
+  {
+    "internal_title": "Ada Lovelace – প্রথম প্রোগ্রামার ও তার ভবিষ্যৎদৃষ্টিভঙ্গি",
+    "category": "Famous Programmers",
+    "scheduled_date": "2026-09-15",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122102529243446154",
+    "generated_at": "2026-08-23T03:35:36.978191+00:00"
+  },
+  {
+    "internal_title": "RAMAC এবং প্রথম হার্ডডিস্কের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-15",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122102529951446154",
+    "generated_at": "2026-08-23T03:36:39.763222+00:00"
   }
 ]
