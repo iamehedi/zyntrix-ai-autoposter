@@ -1732,5 +1732,105 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122102529951446154",
     "generated_at": "2026-08-23T03:36:39.763222+00:00"
+  },
+  {
+    "internal_title": "Linux Kernel 1.0 রিলিজের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-15",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122103554937446154",
+    "generated_at": "2026-08-24T03:31:03.738151+00:00"
+  },
+  {
+    "internal_title": "Xerox Alto এবং আধুনিক GUI‑এর সূচনা",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-15",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122103555321446154",
+    "generated_at": "2026-08-24T03:31:45.221410+00:00"
+  },
+  {
+    "internal_title": "Mosaic এবং ওয়েবের বিস্ফোরণ",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-15",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122103555933446154",
+    "generated_at": "2026-08-24T03:32:33.287123+00:00"
+  },
+  {
+    "internal_title": "ARPANET-এর প্রথম সংযোগের গল্প",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-16",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122103556311446154",
+    "generated_at": "2026-08-24T03:33:03.862515+00:00"
+  },
+  {
+    "internal_title": "মথের গোঁফে লুকানো প্রথম বাগের গল্প",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-09-16",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122103557001446154",
+    "generated_at": "2026-08-24T03:34:36.724327+00:00"
+  },
+  {
+    "internal_title": "Ray Tomlinson এবং @ চিহ্নের গল্প",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-16",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122103557145446154",
+    "generated_at": "2026-08-24T03:35:00.240278+00:00"
+  },
+  {
+    "internal_title": "World Wide Web এর প্রথম সার্ভার",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-16",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122103557505446154",
+    "generated_at": "2026-08-24T03:35:48.499638+00:00"
+  },
+  {
+    "internal_title": "FORTRAN এর জন্মগাঁথা",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-16",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122103558039446154",
+    "generated_at": "2026-08-24T03:36:38.018493+00:00"
+  },
+  {
+    "internal_title": "Grace Hopper এবং A-0 কম্পাইলার",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-17",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122103558789446154",
+    "generated_at": "2026-08-24T03:37:37.247829+00:00"
+  },
+  {
+    "internal_title": "Altair 8800 এবং মাইক্রোকম্পিউটারের জন্ম",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-17",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122103559197446154",
+    "generated_at": "2026-08-24T03:38:03.813223+00:00"
   }
 ]
