@@ -1832,5 +1832,105 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122103559197446154",
     "generated_at": "2026-08-24T03:38:03.813223+00:00"
+  },
+  {
+    "internal_title": "C ভাষার জন্মগাঁথা",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-17",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122104519305446154",
+    "generated_at": "2026-08-25T03:25:53.974305+00:00"
+  },
+  {
+    "internal_title": "UNIX এর জন্মগাঁথা",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-17",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122104520127446154",
+    "generated_at": "2026-08-25T03:26:57.585040+00:00"
+  },
+  {
+    "internal_title": "Python ভাষার জন্মগাঁথা",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-17",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122104520517446154",
+    "generated_at": "2026-08-25T03:27:45.696787+00:00"
+  },
+  {
+    "internal_title": "কম্পিউটার মাউসের জন্মকথা: কাঠের বাক্স থেকে আধুনিক প্রযুক্তির ভিত্তি",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-18",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122104521999446154",
+    "generated_at": "2026-08-25T03:29:17.837230+00:00"
+  },
+  {
+    "internal_title": "Ada Lovelace এবং প্রথম অ্যালগরিদমের গল্প",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-18",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122104522095446154",
+    "generated_at": "2026-08-25T03:29:30.256064+00:00"
+  },
+  {
+    "internal_title": "IBM System/360 এর উন্মোচন এবং আধুনিক কম্পিউটারের ভিত্তি",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-18",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122104522857446154",
+    "generated_at": "2026-08-25T03:30:12.706839+00:00"
+  },
+  {
+    "internal_title": "লিনাক্সের জন্মগাঁথা",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-18",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122104523403446154",
+    "generated_at": "2026-08-25T03:30:59.855334+00:00"
+  },
+  {
+    "internal_title": "Creeper ভাইরাসের প্রথম ধাক্কা",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-09-18",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122104524015446154",
+    "generated_at": "2026-08-25T03:31:25.523470+00:00"
+  },
+  {
+    "internal_title": "Java ভাষার জন্মগাঁথা",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-19",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122104524657446154",
+    "generated_at": "2026-08-25T03:32:15.267954+00:00"
+  },
+  {
+    "internal_title": "ARPANET: ইন্টারনেটের প্রথম ধাপের গল্প",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-19",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122104525635446154",
+    "generated_at": "2026-08-25T03:33:35.508059+00:00"
   }
 ]
