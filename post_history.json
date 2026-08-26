@@ -1932,5 +1932,105 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122104525635446154",
     "generated_at": "2026-08-25T03:33:35.508059+00:00"
+  },
+  {
+    "internal_title": "Brain ভাইরাসের উন্মোচন",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-09-19",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122105157441446154",
+    "generated_at": "2026-08-26T03:33:04.007915+00:00"
+  },
+  {
+    "internal_title": "Spacewar! - প্রথম কম্পিউটার গেমের জন্মগাঁথা",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-19",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122105157621446154",
+    "generated_at": "2026-08-26T03:33:52.155098+00:00"
+  },
+  {
+    "internal_title": "প্রথম ইমেইল পাঠানোর গল্প",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-19",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122105157849446154",
+    "generated_at": "2026-08-26T03:34:39.660617+00:00"
+  },
+  {
+    "internal_title": "VisiCalc – প্রথম স্প্রেডশিটের উত্থান",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-20",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122105158167446154",
+    "generated_at": "2026-08-26T03:36:15.870500+00:00"
+  },
+  {
+    "internal_title": "Intel 4004 – প্রথম মাইক্রোপ্রসেসরের জন্মগাঁথা",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-20",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122105158239446154",
+    "generated_at": "2026-08-26T03:36:41.538354+00:00"
+  },
+  {
+    "internal_title": "Xerox Alto এবং GUI‑এর প্রথম সূচনা",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-20",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122105158473446154",
+    "generated_at": "2026-08-26T03:37:10.487483+00:00"
+  },
+  {
+    "internal_title": "Morris Worm এবং ইন্টারনেটের প্রথম বড় সাইবার‑ঝুঁকি",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-09-20",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122105158731446154",
+    "generated_at": "2026-08-26T03:37:56.201193+00:00"
+  },
+  {
+    "internal_title": "Apple II এবং ব্যক্তিগত কম্পিউটারের বিপ্লব",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-20",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122105158815446154",
+    "generated_at": "2026-08-26T03:38:19.920732+00:00"
+  },
+  {
+    "internal_title": "Mosaic ব্রাউজার এবং ওয়েবের রঙিন সূচনা",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-21",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122105159277446154",
+    "generated_at": "2026-08-26T03:39:36.223780+00:00"
+  },
+  {
+    "internal_title": "FORTRAN – প্রথম উচ্চ-স্তরের ভাষার উন্মোচন",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-21",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122105159313446154",
+    "generated_at": "2026-08-26T03:39:46.511587+00:00"
   }
 ]
