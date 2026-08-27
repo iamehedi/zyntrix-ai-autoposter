@@ -2032,5 +2032,105 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122105159313446154",
     "generated_at": "2026-08-26T03:39:46.511587+00:00"
+  },
+  {
+    "internal_title": "UNIVAC I এবং ১৯৫২ সালের প্রেসিডেন্ট নির্বাচন",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-21",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122105891391446154",
+    "generated_at": "2026-08-27T12:58:00.837939+00:00"
+  },
+  {
+    "internal_title": "Grace Hopper ও COBOL",
+    "category": "Famous Programmers",
+    "scheduled_date": "2026-09-21",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122105891787446154",
+    "generated_at": "2026-08-27T12:59:29.267961+00:00"
+  },
+  {
+    "internal_title": "মাউসের উত্থান ও দারুণ গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-21",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122105891823446154",
+    "generated_at": "2026-08-27T12:59:38.557125+00:00"
+  },
+  {
+    "internal_title": "Altair 8800 – মাইক্রো কম্পিউটারের সূচনা",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-22",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122105892147446154",
+    "generated_at": "2026-08-27T13:00:23.120782+00:00"
+  },
+  {
+    "internal_title": "প্রথম কম্পিউটার বাগ: মথা ও ডিবাগিং",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-09-22",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122105892549446154",
+    "generated_at": "2026-08-27T13:01:38.381810+00:00"
+  },
+  {
+    "internal_title": "WWW এর জন্মগাঁথা",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-22",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122105892813446154",
+    "generated_at": "2026-08-27T13:02:26.657022+00:00"
+  },
+  {
+    "internal_title": "ARPANET – ইন্টারনেটের প্রথম শ্বাস",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-22",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122105893023446154",
+    "generated_at": "2026-08-27T13:02:52.514898+00:00"
+  },
+  {
+    "internal_title": "আদা লাভলেস ও প্রথম অ্যালগরিদম",
+    "category": "Famous Programmers",
+    "scheduled_date": "2026-09-22",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122105893083446154",
+    "generated_at": "2026-08-27T13:03:20.448541+00:00"
+  },
+  {
+    "internal_title": "IBM System/360 বিপ্লব",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-23",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122105893245446154",
+    "generated_at": "2026-08-27T13:03:44.199813+00:00"
+  },
+  {
+    "internal_title": "UNIX – অপারেটিং সিস্টেমের নীরব বিপ্লব",
+    "category": "Operating System History",
+    "scheduled_date": "2026-09-23",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122105893707446154",
+    "generated_at": "2026-08-27T13:05:18.284383+00:00"
   }
 ]
