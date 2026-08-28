@@ -2132,5 +2132,105 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122105893707446154",
     "generated_at": "2026-08-27T13:05:18.284383+00:00"
+  },
+  {
+    "internal_title": "Java ভাষার উত্থান ও ‘Write Once, Run Anywhere’",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-23",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122106282687446154",
+    "generated_at": "2026-08-28T14:29:10.295561+00:00"
+  },
+  {
+    "internal_title": "GNU Project ও GPL লাইসেন্সের উত্স",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-23",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122106282915446154",
+    "generated_at": "2026-08-28T14:29:59.541333+00:00"
+  },
+  {
+    "internal_title": "ইন্টেল ৪০০৪ – প্রথম মাইক্রোপ্রসেসর",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-23",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122106283287446154",
+    "generated_at": "2026-08-28T14:30:48.017978+00:00"
+  },
+  {
+    "internal_title": "Xerox Alto – GUI এর প্রথম দিক",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-24",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122106283635446154",
+    "generated_at": "2026-08-28T14:32:25.626087+00:00"
+  },
+  {
+    "internal_title": "লিনাক্সের জন্মকাহিনী",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-24",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122106283923446154",
+    "generated_at": "2026-08-28T14:32:53.621295+00:00"
+  },
+  {
+    "internal_title": "ELIZA - প্রথম চ্যাটবটের গল্প",
+    "category": "AI History",
+    "scheduled_date": "2026-09-24",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122106284055446154",
+    "generated_at": "2026-08-28T14:33:11.973129+00:00"
+  },
+  {
+    "internal_title": "Creeper Virus – প্রথম নেটওয়ার্ক ওয়ার্মের গল্প",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-09-24",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122106284391446154",
+    "generated_at": "2026-08-28T14:33:39.341738+00:00"
+  },
+  {
+    "internal_title": "প্রথম ইমেইল ও রে টমলিনসনের গল্প",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-24",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122106284535446154",
+    "generated_at": "2026-08-28T14:34:11.160799+00:00"
+  },
+  {
+    "internal_title": "কম্পিউটার মাউসের জন্মকথা ও 'মাদার অফ অল ডেমোস'",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-25",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122106285099446154",
+    "generated_at": "2026-08-28T14:35:32.219649+00:00"
+  },
+  {
+    "internal_title": "Spacewar! – প্রথম ভিডিও গেমের জন্মগাঁথা",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-25",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122106285189446154",
+    "generated_at": "2026-08-28T14:35:38.935405+00:00"
   }
 ]
