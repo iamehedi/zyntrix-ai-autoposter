@@ -2232,5 +2232,105 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122106285189446154",
     "generated_at": "2026-08-28T14:35:38.935405+00:00"
+  },
+  {
+    "internal_title": "Y2K বাগের অদ্ভুত গল্প",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-09-25",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122106550011446154",
+    "generated_at": "2026-08-29T09:15:05.488557+00:00"
+  },
+  {
+    "internal_title": "FORTRAN – প্রথম উচ্চ‑স্তরের প্রোগ্রামিং ভাষার উত্থান",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-25",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122106550149446154",
+    "generated_at": "2026-08-29T09:15:46.431161+00:00"
+  },
+  {
+    "internal_title": "Mosaic – প্রথম গ্রাফিক্যাল ব্রাউজার",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-25",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122106550371446154",
+    "generated_at": "2026-08-29T09:16:34.329676+00:00"
+  },
+  {
+    "internal_title": "ওয়েবের প্রথম পাতা – CERN-এ Tim Berners-Lee",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-26",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122106550635446154",
+    "generated_at": "2026-08-29T09:17:23.845608+00:00"
+  },
+  {
+    "internal_title": "মথা ও প্রথম বাগের গল্প",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-09-26",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122106550737446154",
+    "generated_at": "2026-08-29T09:18:10.688134+00:00"
+  },
+  {
+    "internal_title": "ARPANET এর জন্মগাঁথা",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-26",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122106551055446154",
+    "generated_at": "2026-08-29T09:19:46.531764+00:00"
+  },
+  {
+    "internal_title": "Pong – প্রথম আর্কেড গেমের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-26",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122106551169446154",
+    "generated_at": "2026-08-29T09:20:14.630762+00:00"
+  },
+  {
+    "internal_title": "প্রথম হার্ড ড্রাইভের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-26",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122106551361446154",
+    "generated_at": "2026-08-29T09:20:33.013209+00:00"
+  },
+  {
+    "internal_title": "BASIC ভাষার জন্ম ও দুই তরুণের স্বপ্ন",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-27",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122106551601446154",
+    "generated_at": "2026-08-29T09:21:01.306188+00:00"
+  },
+  {
+    "internal_title": "ENIAC – প্রথম ইলেকট্রনিক ডিজিটাল কম্পিউটার",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-27",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122106552207446154",
+    "generated_at": "2026-08-29T09:21:41.817527+00:00"
   }
 ]
