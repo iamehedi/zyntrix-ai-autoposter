@@ -2332,5 +2332,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122106552207446154",
     "generated_at": "2026-08-29T09:21:41.817527+00:00"
+  },
+  {
+    "internal_title": "Git এর জন্মগাঁথা",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-27",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122106887649446154",
+    "generated_at": "2026-08-30T08:28:14.801821+00:00"
+  },
+  {
+    "internal_title": "Sketchpad – ইন্টারেক্টিভ গ্রাফিক্সের প্রথম পদক্ষেপ",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-27",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122106887853446154",
+    "generated_at": "2026-08-30T08:29:01.828588+00:00"
+  },
+  {
+    "internal_title": "লিনাক্স কার্নেলের জন্ম ও লিনাস টরভাল্ডসের গল্প",
+    "category": "Operating System History",
+    "scheduled_date": "2026-09-27",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122106888201446154",
+    "generated_at": "2026-08-30T08:30:23.010233+00:00"
+  },
+  {
+    "internal_title": "প্রথম ইমেইল ও @‑চিহ্নের গোপন গল্প",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-28",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122106888231446154",
+    "generated_at": "2026-08-30T08:30:28.802811+00:00"
+  },
+  {
+    "internal_title": "COBOL এর জন্ম ও ব্যবসায়িক সফটওয়্যারের দিগন্ত",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-28",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122106888717446154",
+    "generated_at": "2026-08-30T08:31:34.897313+00:00"
   }
 ]
