@@ -2382,5 +2382,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122106888717446154",
     "generated_at": "2026-08-30T08:31:34.897313+00:00"
+  },
+  {
+    "internal_title": "কম্পিউটার মাউসের জন্মকথা",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-28",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122107214103446154",
+    "generated_at": "2026-08-31T08:48:56.924890+00:00"
+  },
+  {
+    "internal_title": "Xerox Alto এবং GUI‑এর প্রথম জ্যোতি",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-28",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122107214217446154",
+    "generated_at": "2026-08-31T08:49:08.209677+00:00"
+  },
+  {
+    "internal_title": "UNIX ও C ভাষার উত্থান",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-28",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122107214547446154",
+    "generated_at": "2026-08-31T08:50:44.273964+00:00"
+  },
+  {
+    "internal_title": "Ada Lovelace এবং প্রথম অ্যালগোরিদমের গল্প",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-29",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122107214691446154",
+    "generated_at": "2026-08-31T08:51:13.185323+00:00"
+  },
+  {
+    "internal_title": "Intel 4004 মাইক্রোপ্রসেসরের উত্থান",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-29",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122107214805446154",
+    "generated_at": "2026-08-31T08:51:35.878492+00:00"
   }
 ]
