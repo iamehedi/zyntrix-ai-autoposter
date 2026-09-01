@@ -2432,5 +2432,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122107214805446154",
     "generated_at": "2026-08-31T08:51:35.878492+00:00"
+  },
+  {
+    "internal_title": "Mosaic – প্রথম গ্রাফিকাল ওয়েব ব্রাউজার",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-29",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122107537395446154",
+    "generated_at": "2026-09-01T07:55:23.538539+00:00"
+  },
+  {
+    "internal_title": "মথের জারিতে প্রথম বাগের গল্প",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-09-29",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122107537575446154",
+    "generated_at": "2026-09-01T07:56:02.263830+00:00"
+  },
+  {
+    "internal_title": "Archie ও Veronica – প্রথম ওয়েবসার্চের গল্প",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-29",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122107537725446154",
+    "generated_at": "2026-09-01T07:56:52.237830+00:00"
+  },
+  {
+    "internal_title": "TCP/IP এর উত্থান ও ইন্টারনেটের রূপান্তর",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-30",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122107537767446154",
+    "generated_at": "2026-09-01T07:57:16.877913+00:00"
+  },
+  {
+    "internal_title": "LISP – AI-র জন্মভূমি",
+    "category": "Programming History",
+    "scheduled_date": "2026-09-30",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122107537809446154",
+    "generated_at": "2026-09-01T07:57:43.221396+00:00"
   }
 ]
