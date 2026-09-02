@@ -2482,5 +2482,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122107537809446154",
     "generated_at": "2026-09-01T07:57:43.221396+00:00"
+  },
+  {
+    "internal_title": "প্রথম ওয়েবসাইটের গল্প",
+    "category": "Internet History",
+    "scheduled_date": "2026-09-30",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122107842975446154",
+    "generated_at": "2026-09-02T07:15:00.678602+00:00"
+  },
+  {
+    "internal_title": "ইলেক্ট্রনিক ফ্রন্টিয়ার – প্রথম কম্পিউটার ভাইরাসের গল্প",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-09-30",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122107843029446154",
+    "generated_at": "2026-09-02T07:15:48.008101+00:00"
+  },
+  {
+    "internal_title": "Spacewar! – গেমিংয়ের জন্মকথা",
+    "category": "Computer History",
+    "scheduled_date": "2026-09-30",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122107843167446154",
+    "generated_at": "2026-09-02T07:16:36.252169+00:00"
+  },
+  {
+    "internal_title": "FORTRAN – প্রথম উচ্চ-স্তরের প্রোগ্রামিং ভাষার গল্প",
+    "category": "Programming History",
+    "scheduled_date": "2026-10-01",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122107843437446154",
+    "generated_at": "2026-09-02T07:17:02.565746+00:00"
+  },
+  {
+    "internal_title": "ইমেইল ও @ চিহ্নের উদ্ভব",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-01",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122107843473446154",
+    "generated_at": "2026-09-02T07:17:29.786927+00:00"
   }
 ]
