@@ -2532,5 +2532,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122107843473446154",
     "generated_at": "2026-09-02T07:17:29.786927+00:00"
+  },
+  {
+    "internal_title": "BASIC এর জন্ম ও জনপ্রিয়তা",
+    "category": "Programming History",
+    "scheduled_date": "2026-10-01",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122108126085446154",
+    "generated_at": "2026-09-03T07:18:39.613061+00:00"
+  },
+  {
+    "internal_title": "A‑0 কম্পাইলার ও Grace Hopper এর গল্প",
+    "category": "Programming History",
+    "scheduled_date": "2026-10-01",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122108126109446154",
+    "generated_at": "2026-09-03T07:18:45.465884+00:00"
+  },
+  {
+    "internal_title": "Atari 2600 – গৃহে গেমিংয়ের প্রথম বিপ্লব",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-01",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122108126151446154",
+    "generated_at": "2026-09-03T07:19:18.088334+00:00"
+  },
+  {
+    "internal_title": "মাউসের উদ্ভবের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-02",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122108126463446154",
+    "generated_at": "2026-09-03T07:20:16.814342+00:00"
+  },
+  {
+    "internal_title": "ARPANET-এর প্রথম বার্তা: \"LO\"",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-02",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122108126679446154",
+    "generated_at": "2026-09-03T07:21:03.959261+00:00"
   }
 ]
