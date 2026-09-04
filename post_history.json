@@ -2582,5 +2582,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122108126679446154",
     "generated_at": "2026-09-03T07:21:03.959261+00:00"
+  },
+  {
+    "internal_title": "Heartbleed বাগের অদ্ভুত গল্প",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-10-02",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122108398599446154",
+    "generated_at": "2026-09-04T07:20:46.070123+00:00"
+  },
+  {
+    "internal_title": "UNIX ও C ভাষার জন্মের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-02",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122108398623446154",
+    "generated_at": "2026-09-04T07:20:52.829902+00:00"
+  },
+  {
+    "internal_title": "Git এর জন্ম ও লিনাসের দৃষ্টিভঙ্গি",
+    "category": "Programming History",
+    "scheduled_date": "2026-10-02",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122108398671446154",
+    "generated_at": "2026-09-04T07:20:59.495998+00:00"
+  },
+  {
+    "internal_title": "Intel 4004 মাইক্রোপ্রসেসর",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-03",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122108398707446154",
+    "generated_at": "2026-09-04T07:21:18.028062+00:00"
+  },
+  {
+    "internal_title": "Xerox Alto – GUI-র জন্ম",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-03",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122108398749446154",
+    "generated_at": "2026-09-04T07:21:40.069441+00:00"
   }
 ]
