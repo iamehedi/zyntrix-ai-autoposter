@@ -2632,5 +2632,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122108398749446154",
     "generated_at": "2026-09-04T07:21:40.069441+00:00"
+  },
+  {
+    "internal_title": "IBM RAMAC প্রথম হার্ড ড্রাইভের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-03",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122108654433446154",
+    "generated_at": "2026-09-05T07:02:53.445810+00:00"
+  },
+  {
+    "internal_title": "Mosaic – ওয়েবের প্রথম গ্রাফিক্যাল ব্রাউজার",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-03",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122108654493446154",
+    "generated_at": "2026-09-05T07:03:00.205989+00:00"
+  },
+  {
+    "internal_title": "Elk Cloner – প্রথম ফ্লপি‑ভিত্তিক ভাইরাসের গল্প",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-10-03",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122108654571446154",
+    "generated_at": "2026-09-05T07:03:06.434329+00:00"
+  },
+  {
+    "internal_title": "Osborne 1 – প্রথম বাণিজ্যিক ল্যাপটপের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-04",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122108654961446154",
+    "generated_at": "2026-09-05T07:04:01.982407+00:00"
+  },
+  {
+    "internal_title": "ওয়েবের জন্মের গল্প",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-04",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122108655063446154",
+    "generated_at": "2026-09-05T07:04:26.972937+00:00"
   }
 ]
