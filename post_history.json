@@ -2682,5 +2682,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122108655063446154",
     "generated_at": "2026-09-05T07:04:26.972937+00:00"
+  },
+  {
+    "internal_title": "Altair 8800 – প্রথম মাইক্রো কম্পিউটারের উত্থান",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-04",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122108940963446154",
+    "generated_at": "2026-09-06T07:14:22.683890+00:00"
+  },
+  {
+    "internal_title": "Fortran এর উত্থান ও প্রভাব",
+    "category": "Programming History",
+    "scheduled_date": "2026-10-04",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122108941011446154",
+    "generated_at": "2026-09-06T07:14:30.101903+00:00"
+  },
+  {
+    "internal_title": "Spacewar! – প্রথম ভিডিও গেমের উত্থান",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-04",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122108941047446154",
+    "generated_at": "2026-09-06T07:15:00.889016+00:00"
+  },
+  {
+    "internal_title": "Creeper – প্রথম কম্পিউটার ওয়ার্মের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-05",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122108941101446154",
+    "generated_at": "2026-09-06T07:15:24.600503+00:00"
+  },
+  {
+    "internal_title": "Sketchpad এবং প্রথম ইন্টারেক্টিভ গ্রাফিক্স",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-05",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122108941263446154",
+    "generated_at": "2026-09-06T07:15:48.617144+00:00"
   }
 ]
