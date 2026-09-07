@@ -2732,5 +2732,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122108941263446154",
     "generated_at": "2026-09-06T07:15:48.617144+00:00"
+  },
+  {
+    "internal_title": "Grace Hopper এবং প্রথম কম্পাইলার",
+    "category": "Famous Programmers",
+    "scheduled_date": "2026-10-05",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122109225411446154",
+    "generated_at": "2026-09-07T07:27:33.938326+00:00"
+  },
+  {
+    "internal_title": "ডগলাস এঙ্গেলবার্টের মাউসের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-05",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122109225459446154",
+    "generated_at": "2026-09-07T07:27:42.786706+00:00"
+  },
+  {
+    "internal_title": "UNIX এর জন্ম ও Bell Labs এর গোপন গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-05",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122109225501446154",
+    "generated_at": "2026-09-07T07:27:52.060608+00:00"
+  },
+  {
+    "internal_title": "The Origin of 'Bug' in Computing",
+    "category": "Computer History / Famous Bugs",
+    "scheduled_date": "2026-10-06",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122109226209446154",
+    "generated_at": "2026-09-07T07:30:15.398589+00:00"
+  },
+  {
+    "internal_title": "ARPANET – ইন্টারনেটের প্রথম ধাপের গল্প",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-06",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122109226347446154",
+    "generated_at": "2026-09-07T07:30:22.030893+00:00"
   }
 ]
