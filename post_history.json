@@ -2782,5 +2782,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122109226347446154",
     "generated_at": "2026-09-07T07:30:22.030893+00:00"
+  },
+  {
+    "internal_title": "Xerox Alto ও GUI এর জন্ম",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-06",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122109523857446154",
+    "generated_at": "2026-09-08T07:21:29.655483+00:00"
+  },
+  {
+    "internal_title": "IBM 305 RAMAC এবং প্রথম হার্ড ড্রাইভের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-06",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122109524043446154",
+    "generated_at": "2026-09-08T07:21:54.075574+00:00"
+  },
+  {
+    "internal_title": "Integrated Circuit (IC) Birth Story",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-06",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122109524103446154",
+    "generated_at": "2026-09-08T07:22:46.911530+00:00"
+  },
+  {
+    "internal_title": "SQL এবং রিলেশনাল ডাটাবেসের জন্ম",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-07",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122109524325446154",
+    "generated_at": "2026-09-08T07:23:22.430077+00:00"
+  },
+  {
+    "internal_title": "ইন্টেল ৪০০৪ – প্রথম মাইক্রোপ্রসেসরের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-07",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122109524493446154",
+    "generated_at": "2026-09-08T07:23:50.536392+00:00"
   }
 ]
