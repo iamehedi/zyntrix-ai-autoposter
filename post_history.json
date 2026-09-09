@@ -2832,5 +2832,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122109524493446154",
     "generated_at": "2026-09-08T07:23:50.536392+00:00"
+  },
+  {
+    "internal_title": "VisiCalc – প্রথম স্প্রেডশীট সফটওয়্যারের গল্প",
+    "category": "Software Development History",
+    "scheduled_date": "2026-10-07",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122109825507446154",
+    "generated_at": "2026-09-09T07:30:18.256863+00:00"
+  },
+  {
+    "internal_title": "Apple I গ্যারেজের সোনার সৃষ্টিকর্ম",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-07",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122109825549446154",
+    "generated_at": "2026-09-09T07:30:44.531514+00:00"
+  },
+  {
+    "internal_title": "World Wide Web এর উন্মোচন",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-07",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122109825693446154",
+    "generated_at": "2026-09-09T07:31:03.953800+00:00"
+  },
+  {
+    "internal_title": "FORTRAN – প্রথম হাই-লেভেল প্রোগ্রামিং ভাষার গল্প",
+    "category": "Programming History",
+    "scheduled_date": "2026-10-08",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122109825843446154",
+    "generated_at": "2026-09-09T07:31:37.410605+00:00"
+  },
+  {
+    "internal_title": "Ray Tomlinson এবং প্রথম ইমেইল",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-08",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122109825927446154",
+    "generated_at": "2026-09-09T07:31:45.120205+00:00"
   }
 ]
