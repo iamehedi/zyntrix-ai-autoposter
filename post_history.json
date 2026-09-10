@@ -2882,5 +2882,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122109825927446154",
     "generated_at": "2026-09-09T07:31:45.120205+00:00"
+  },
+  {
+    "internal_title": "DNS এর জন্ম ও প্রথম ডোমেইন নাম",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-08",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122110142361446154",
+    "generated_at": "2026-09-10T07:26:14.409336+00:00"
+  },
+  {
+    "internal_title": "Altair 8800 – প্রথম ব্যক্তিগত কম্পিউটারের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-08",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122110142409446154",
+    "generated_at": "2026-09-10T07:27:04.709293+00:00"
+  },
+  {
+    "internal_title": "ডগা মাউসের গোপন গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-08",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122110142433446154",
+    "generated_at": "2026-09-10T07:27:10.816711+00:00"
+  },
+  {
+    "internal_title": "Spacewar! – প্রথম ডেজিটাল গেমের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-09",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122110142505446154",
+    "generated_at": "2026-09-10T07:27:26.188011+00:00"
+  },
+  {
+    "internal_title": "Ariane 5 সফটওয়্যার বাগের ধ্বংসাত্মক ফল",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-10-09",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122110142835446154",
+    "generated_at": "2026-09-10T07:27:54.365101+00:00"
   }
 ]
