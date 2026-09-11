@@ -2932,5 +2932,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122110142835446154",
     "generated_at": "2026-09-10T07:27:54.365101+00:00"
+  },
+  {
+    "internal_title": "ক্রিপ্টোল – প্রথম কম্পিউটার ভাইরাসের গল্প",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-10-09",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122110415427446154",
+    "generated_at": "2026-09-11T07:24:20.202026+00:00"
+  },
+  {
+    "internal_title": "Microsoft এর প্রথম পণ্য – Altair BASIC",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-09",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122110415679446154",
+    "generated_at": "2026-09-11T07:24:48.721992+00:00"
+  },
+  {
+    "internal_title": "মথেরা এবং বাগের গল্প",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-10-09",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122110415841446154",
+    "generated_at": "2026-09-11T07:25:12.338900+00:00"
+  },
+  {
+    "internal_title": "UNIX এর উত্স ও বিকাশ",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-10",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122110416027446154",
+    "generated_at": "2026-09-11T07:25:37.205611+00:00"
+  },
+  {
+    "internal_title": "Linus Torvalds এবং Linux Kernel এর জন্ম",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-10",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122110416279446154",
+    "generated_at": "2026-09-11T07:26:04.755529+00:00"
   }
 ]
