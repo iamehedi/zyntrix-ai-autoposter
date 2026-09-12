@@ -2982,5 +2982,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122110416279446154",
     "generated_at": "2026-09-11T07:26:04.755529+00:00"
+  },
+  {
+    "internal_title": "মথের মায়া: হার্ভার্ড মার্ক II-এ প্রথম 'বাগ'",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-10-10",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122110691361446154",
+    "generated_at": "2026-09-12T07:16:48.106147+00:00"
+  },
+  {
+    "internal_title": "ইন্টেল 4004 – মাইক্রোপ্রসেসরের সূচনা",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-10",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122110691391446154",
+    "generated_at": "2026-09-12T07:16:55.355633+00:00"
+  },
+  {
+    "internal_title": "IBM System/360 এর বিপ্লবী উন্মোচন",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-10",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122110691421446154",
+    "generated_at": "2026-09-12T07:17:02.244555+00:00"
+  },
+  {
+    "internal_title": "Sketchpad এবং গ্রাফিক্সের সূচনা",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-11",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122110691547446154",
+    "generated_at": "2026-09-12T07:17:18.680226+00:00"
+  },
+  {
+    "internal_title": "Tim Berners-Lee এবং ওয়েবের সূচনা",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-11",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122110691721446154",
+    "generated_at": "2026-09-12T07:17:47.701313+00:00"
   }
 ]
