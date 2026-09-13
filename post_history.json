@@ -3032,5 +3032,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122110691721446154",
     "generated_at": "2026-09-12T07:17:47.701313+00:00"
+  },
+  {
+    "internal_title": "Fortran – প্রথম উচ্চ-স্তরের প্রোগ্রামিং ভাষা",
+    "category": "Programming History",
+    "scheduled_date": "2026-10-11",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122111023959446154",
+    "generated_at": "2026-09-13T07:35:06.366070+00:00"
+  },
+  {
+    "internal_title": "ARPANET: ইন্টারনেটের জন্ম",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-11",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122111024067446154",
+    "generated_at": "2026-09-13T07:35:20.169332+00:00"
+  },
+  {
+    "internal_title": "GNU Project এবং মুক্ত সফটওয়্যারের উত্থান",
+    "category": "Famous Bugs / Programming History",
+    "scheduled_date": "2026-10-11",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122111024289446154",
+    "generated_at": "2026-09-13T07:36:08.665949+00:00"
+  },
+  {
+    "internal_title": "ডগলাস এঙ্গেলবার্টের মাউসের জন্ম",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-12",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122111024409446154",
+    "generated_at": "2026-09-13T07:36:32.835310+00:00"
+  },
+  {
+    "internal_title": "টেট্রিসের উত্স এবং সোভিয়েত গেমের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-12",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122111024727446154",
+    "generated_at": "2026-09-13T07:37:23.410816+00:00"
   }
 ]
