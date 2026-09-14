@@ -3082,5 +3082,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122111024727446154",
     "generated_at": "2026-09-13T07:37:23.410816+00:00"
+  },
+  {
+    "internal_title": "Deep Blue vs Kasparov: চেসের ইতিহাসের মাইলফলক",
+    "category": "AI History",
+    "scheduled_date": "2026-10-12",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122111337645446154",
+    "generated_at": "2026-09-14T08:01:25.901150+00:00"
+  },
+  {
+    "internal_title": "Xerox Alto এবং প্রথম GUI",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-12",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122111337675446154",
+    "generated_at": "2026-09-14T08:01:31.686549+00:00"
+  },
+  {
+    "internal_title": "Mosaic এবং ওয়েবের বন্যা",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-12",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122111337795446154",
+    "generated_at": "2026-09-14T08:02:07.890855+00:00"
+  },
+  {
+    "internal_title": "Grace Hopper এবং কম্পাইলারের জন্ম",
+    "category": "Programming History",
+    "scheduled_date": "2026-10-13",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122111338107446154",
+    "generated_at": "2026-09-14T08:03:12.883320+00:00"
+  },
+  {
+    "internal_title": "Spacewar! – গেমিং ইতিহাসের প্রথম জ্যোতি",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-13",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122111338137446154",
+    "generated_at": "2026-09-14T08:03:18.385198+00:00"
   }
 ]
