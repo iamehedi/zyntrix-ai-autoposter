@@ -3132,5 +3132,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122111338137446154",
     "generated_at": "2026-09-14T08:03:18.385198+00:00"
+  },
+  {
+    "internal_title": "Ada ভাষার উত্পত্তি",
+    "category": "Programming History",
+    "scheduled_date": "2026-10-13",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122111679171446154",
+    "generated_at": "2026-09-15T07:56:43.187042+00:00"
+  },
+  {
+    "internal_title": "Creeper এবং Reaper – প্রথম কম্পিউটার ভাইরাসের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-13",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122111679237446154",
+    "generated_at": "2026-09-15T07:57:07.882050+00:00"
+  },
+  {
+    "internal_title": "লিনাক্সের জন্ম: হবি থেকে বিশ্বজুড়ে শাসন",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-13",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122111679423446154",
+    "generated_at": "2026-09-15T07:57:38.363595+00:00"
+  },
+  {
+    "internal_title": "Python ভাষার জন্ম",
+    "category": "Programming History",
+    "scheduled_date": "2026-10-14",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122111679783446154",
+    "generated_at": "2026-09-15T07:58:21.099467+00:00"
+  },
+  {
+    "internal_title": "IBM 305 RAMAC এবং হার্ড ডিস্কের জন্ম",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-14",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122111679951446154",
+    "generated_at": "2026-09-15T07:58:51.085598+00:00"
   }
 ]
