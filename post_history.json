@@ -3182,5 +3182,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122111679951446154",
     "generated_at": "2026-09-15T07:58:51.085598+00:00"
+  },
+  {
+    "internal_title": "ইমেল এর প্রথম পাঠ",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-14",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122111998821446154",
+    "generated_at": "2026-09-16T07:49:34.092036+00:00"
+  },
+  {
+    "internal_title": "প্রথম ওয়েবসাইটের জন্ম",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-14",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122111998863446154",
+    "generated_at": "2026-09-16T07:49:45.236830+00:00"
+  },
+  {
+    "internal_title": "ENIAC প্রোগ্রামারদের গোপন গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-14",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122111999163446154",
+    "generated_at": "2026-09-16T07:50:22.306781+00:00"
+  },
+  {
+    "internal_title": "প্রথম ডোমেইন নাম এবং DNS‑এর জন্ম",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-15",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122111999283446154",
+    "generated_at": "2026-09-16T07:50:54.136019+00:00"
+  },
+  {
+    "internal_title": "VisiCalc – স্প্রেডশিটের প্রথম পাখি",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-15",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122111999733446154",
+    "generated_at": "2026-09-16T07:51:44.010736+00:00"
   }
 ]
