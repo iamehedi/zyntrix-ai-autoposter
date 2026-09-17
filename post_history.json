@@ -3232,5 +3232,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122111999733446154",
     "generated_at": "2026-09-16T07:51:44.010736+00:00"
+  },
+  {
+    "internal_title": "UNIX এর জন্ম ও আধুনিক কম্পিউটিংয়ে প্রভাব",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-15",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122112261147446154",
+    "generated_at": "2026-09-17T07:53:54.864779+00:00"
+  },
+  {
+    "internal_title": "ARPANET এবং প্রথম ইন্টারনেট বার্তা",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-15",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122112261171446154",
+    "generated_at": "2026-09-17T07:54:04.567357+00:00"
+  },
+  {
+    "internal_title": "মাউসের জন্ম ও প্রথম ব্যবহার",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-15",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122112261621446154",
+    "generated_at": "2026-09-17T07:54:31.957439+00:00"
+  },
+  {
+    "internal_title": "জেরক্স অল্টো এবং গ্রাফিক্যাল ইন্টারফেসের জন্ম",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-16",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122112262215446154",
+    "generated_at": "2026-09-17T07:56:03.804816+00:00"
+  },
+  {
+    "internal_title": "FORTRAN – প্রথম উচ্চ‑স্তরের ভাষার উত্থান",
+    "category": "Programming History",
+    "scheduled_date": "2026-10-16",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122112262239446154",
+    "generated_at": "2026-09-17T07:56:10.234997+00:00"
   }
 ]
