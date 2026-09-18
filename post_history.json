@@ -3282,5 +3282,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122112262239446154",
     "generated_at": "2026-09-17T07:56:10.234997+00:00"
+  },
+  {
+    "internal_title": "Grace Hopper এবং COBOL",
+    "category": "Programming History",
+    "scheduled_date": "2026-10-16",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122112548655446154",
+    "generated_at": "2026-09-18T07:32:22.012650+00:00"
+  },
+  {
+    "internal_title": "গিটের জন্ম ও লিনাসের বাগের যুদ্ধ",
+    "category": "Programming History",
+    "scheduled_date": "2026-10-16",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122112548679446154",
+    "generated_at": "2026-09-18T07:32:27.453790+00:00"
+  },
+  {
+    "internal_title": "BASIC ভাষার জন্ম ও শিক্ষার বিপ্লব",
+    "category": "Programming History",
+    "scheduled_date": "2026-10-16",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122112548991446154",
+    "generated_at": "2026-09-18T07:33:01.619458+00:00"
+  },
+  {
+    "internal_title": "CAPTCHA এর উত্পত্তি ও আধুনিক ব্যবহার",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-17",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122112549201446154",
+    "generated_at": "2026-09-18T07:33:24.109150+00:00"
+  },
+  {
+    "internal_title": "Intel 4004 মাইক্রোপ্রসেসরের জন্ম",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-17",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122112549357446154",
+    "generated_at": "2026-09-18T07:33:48.665229+00:00"
   }
 ]
