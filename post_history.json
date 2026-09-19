@@ -3332,5 +3332,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122112549357446154",
     "generated_at": "2026-09-18T07:33:48.665229+00:00"
+  },
+  {
+    "internal_title": "স্পেস ইনভেডার এবং গেমিংয়ের রূপান্তর",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-17",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122112850683446154",
+    "generated_at": "2026-09-19T07:27:50.353365+00:00"
+  },
+  {
+    "internal_title": "আদা লাভলেসের প্রথম অ্যালগরিদম",
+    "category": "Famous Programmers",
+    "scheduled_date": "2026-10-17",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122112850893446154",
+    "generated_at": "2026-09-19T07:27:56.309197+00:00"
+  },
+  {
+    "internal_title": "IBM PC এবং Intel 8088 এর অপ্রত্যাশিত মিলন",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-17",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122112852189446154",
+    "generated_at": "2026-09-19T07:28:38.014597+00:00"
+  },
+  {
+    "internal_title": "মথের পাপড়ি ও প্রথম কম্পিউটার বাগ",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-10-18",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122112852753446154",
+    "generated_at": "2026-09-19T07:28:50.893722+00:00"
+  },
+  {
+    "internal_title": "Hello, World! এর উত্পত্তি",
+    "category": "Programming History",
+    "scheduled_date": "2026-10-18",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122112853497446154",
+    "generated_at": "2026-09-19T07:29:16.831813+00:00"
   }
 ]
