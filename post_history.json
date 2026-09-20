@@ -3382,5 +3382,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122112853497446154",
     "generated_at": "2026-09-19T07:29:16.831813+00:00"
+  },
+  {
+    "internal_title": "মুজিক্লি: ওয়েবের প্রথম ব্রাউজার",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-18",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122113233435446154",
+    "generated_at": "2026-09-20T07:51:47.452879+00:00"
+  },
+  {
+    "internal_title": "কোর্সা ভাইরাসের উত্থান ও প্রভাব",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-10-18",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122113233465446154",
+    "generated_at": "2026-09-20T07:51:53.408138+00:00"
+  },
+  {
+    "internal_title": "প্রথম ইমেল এবং রে টমলিনসন",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-18",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122113233615446154",
+    "generated_at": "2026-09-20T07:51:59.167368+00:00"
+  },
+  {
+    "internal_title": "প্রথম ওয়েবসার্ভার",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-19",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122113233897446154",
+    "generated_at": "2026-09-20T07:52:54.639825+00:00"
+  },
+  {
+    "internal_title": "Xerox Alto এবং GUI এর উত্পত্তি",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-19",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122113234053446154",
+    "generated_at": "2026-09-20T07:53:36.180208+00:00"
   }
 ]
