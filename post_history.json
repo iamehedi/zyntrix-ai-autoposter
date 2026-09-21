@@ -3432,5 +3432,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122113234053446154",
     "generated_at": "2026-09-20T07:53:36.180208+00:00"
+  },
+  {
+    "internal_title": "Unix-এর জন্মের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-19",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122113565733446154",
+    "generated_at": "2026-09-21T08:06:39.892171+00:00"
+  },
+  {
+    "internal_title": "DNS এর জন্ম ও ইন্টারনেটের নামকরণ বিপ্লব",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-19",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122113565775446154",
+    "generated_at": "2026-09-21T08:06:46.289397+00:00"
+  },
+  {
+    "internal_title": "ডিবাগিং শব্দের উত্পত্তি ও গ্রেস হপার",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-10-19",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122113565799446154",
+    "generated_at": "2026-09-21T08:06:52.470144+00:00"
+  },
+  {
+    "internal_title": "Microsoft-এর প্রথম পণ্য: Altair BASIC",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-20",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122113566033446154",
+    "generated_at": "2026-09-21T08:07:24.143715+00:00"
+  },
+  {
+    "internal_title": "Mosaic ব্রাউজার: ওয়েবের প্রথম রঙিন জানালা",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-20",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122113566129446154",
+    "generated_at": "2026-09-21T08:07:51.199623+00:00"
   }
 ]
