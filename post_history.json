@@ -3482,5 +3482,45 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122113566129446154",
     "generated_at": "2026-09-21T08:07:51.199623+00:00"
+  },
+  {
+    "internal_title": "ARPANET – ইন্টারনেটের জন্ম",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-20",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122113869945446154",
+    "generated_at": "2026-09-22T07:51:27.476075+00:00"
+  },
+  {
+    "internal_title": "Creeper ভাইরাস ও Reaper অ্যান্টিভাইরাসের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-20",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122113869987446154",
+    "generated_at": "2026-09-22T07:51:34.877271+00:00"
+  },
+  {
+    "internal_title": "লিনাক্সের প্রথম দিন",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-20",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122113870035446154",
+    "generated_at": "2026-09-22T07:52:00.232675+00:00"
+  },
+  {
+    "internal_title": "প্রথম ইলেকট্রনিক ডিজিটাল কম্পিউটার ENIAC এর জন্মকথা",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-21",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122113870671446154",
+    "generated_at": "2026-09-22T07:54:06.295678+00:00"
   }
 ]
