@@ -3522,5 +3522,65 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122113870671446154",
     "generated_at": "2026-09-22T07:54:06.295678+00:00"
+  },
+  {
+    "internal_title": "মাউসের প্রথম গোপন গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-21",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122114171673446154",
+    "generated_at": "2026-09-23T07:53:35.555223+00:00"
+  },
+  {
+    "internal_title": "VisiCalc – স্প্রেডশিটের উত্থান",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-21",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122114171703446154",
+    "generated_at": "2026-09-23T07:53:41.891770+00:00"
+  },
+  {
+    "internal_title": "GNU প্রকল্পের জন্ম ও প্রভাব",
+    "category": "Programming History",
+    "scheduled_date": "2026-10-21",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122114171817446154",
+    "generated_at": "2026-09-23T07:53:48.290684+00:00"
+  },
+  {
+    "internal_title": "IBM System/360 এর বিপ্লবী যাত্রা",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-21",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122114172159446154",
+    "generated_at": "2026-09-23T07:54:19.387110+00:00"
+  },
+  {
+    "internal_title": "Apple II: Personal Computing for Everyone",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-22",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122114172705446154",
+    "generated_at": "2026-09-23T07:55:23.657841+00:00"
+  },
+  {
+    "internal_title": "Fortran-এর উত্থান ও প্রভাব",
+    "category": "Programming History",
+    "scheduled_date": "2026-10-22",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122114172747446154",
+    "generated_at": "2026-09-23T07:55:34.825591+00:00"
   }
 ]
