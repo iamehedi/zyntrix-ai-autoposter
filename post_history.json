@@ -3582,5 +3582,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122114172747446154",
     "generated_at": "2026-09-23T07:55:34.825591+00:00"
+  },
+  {
+    "internal_title": "ইমেইল স্প্যামের উত্স ও মণ্টি পাইথন কনেকশন",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-22",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122114450361446154",
+    "generated_at": "2026-09-24T07:43:48.712551+00:00"
+  },
+  {
+    "internal_title": "প্রথম ওয়েব সার্ভার ও পেজের গল্প",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-22",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122114450433446154",
+    "generated_at": "2026-09-24T07:44:15.076824+00:00"
+  },
+  {
+    "internal_title": "Xerox Alto ও GUI এর সূচনা",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-22",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122114450637446154",
+    "generated_at": "2026-09-24T07:44:47.172401+00:00"
+  },
+  {
+    "internal_title": "Morris Worm এর উত্থান ও প্রভাব",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-10-23",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122114450667446154",
+    "generated_at": "2026-09-24T07:44:53.316147+00:00"
+  },
+  {
+    "internal_title": "Intel 4004 – প্রথম মাইক্রোপ্রসেসরের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-23",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122114450967446154",
+    "generated_at": "2026-09-24T07:45:25.575751+00:00"
   }
 ]
