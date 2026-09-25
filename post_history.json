@@ -3632,5 +3632,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122114450967446154",
     "generated_at": "2026-09-24T07:45:25.575751+00:00"
+  },
+  {
+    "internal_title": "ট্রানজিস্টরের জন্ম: যে ক্ষুদ্র আবিষ্কার বদলে দিল বিশ্ব",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-23",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122114710995446154",
+    "generated_at": "2026-09-25T08:03:42.234034+00:00"
+  },
+  {
+    "internal_title": "ডিজিটাল ক্যামেরার উত্পত্তি ও CCD সেন্সরের গল্প",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-23",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122114711037446154",
+    "generated_at": "2026-09-25T08:03:53.649031+00:00"
+  },
+  {
+    "internal_title": "Mosaic ব্রাউজার ও ইন্টারনেটের প্রথম ছবি",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-23",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122114711379446154",
+    "generated_at": "2026-09-25T08:04:25.222388+00:00"
+  },
+  {
+    "internal_title": "Spacewar! – গেমিংয়ের প্রথম সূচনা",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-24",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122114711703446154",
+    "generated_at": "2026-09-25T08:04:52.524120+00:00"
+  },
+  {
+    "internal_title": "ENIAC এর প্রথম দিন",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-24",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122114711751446154",
+    "generated_at": "2026-09-25T08:05:10.972354+00:00"
   }
 ]
