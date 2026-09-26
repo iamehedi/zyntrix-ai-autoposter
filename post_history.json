@@ -3682,5 +3682,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122114711751446154",
     "generated_at": "2026-09-25T08:05:10.972354+00:00"
+  },
+  {
+    "internal_title": "The Invention of the Computer Mouse and the Mother of All Demos",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-24",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122115001233446154",
+    "generated_at": "2026-09-26T07:55:43.684291+00:00"
+  },
+  {
+    "internal_title": "ARPANET: ইন্টারনেটের সূচনা",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-24",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122115001281446154",
+    "generated_at": "2026-09-26T07:55:51.246445+00:00"
+  },
+  {
+    "internal_title": "ওয়েবের জন্মের পেছনের গল্প",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-24",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122115001311446154",
+    "generated_at": "2026-09-26T07:56:00.468494+00:00"
+  },
+  {
+    "internal_title": "মশা ও প্রথম বাগের গল্প",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-10-25",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122115001467446154",
+    "generated_at": "2026-09-26T07:56:29.535478+00:00"
+  },
+  {
+    "internal_title": "VisiCalc এর উত্থান ও আধুনিক অফিস সফটওয়্যারে প্রভাব",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-25",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122115001761446154",
+    "generated_at": "2026-09-26T07:57:04.105231+00:00"
   }
 ]
