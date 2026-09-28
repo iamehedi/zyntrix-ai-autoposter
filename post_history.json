@@ -3782,5 +3782,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122115285711446154",
     "generated_at": "2026-09-27T08:28:16.190302+00:00"
+  },
+  {
+    "internal_title": "MS-DOS: Microsoft's Big Break with IBM",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-26",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122115570855446154",
+    "generated_at": "2026-09-28T08:51:58.932884+00:00"
+  },
+  {
+    "internal_title": "Fortran এর জন্ম ও প্রথম ব্যবহার",
+    "category": "Programming History",
+    "scheduled_date": "2026-10-26",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122115570951446154",
+    "generated_at": "2026-09-28T08:52:04.744627+00:00"
+  },
+  {
+    "internal_title": "The First Computer Worm and Antivirus",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-26",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122115571317446154",
+    "generated_at": "2026-09-28T08:53:06.891107+00:00"
+  },
+  {
+    "internal_title": "Xerox Alto – GUI‑এর প্রথম পিতামাতা",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-27",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122115571527446154",
+    "generated_at": "2026-09-28T08:54:05.353259+00:00"
+  },
+  {
+    "internal_title": "Spacewar! গেমের জন্ম",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-27",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122115571743446154",
+    "generated_at": "2026-09-28T08:54:31.493975+00:00"
   }
 ]
