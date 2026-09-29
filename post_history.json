@@ -3832,5 +3832,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122115571743446154",
     "generated_at": "2026-09-28T08:54:31.493975+00:00"
+  },
+  {
+    "internal_title": "ইমেইল @ চিহ্নের উদ্ভব",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-27",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122115904281446154",
+    "generated_at": "2026-09-29T08:49:30.382053+00:00"
+  },
+  {
+    "internal_title": "Unix এর উত্পত্তি",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-27",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122115904311446154",
+    "generated_at": "2026-09-29T08:49:36.757570+00:00"
+  },
+  {
+    "internal_title": "Lisp এর উত্স ও AI তে প্রভাব",
+    "category": "Programming History",
+    "scheduled_date": "2026-10-27",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122115904353446154",
+    "generated_at": "2026-09-29T08:50:02.288111+00:00"
+  },
+  {
+    "internal_title": "Mosaic ব্রাউজারের উত্থান",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-28",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122115904509446154",
+    "generated_at": "2026-09-29T08:50:23.651528+00:00"
+  },
+  {
+    "internal_title": "মথের গোপনীয়তা – প্রথম বাগের গল্প",
+    "category": "Famous Bugs",
+    "scheduled_date": "2026-10-28",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122115904779446154",
+    "generated_at": "2026-09-29T08:50:53.715241+00:00"
   }
 ]
