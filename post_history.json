@@ -3882,5 +3882,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122115904779446154",
     "generated_at": "2026-09-29T08:50:53.715241+00:00"
+  },
+  {
+    "internal_title": "প্রথম ওয়েবসাইটের জন্ম ও টিম বার্নার্স-লির দৃষ্টিভঙ্গি",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-28",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122116189899446154",
+    "generated_at": "2026-09-30T08:48:39.244753+00:00"
+  },
+  {
+    "internal_title": "TCP/IP: Internet's Foundation",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-28",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122116189923446154",
+    "generated_at": "2026-09-30T08:49:06.050031+00:00"
+  },
+  {
+    "internal_title": "কম্পিউটার মাউসের উদ্ভব",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-28",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122116190199446154",
+    "generated_at": "2026-09-30T08:49:42.868363+00:00"
+  },
+  {
+    "internal_title": "ARPANET – ইন্টারনেটের শিকড়",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-29",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122116190337446154",
+    "generated_at": "2026-09-30T08:50:09.240024+00:00"
+  },
+  {
+    "internal_title": "VisiCalc – প্রথম স্প্রেডশিট",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-29",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122116190649446154",
+    "generated_at": "2026-09-30T08:51:01.780250+00:00"
   }
 ]
