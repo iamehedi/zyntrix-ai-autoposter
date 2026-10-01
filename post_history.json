@@ -3932,5 +3932,55 @@
     "status": "SCHEDULED_VERIFIED",
     "meta_post_id": "1303242722866748_122116190649446154",
     "generated_at": "2026-09-30T08:51:01.780250+00:00"
+  },
+  {
+    "internal_title": "আদা লাভলেসের প্রথম প্রোগ্রাম",
+    "category": "Famous Programmers",
+    "scheduled_date": "2026-10-29",
+    "scheduled_time": "17:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122116474263446154",
+    "generated_at": "2026-10-01T09:13:24.465063+00:00"
+  },
+  {
+    "internal_title": "CAPTCHA‑এর জন্ম ও অপ্রত্যাশিত মোড়",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-29",
+    "scheduled_time": "20:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122116474287446154",
+    "generated_at": "2026-10-01T09:13:30.041303+00:00"
+  },
+  {
+    "internal_title": "DNS এর উত্পত্তি",
+    "category": "Internet History",
+    "scheduled_date": "2026-10-29",
+    "scheduled_time": "22:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122116474317446154",
+    "generated_at": "2026-10-01T09:13:35.781872+00:00"
+  },
+  {
+    "internal_title": "Photoshop এর জন্ম ও প্রভাব",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-30",
+    "scheduled_time": "08:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122116474683446154",
+    "generated_at": "2026-10-01T09:14:20.742605+00:00"
+  },
+  {
+    "internal_title": "ট্রানজিস্টরের জন্ম: ক্ষুদ্র এক যন্ত্রাংশের বিশাল বিপ্লব",
+    "category": "Computer History",
+    "scheduled_date": "2026-10-30",
+    "scheduled_time": "12:00",
+    "timezone": "Asia/Dhaka",
+    "status": "SCHEDULED_VERIFIED",
+    "meta_post_id": "1303242722866748_122116475049446154",
+    "generated_at": "2026-10-01T09:15:24.742991+00:00"
   }
 ]
